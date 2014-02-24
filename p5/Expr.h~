@@ -4,9 +4,8 @@ class Expr
         Expr(int value);
         Expr(double value);
         Expr(string value);
-        Expr(Operator_type type, Expr *newlhs, Expr *newrhs) // for the operators
-        Expr(Operator_type type, Expr *newlhs);
-        Expr(Variable* value);
+        Expr(Gpl_op type, Expr *lhs, Expr *rhs) // for the operators
+        
         int eval_int();
         double eval_double();
         string eval_string();
@@ -14,6 +13,4 @@ class Expr
     private:
         string type;
         string kind;
-        Expr* lhs;
-        Expr* rhs;
 }

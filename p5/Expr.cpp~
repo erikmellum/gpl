@@ -1,0 +1,13 @@
+#include "Expr.h"
+
+using namespace std;
+
+int Expr::eval_int()
+{
+}
+double Expr::eval_double()
+{
+}
+string Expr::eval_string()
+{
+}
