@@ -1,0 +1,3 @@
+// p4 t106.gpl
+int number[10];
+string number[10];

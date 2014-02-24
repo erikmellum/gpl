@@ -1,0 +1,36 @@
+gpl.cpp::main()
+  input file(tests/t005.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(false)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(false)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+No errors found (parser probably worked correctly).
+
+
+Printing the symbol table from main()
+int a 42
+int b 42
+int nums[0] 42
+int nums[1] 42
+string s1 "Hello world"
+string s2 "Hello world"
+string strings[0] "Hello world"
+string strings[1] "Hello world"
+string strings[2] "Hello world"
+string strings[3] "Hello world"
+double values[0] 3.145
+double values[1] 3.145
+double values[2] 3.145
+double x 3.145
+double y 3.145
+If graphics was enabled gpl program would execute now.
+
+gpl.cpp::main() done.

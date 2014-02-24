@@ -1,0 +1,44 @@
+// Set up system variables used to create window
+int window_width = 800;
+int window_height = 400;
+string window_title = "Mouseattack";
+
+int ball_x_increment = 5;
+int ball_y_increment = 5;
+int ball_size = 10;
+int mouse_x;
+int mouse_y;
+
+forward animation ball_animate(circle cur_ball);
+circle ball(x = window_width/2, y = window_height/2, 
+            radius = ball_size/2, animation_block = ball_animate);
+
+circle userball(x = window_width/2, y = window_height/2, 
+            radius = ball_size/2, red = 1.0);
+
+animation ball_animate(circle cur_ball)
+{       
+    if(userball touches cur_ball)
+    {
+        ball_x_increment = 0;
+        ball_y_increment = 0;
+        print("Game Over");
+    }
+    if (cur_ball.x > mouse_x)
+        ball_x_increment = -5;
+    if(cur_ball.x < mouse_x)
+        ball_x_increment = 5;
+    if(cur_ball.y < mouse_y)
+        ball_y_increment = 5;
+    if (cur_ball.y > mouse_y)
+        ball_y_increment = -5;
+    cur_ball.x += ball_x_increment;
+    cur_ball.y += ball_y_increment;
+}
+
+on mouse_move
+{
+    userball.x = mouse_x;
+    userball.y = mouse_y;
+}
+

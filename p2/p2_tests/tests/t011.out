@@ -1,0 +1,10 @@
+parser.cpp::main() reading file tests/t011.in
+parser.cpp::main() about to call yyparse()
+type zero or more array declarations followed by ^D:
+
+
+parser.cpp::main() after call to yyparse()
+
+yyparse() found errors
+
+parser.cpp::main() end of program.

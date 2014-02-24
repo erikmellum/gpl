@@ -1,0 +1,16 @@
+gpl.cpp::main()
+  input file(tests/t104.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(false)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(false)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+1 error found.
+gpl giving up.

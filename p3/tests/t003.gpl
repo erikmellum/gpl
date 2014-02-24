@@ -1,0 +1,59 @@
+// Set up system variables
+int window_width = 400;
+int window_height = 300;
+string window_title = "gpl Pong";
+int animation_speed = 99;
+
+int paddle_increment = 30;
+
+int ball_x_increment = 5;
+int ball_y_increment = 2;
+int paddle_width = 5;
+int paddle_height = 40;
+int ball_size = 10;
+
+// declare the animation handler functions
+forward animation ball_animate(circle cur_ball);
+
+// create a rectangle that will be used for the paddle
+rectangle paddle(x = window_width/10, y = window_height/2, 
+                 w = paddle_width, h = paddle_height);
+
+// create a rectangle that will be used for the ball
+// note that the ball has an animation handler
+circle ball(x = window_width/2, y = window_height/2, 
+            radius = ball_size/2, animation_block = ball_animate);
+
+// animation handler for the ball
+animation ball_animate(circle cur_ball)
+{
+    // if ball has reached either the left or right, reverse its direction
+    if (cur_ball.x < 0 || cur_ball.x > window_width - ball_size)
+        ball_x_increment = -ball_x_increment;
+
+    // if ball has reached either the top or bottom, reverse its direction
+    if (cur_ball.y < 0 || cur_ball.y > window_height - ball_size)
+        ball_y_increment = -ball_y_increment;
+
+    // if ball touches the paddle, reverse its direction
+    if (cur_ball touches paddle)
+        ball_x_increment = -ball_x_increment;
+
+    // on each step of the animation, move the ball
+    cur_ball.x += ball_x_increment;
+    cur_ball.y += ball_y_increment;
+}
+
+// when the user presses the up arrow, move the paddle up
+on uparrow
+{
+    if (paddle.y < window_height - 2*paddle_increment)
+        paddle.y += paddle_increment;
+}
+
+// when the user presses the down arrow, move the paddle down
+on downarrow
+{
+    if (paddle.y > paddle_increment)
+        paddle.y -= paddle_increment;
+}

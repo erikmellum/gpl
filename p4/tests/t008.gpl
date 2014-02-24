@@ -1,0 +1,5 @@
+// p4 t008.gpl
+
+int numbers[2000];
+double values[2000];
+string strings[2000];

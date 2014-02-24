@@ -1,0 +1,24 @@
+test: test.o symbol_table.o symbol.o gpl_type.o gpl_assert.o
+	g++ -o test test.o symbol_table.o symbol.o gpl_type.o gpl_assert.o
+
+test.o: test.cpp symbol_table.h symbol.h gpl_type.h
+	g++ -c test.cpp
+
+symbol_table.o: symbol_table.cpp symbol_table.h symbol.h gpl_type.h
+	g++ -c symbol_table.cpp 
+
+symbol.o: symbol.cpp symbol.h gpl_type.h
+	g++ -c symbol.cpp 
+
+gpl_type.o: gpl_type.cpp gpl_type.h
+	g++ -c gpl_type.cpp
+
+gpl_assert.o: gpl_assert.cpp gpl_assert.h
+	g++ -c gpl_assert.cpp
+
+clean:
+	del -f *.o
+	
+cleanall: 
+	del -f *.o
+	del -f project.exe

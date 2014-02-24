@@ -1,0 +1,4 @@
+// p4 t006.gpl
+int a_very_long_identifier;
+int an_identifier_with_digits_1234;
+int _start_with_an_underscore;

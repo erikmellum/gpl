@@ -1,0 +1,15 @@
+// p4 t108.gpl
+// For this phase, the size of arrays must be an integer constant
+// integer constants should not include a minus sign.
+// In gpl there are no negative integer constants
+//     -42 is the unary minus operator '-' and the int constant '42'
+//
+// For this phase, there are no unary minus operators.
+//
+// If you defined your integer constants correctly this program will
+// result in a syntax error.
+// 
+// If you defined your integer constants INCORRECTLY this program will
+// not have any errors.
+//
+int nums[-5];

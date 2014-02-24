@@ -1,0 +1,205 @@
+// in addition to the static tokens listed below, there are four non-static
+// tokens -- these are described in the handout
+integer constant
+double constant
+string constant
+indentifier
+
+
+// Static tokens (always the same string)
+// types
+int
+double
+string
+triangle
+pixmap
+circle
+rectangle
+textbox
+
+// keywords
+forward
+initialization
+on
+animation
+if
+for
+else
+exit
+print
+true
+false
+
+// event keys
+space
+leftarrow
+rightarrow
+uparrow
+downarrow
+leftmouse_down
+middlemouse_down
+rightmouse_down
+leftmouse_up
+middlemouse_up
+rightmouse_up
+mouse_move
+mouse_drag
+f1
+akey
+skey
+dkey
+fkey
+hkey
+jkey
+kkey
+lkey
+wkey
+
+// punctuation
+(
+)
+{
+}
+[
+]
+;
+,
+.
+
+// assignment operators
+// unlike C/C++/Java, assignment operators are NOT part of expressions
+// thus they don't need to be assigned a precedence level
+=
++=
+-=
+
+// unary operators with textual names
+// these "fake" functions are in the grammar in such a way
+// that they do not need to be assigned a precedence level
+sin
+cos
+tan
+asin
+acos
+atan
+sqrt
+abs
+floor
+random
+
+// graphical operators
+// these binary operators are in the grammar in such a way that
+// they don't need a precedence level
+touches
+near
+
+
+
+// Copy the following token declarations into your .y file.
+// Make sure you fill in the types for the ones with < > 
+
+
+%token T_INT
+%token T_DOUBLE
+%token T_STRING
+%token T_TRIANGLE
+%token T_PIXMAP
+%token T_CIRCLE
+%token T_RECTANGLE
+%token T_TEXTBOX
+%token T_FORWARD
+%token T_INITIALIZATION
+
+%token T_TRUE
+%token T_FALSE
+
+%token T_ON
+%token T_SPACE
+%token T_LEFTARROW
+%token T_RIGHTARROW
+%token T_UPARROW
+%token T_DOWNARROW
+%token T_F1
+%token T_WKEY
+%token T_AKEY
+%token T_SKEY
+%token T_DKEY
+%token T_FKEY
+%token T_HKEY
+%token T_JKEY
+%token T_KKEY
+%token T_LKEY
+%token T_LEFTMOUSE_DOWN
+%token T_MIDDLEMOUSE_DOWN
+%token T_RIGHTMOUSE_DOWN
+%token T_LEFTMOUSE_UP
+%token T_MIDDLEMOUSE_UP
+%token T_RIGHTMOUSE_UP
+%token T_MOUSE_MOVE
+%token T_MOUSE_DRAG
+
+%token T_TOUCHES
+%token T_NEAR
+
+%token T_ANIMATION
+
+%token T_IF
+%token T_FOR
+%token T_ELSE
+
+%token T_EXIT
+%token T_PRINT
+
+%token T_LPAREN
+%token T_RPAREN
+%token T_LBRACE
+%token T_RBRACE
+%token T_LBRACKET
+%token T_RBRACKET
+%token T_SEMIC
+%token T_COMMA
+%token T_PERIOD
+
+%token T_ASSIGN
+%token T_PLUS_ASSIGN
+%token T_MINUS_ASSIGN
+%token T_PLUS_PLUS
+%token T_MINUS_MINUS
+
+%token T_ASTERISK
+%token T_DIVIDE
+%token T_MOD
+%token T_PLUS
+%token T_MINUS
+%token T_SIN
+%token T_COS
+%token T_TAN
+%token T_ASIN
+%token T_ACOS
+%token T_ATAN
+%token T_SQRT
+%token T_FLOOR
+%token T_ABS
+%token T_RANDOM
+
+%token T_LESS
+%token T_GREATER
+%token T_LESS_EQUAL
+%token T_GREATER_EQUAL
+%token T_EQUAL
+%token T_NOT_EQUAL
+
+%token T_AND
+%token T_OR
+%token T_NOT
+
+// the following need a type
+// %token <type goes here> TOKEN
+%token <union_string> T_ID
+%token <union_int> T_INT_CONSTANT
+%token <union_double> T_DOUBLE_CONSTANT
+%token <union_string> T_STRING_CONSTANT
+
+// special token that does not match any production
+// used for characters that are not part of the language
+%token T_ERROR

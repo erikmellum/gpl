@@ -1,0 +1,11 @@
+parser.cpp::main() reading file tests/t006.in
+parser.cpp::main() about to call yyparse()
+type zero or more array declarations followed by ^D:
+
+strings[] = {int, double, string, triangle, pixmap, circle, rectangle, textbox, forward, initialization, on, animation, if, for, else, exit, print, true, false, space, leftarrow, rightarrow, uparrow, downarrow, leftmousedown, middlemousedown, rightmousedown, leftmouseup, middlemouseup, rightmouseup, mousemove, mousedrag, akey, skey, dkey, fkey, hkey, jkey, kkey, lkey, wkey, sin, cos, tan, asin, acos, atan, sqrt, abs, floor, random, touches, near};
+
+parser.cpp::main() after call to yyparse()
+
+no errors found by yyparse()
+
+parser.cpp::main() end of program.

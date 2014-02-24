@@ -1,0 +1,169 @@
+int window_width = 800;
+int window_height = 400;
+string window_title = "Mouseattack";
+
+int ball_x_increment = 5;
+int ball_y_increment = 5;
+int ball_size = 25;
+int mouse_x;
+int mouse_y;
+int xrand = 20;
+int yrand = 15;
+int timer = 5000;
+int points = 100;
+int start = 0;
+forward animation ball_animate(circle cur_ball);
+
+circle ball(x = window_width/2, y = window_height/2, visible = 1, radius = ball_size/2, blue = .2, animation_block = ball_animate);
+
+circle ball1(x = window_width/2, y = window_height/2, visible = 0, radius = 9, green = 1, animation_block = ball_animate);
+
+circle ball2(x = window_width/2, y = window_height/2, visible = 0, radius = 14, blue = .5, green = 1, animation_block = ball_animate);
+
+circle ball3(x = window_width/2, y = window_height/2, visible = 0, radius = 20, red = .3, blue = 1, animation_block = ball_animate);
+
+circle ball4(x = window_width/2, y = window_height/2, visible = 0, radius = 27, green = 1, red = .1, animation_block = ball_animate);
+
+circle ball5(x = window_width/2, y = window_height/2, visible = 0, radius = 35, blue = .2, red = 1, animation_block = ball_animate);
+
+circle ball6(x = window_width/2, y = window_height/2, visible = 0, radius = 43, blue = .9, red = .5, animation_block = ball_animate);
+
+circle userball(x = window_width/2, y = window_height/2,radius = ball_size/2, red = 1.0);
+
+textbox title(x = 10, y = 10, text = "Avoid the dots, press left mouse to begin, space to quit. Hit 0 and lose, 100 points for the win!", size = 0.1);
+
+textbox title1(x = 10, y = 380, text = "F1 Toggles Options", size = 0.1);
+
+animation ball_animate(circle cur_ball)
+{   
+    if(start == 1)
+    {
+        title.text = "Survive until 0: " + timer + "  Points: " + points + " x speed: " + xrand + " y speed: " + yrand;
+        if(points == 0)
+        {
+            title.text = "You ran out of points, Game Over! Press Space to Quit or Click to try again!";
+            start = 0;       
+        }    
+        if(userball touches cur_ball && cur_ball.visible == 1)
+        {
+            points = points-1;
+        }
+        if(timer%2 ==0)
+        {
+            if (cur_ball.x > mouse_x)
+                ball_x_increment = (random(xrand)+1)*-1;
+            if(cur_ball.x < mouse_x)
+                ball_x_increment = random(xrand)+1;
+        }
+        else
+        {
+            if(cur_ball.y < mouse_y)
+                ball_y_increment = random(yrand)+1;
+            if (cur_ball.y > mouse_y)
+                ball_y_increment = (random(yrand)+1)*-1;
+        }
+        cur_ball.x += ball_x_increment;
+        cur_ball.y += ball_y_increment;
+        if(timer == 0)
+        {
+            if(points == 100)
+                title.text = "You won with a perfect score, you're an expert!";
+            else if(points == 99)
+                title.text = "99 points... the true sign of a loser";
+            else if(points > 95)
+                title.text = "You won and you were close... but they say close only counts with hand grenades and horseshoes. You missed " + (100-points) + "points.";
+            else if(points > 90)
+                title.text = "My grandma is better than you and she doesn't even have arms. You missed " + (100-points) + "points.";
+            else if(points > 80)
+                title.text = "Face it. You should try a new hobby. You missed " + (100-points) + "points.";
+            else if(points > 70)
+                title.text = "Pathetic at best. Maybe another attempt? " + (100-points) + " to be exact.";
+            else if(points > 50)
+                title.text = "You are right 50% of the time every time, and thats terrible. You missed " + (100-points) + "points.";
+            else if(points > 30)
+                title.text = "It's okay if you've never used a mouse before. You missed " + (100-points) + "points.";
+            else if(points > 10)
+                title.text = "Try writing your own game, chances are you'll do better. You missed " + (100-points) + "points.";
+            else if(points > 1)
+                title.text = "You won but does it really mean anything if you only got " + (100-points) + "points?";
+            start = 0;
+        }
+        else if(timer == 4500)
+        {
+            ball1.x = random(window_width);
+            ball1.y = random(window_height);
+            ball1.visible = 1;
+        }    
+        else if(timer == 4000)
+        {
+            ball2.x = random(window_width);
+            ball2.y = random(window_height);
+            ball2.visible = 1;
+        }
+        else if(timer == 3500)
+        {
+            ball3.x = random(window_width);
+            ball3.y = random(window_height);
+            ball3.visible = 1;
+        }    
+        else if(timer == 3000)
+        {
+            ball4.x = random(window_width);
+            ball4.y = random(window_height);
+            ball4.visible = 1;
+        }  
+        else if(timer == 2500)
+        {
+            ball5.x = random(window_width);
+            ball5.y = random(window_height);
+            ball5.visible = 1;
+        }    
+        else if(timer == 2000)
+        {
+            ball6.x = random(window_width);
+            ball6.y = random(window_height);
+            ball6.visible = 1;
+        }    
+        timer = timer - 1;
+    }
+}
+
+on mouse_move
+{
+    userball.x = mouse_x;
+    userball.y = mouse_y;
+}
+
+on leftmouse_down
+{
+    ball1.visible=0;
+    ball2.visible=0;
+    ball3.visible=0;
+    ball4.visible=0;
+    ball5.visible=0;
+    ball6.visible=0;
+    timer = 5000;
+    points = 100;
+    start = 1;
+}
+on space
+{
+    exit(0);
+}
+on uparrow
+{
+    xrand += 2;
+    yrand += 2;
+}
+on downarrow
+{
+    xrand -= 2;
+    yrand -= 2;
+}
+on f1
+{
+    if(title1.text == "F1 Toggles Options")
+        title1.text = "Click to start a game, Space to Quit, Down Arrow decreases difficulty, Up Arrow increases difficulty.";
+    else
+        title1.text = "F1 Toggles Options";
+}

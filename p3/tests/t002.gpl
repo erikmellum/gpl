@@ -1,0 +1,7 @@
+double x;
+
+on leftarrow
+{
+
+    x += 1;
+}

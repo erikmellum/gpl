@@ -1,0 +1,5 @@
+unions are cool because they allow you to put multiple data members into the union, but the actual instance of this union will only allow you access to a single variable at a time. This means that the space in memory for the union only has to be the size of the largest member. Super cool!
+
+I also learned about enums which are really cool because they basically allow you to create a new data type with a set of predefined values that it can be. Such as an enum that holds the days of the week and then whenever you create an enum the value has to be one of the days of the week so you can easily make comparisons. Tyson used the enums to create error messages which are then caught in the error handler. Very cool!
+
+

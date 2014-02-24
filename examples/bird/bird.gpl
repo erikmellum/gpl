@@ -1,0 +1,132 @@
+// set up the size of the window
+int window_width = 800;
+int window_height = 500;
+
+// animation_speed controls the rate that objects' animation blocks are called
+int animation_speed = 70; // 100 is fastest, 1 is slowest
+
+int score = 0;
+int i;
+int num_birds = 5;
+int increment = 20;
+
+forward animation fly(pixmap bird);
+
+pixmap birds[num_birds];
+textbox display(x = 2, y = 2, text = "score: " + score);
+textbox instructions(x = window_width - 400, y = 2, 
+                     text = "Use arrows to move bug out of the path of birds");
+
+pixmap bug(x = window_height/2, y = window_height/2, filename = "bug_n.bmp");
+
+initialization
+{
+    for (i = 0; i < num_birds; i += 1)
+    {
+      
+        birds[i].animation_block = fly;
+        birds[i].x = random(window_width-100) + 50;
+        birds[i].y = random(window_height-100) + 50;
+        birds[i].user_int = random(4);
+        if (birds[i].user_int == 0)
+            birds[i].filename = "bird_nw.bmp";
+        else if (birds[i].user_int == 1)
+            birds[i].filename = "bird_ne.bmp";
+        else if (birds[i].user_int == 2)
+            birds[i].filename = "bird_se.bmp";
+        else if (birds[i].user_int == 3)
+            birds[i].filename = "bird_sw.bmp";
+
+    }
+}
+
+animation fly(pixmap bird)
+{
+    if (bird touches bug)
+    {
+        score -= 5;
+        display.text = "score: " + score;
+    }
+
+    if (bird.user_int == 0)
+    {
+        bird.x -= increment;
+        bird.y += increment;
+        if (bird.x <= 0 || bird.y >= window_height)
+        {
+            bird.user_int = 2;
+            bird.filename = "bird_se.bmp";
+            bird.x += random(window_width/4);
+        }
+    }
+    else if (bird.user_int == 2)
+    {
+        bird.x += increment;
+        bird.y -= increment;
+        if (bird.x >= window_width || bird.y <= 0)
+        {
+            bird.user_int = 0;
+            bird.filename = "bird_nw.bmp";
+            bird.x -= random(window_width/4);
+        }
+    }
+    else if (bird.user_int == 1)
+    {
+        bird.x += increment;
+        bird.y += increment;
+        if (bird.x >= window_width || bird.y >= window_height)
+        {
+            bird.user_int = 3;
+            bird.filename = "bird_sw.bmp";
+            bird.x -= random(window_width/4);
+        }
+    }
+    else if (bird.user_int == 3)
+    {
+        bird.x -= increment;
+        bird.y -= increment;
+        if (bird.x <= 0 || bird.y <= 0)
+        {
+            bird.user_int = 1;
+            bird.filename = "bird_ne.bmp";
+            bird.x += random(window_width/4);
+        }
+    }
+}
+
+on uparrow
+{
+    score += 1;
+    display.text = "score: " + score;
+    bug.y += 20;
+    if (bug.y >= window_height)
+        bug.y = 0;
+    bug.filename = "bug_n.bmp";
+}
+on downarrow
+{
+    score += 1;
+    display.text = "score: " + score;
+    bug.y -= 20;
+    if (bug.y <= 0)
+        bug.y = window_height;
+    bug.filename = "bug_s.bmp";
+}
+on leftarrow
+{
+    score += 1;
+    display.text = "score: " + score;
+    bug.x -= 20;
+    if (bug.x <= 0)
+        bug.x = window_width;
+    bug.filename = "bug_w.bmp";
+}
+on rightarrow
+{
+    score += 1;
+    display.text = "score: " + score;
+    bug.x += 20;
+    if (bug.x >= window_width)
+        bug.x = 0;
+    bug.filename = "bug_e.bmp";
+}

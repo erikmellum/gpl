@@ -1,0 +1,11 @@
+// p4 t005.gpl
+int a;
+int b;
+double x;
+double y;
+string s1;
+string s2;
+
+int nums[2];
+double values[3];
+string strings[4];

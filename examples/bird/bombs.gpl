@@ -1,0 +1,426 @@
+// Missile Command by Dan Hembry (02/10/05)
+// GPL program example for CSCI 250
+
+// Set up system variables
+int window_width = 400;
+int window_height = 600;
+int window_x = 300;
+int window_y = 50;
+string window_title = "gpl Missile Command";
+int animation_speed = 50; // 1 is slowest, 100 is fastest
+
+// Declare the functions that will make the nukes move
+forward animation fly_nuke_one(triangle nuke_one_a);
+forward animation fly_nuke_two(triangle nuke_two_a);
+forward animation fly_nuke_three(triangle nuke_three_a);
+
+// Declaration for the animation of the explosion
+forward animation boom_ani(circle yay);
+
+// textbox debug(x = 2, y = 2, text = " ");
+
+textbox gameover(x = 150, y = window_height/2, text = "GAME OVER", visible = false);
+textbox score(x = (window_width/2)-40, y = window_height-12, text = "Score: 0");
+
+
+int i = 0;			// Used in various loops
+int respawn_frames = 50;	// Quick set for the respawn timers
+int move_inc = 12;		// Movement increment for the cursor
+
+int score_value = 0;		// Duh.
+
+// Used to keep track of the explosion
+int boom_stage = 0;
+int boom_x = 0;
+int boom_y = 0;
+
+// The Missiles and associated variables 
+triangle nuke_one(x = window_width/4, y = window_height-10, size = 10, red = 1.0, green = 0.0, blue = 0.0, animation_block = fly_nuke_one);
+triangle nuke_two(x = (window_width/4)*2, y = window_height-10, size = 10, red = 1.0, green = 0.0, blue = 0.0, animation_block = fly_nuke_two);
+triangle nuke_three(x = (window_width/4)*3, y = window_height-10, size = 10, red = 1.0, green = 0.0, blue = 0.0, animation_block = fly_nuke_three);
+
+int nuke_respawn[3];
+int nuke_speed_x[3];
+int nuke_speed_y[3];
+
+// Keeps track of what exactly the nukes are doing, animation wise, at any point in time
+int nuke_stage[3];
+
+// Citys 
+rectangle city_one(x = 80, y = 0, w = 60, h = 15, red = 0.0, green = 0.0, blue = 1.0);
+rectangle city_two(x = 250, y = 0, w = 60, h = 15, red = 0.0, green = 0.0, blue = 1.0);
+
+// Create the rectangle which will act as the cursor
+rectangle cursor(x = window_width/2, y = window_height-20, w = 5, h = 5, red = 0.0, green = 1.0, blue = 0.0);
+
+// Create the ball which will act as the explosion
+circle boom(radius = 1, red = 1.0, green = 0.5, blue = 0, visible = false, animation_block = boom_ani);
+
+
+initialization
+{
+	// Set up the basics for each Missile
+
+	// Nuke one
+	nuke_one.rotation = 180;
+	nuke_one.visible = false;
+	nuke_respawn[0] = random(respawn_frames);	// Between 0 and respawn_frames frames to respawn
+	nuke_speed_x[0] = random(2)-random(2);		// Between -2 and 2 pixels per frame
+	nuke_speed_y[0] = random(4)+3;			// Between 3 and 7 pixels per frame
+
+	// Nuke two
+	nuke_two.rotation = 180;
+	nuke_two.visible = false;
+	nuke_respawn[1] = random(respawn_frames);
+	nuke_speed_x[1] = random(2)-random(2);
+	nuke_speed_y[1] = random(4)+3;
+
+	// Nuke three
+	nuke_three.rotation = 180;
+	nuke_three.visible = false;
+	nuke_respawn[2] = random(respawn_frames);
+	nuke_speed_x[2] = random(2)-random(2);
+	nuke_speed_y[2] = random(4)+3;
+}
+
+animation fly_nuke_one(triangle nuke_one_a)
+{
+	// This is the 'game over' check - it needs to be done every frame.
+	// Since there is no block that runs every frame but isn't linked to an animation, I figured this nuke was as good as any place to put it.
+	if (city_one.visible == false)
+	{
+		if (city_two.visible == false)
+		{
+			// Freeze all the nukes
+			nuke_stage[0] = -1;
+			nuke_stage[1] = -1;
+			nuke_stage[2] = -1;
+
+			gameover.visible = true;
+		}
+	}
+
+	
+
+// 	debug.text = nuke_respawn[0];
+	if (nuke_stage[0] == 0)		// Waiting for the respawn timer to count down
+	{
+		nuke_one_a.visible = false;
+		nuke_respawn[0] -= 1;	// Should decrement the respawn counter by 1
+		if (nuke_respawn[0] < 0)	// When the timer expires...
+			nuke_stage[0] = 1;	// Move on to the next stage
+	}
+	else
+	{
+		if (nuke_stage[0] == 1)	// Respawn - Reset the nukes variable
+		{
+			nuke_speed_x[0] = random(2)-random(2);		// Generate random horz drift
+			nuke_speed_y[0] = random(4)+3;			// Come up with a good speed
+			nuke_one_a.visible = true;
+			nuke_one_a.x = random((window_width-10)+5);	// Have it come in somewhere from the top of the screen
+			nuke_one_a.y = (window_height-10);
+			nuke_stage[0] = 2;	// Move on to the next stage
+		}
+		else
+		{
+			if (nuke_stage[0] == 2)	// Animate - Move the nuke
+			{
+				// Move the nuke
+				nuke_one_a.x = nuke_one_a.x + nuke_speed_x[0];
+				nuke_one_a.y = nuke_one_a.y - nuke_speed_y[0];
+
+				// Check to see if the nuke went off the right side
+				if (nuke_one_a.x < 0)
+				{
+					nuke_respawn[0] = random(respawn_frames);
+					nuke_stage[0] = 0;
+				}
+				// Left side check
+				if (nuke_one_a.x > window_width)
+				{
+					nuke_respawn[0] = random(respawn_frames);
+					nuke_stage[0] = 0;
+				}
+				// Bottom check - eventully hit detection
+				if (nuke_one_a.y < 0)
+				{
+					nuke_respawn[0] = random(respawn_frames);
+					nuke_stage[0] = 0;
+				}
+
+				// Don't bother checking to see if the nuke hit the city if the city was already removed from the map
+				if (city_one.visible == true)
+				{
+					if (nuke_one_a touches city_one)	// Detect a hit
+					{
+						city_one.visible = false;	// Remove the city
+						// Reset the nuke
+						nuke_respawn[0] = random(respawn_frames);
+						nuke_stage[0] = 0;
+					}
+				}
+				if (city_two.visible == true)
+				{
+					if (nuke_one_a touches city_two)	// Detect a hit
+					{
+						city_two.visible = false;	// Remove the city
+						// Reset the nuke
+						nuke_respawn[0] = random(respawn_frames);
+						nuke_stage[0] = 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+animation fly_nuke_two(triangle nuke_two_a)
+{
+// 	debug.text = nuke_respawn[1];
+	if (nuke_stage[1] == 0)		// Waiting for the respawn timer to count down
+	{
+		nuke_two_a.visible = false;
+		nuke_respawn[1] -= 1;	// Should decrement the respawn counter by 1
+		if (nuke_respawn[1] < 0)	// When the timer expires...
+			nuke_stage[1] = 1;	// Move on to the next stage
+	}
+	else
+	{
+		if (nuke_stage[1] == 1)	// Respawn - Reset the nukes variable
+		{
+			nuke_speed_x[1] = random(2)-random(2);		// Generate random horz drift
+			nuke_speed_y[1] = random(4)+3;			// Come up with a good speed
+			nuke_two_a.visible = true;
+			nuke_two_a.x = random((window_width-10)+5);	// Have it come in somewhere from the top of the screen
+			nuke_two_a.y = (window_height-10);
+			nuke_stage[1] = 2;	// Move on to the next stage
+		}
+		else
+		{
+			if (nuke_stage[1] == 2)	// Animate - Move the nuke
+			{
+				// Move the nuke
+				nuke_two_a.x = nuke_two_a.x + nuke_speed_x[1];
+				nuke_two_a.y = nuke_two_a.y - nuke_speed_y[1];
+
+				// Check to see if the nuke went off the right side
+				if (nuke_two_a.x < 0)
+				{
+					nuke_respawn[1] = random(respawn_frames);
+					nuke_stage[1] = 0;
+				}
+				// Left side check
+				if (nuke_two_a.x > window_width)
+				{
+					nuke_respawn[1] = random(respawn_frames);
+					nuke_stage[1] = 0;
+				}
+				// Bottom check - eventully hit detection
+				if (nuke_two_a.y < 0)
+				{
+					nuke_respawn[1] = random(respawn_frames);
+					nuke_stage[1] = 0;
+				}
+
+				// Don't bother checking to see if the nuke hit the city if the city was already removed from the map
+				if (city_one.visible == true)
+				{
+					if (nuke_two_a touches city_one)	// Detect a hit
+					{
+						city_one.visible = false;	// Remove the city
+						// Reset the nuke
+						nuke_respawn[1] = random(respawn_frames);
+						nuke_stage[1] = 0;
+					}
+				}
+				if (city_two.visible == true)
+				{
+					if (nuke_two_a touches city_two)	// Detect a hit
+					{
+						city_two.visible = false;	// Remove the city
+						// Reset the nuke
+						nuke_respawn[1] = random(respawn_frames);
+						nuke_stage[1] = 0;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+animation fly_nuke_three(triangle nuke_three_a)
+{
+// 	debug.text = nuke_respawn[2];
+	if (nuke_stage[2] == 0)		// Waiting for the respawn timer to count down
+	{
+		nuke_three_a.visible = false;
+		nuke_respawn[2] -= 1;	// Should decrement the respawn counter by 1
+		if (nuke_respawn[2] < 0)	// When the timer expires...
+			nuke_stage[2] = 1;	// Move on to the next stage
+	}
+	else
+	{
+		if (nuke_stage[2] == 1)	// Respawn - Reset the nukes variable
+		{
+			nuke_speed_x[2] = random(2)-random(2);		// Generate random horz drift
+			nuke_speed_y[2] = random(4)+3;			// Come up with a good speed
+			nuke_three_a.visible = true;
+			nuke_three_a.x = random((window_width-10)+5);	// Have it come in somewhere from the top of the screen
+			nuke_three_a.y = (window_height-10);
+			nuke_stage[2] = 2;	// Move on to the next stage
+		}
+		else
+		{
+			if (nuke_stage[2] == 2)	// Animate - Move the nuke
+			{
+				// Move the nuke
+				nuke_three_a.x = nuke_three_a.x + nuke_speed_x[2];
+				nuke_three_a.y = nuke_three_a.y - nuke_speed_y[2];
+
+				// Check to see if the nuke went off the right side
+				if (nuke_three_a.x < 0)
+				{
+					nuke_respawn[2] = random(respawn_frames);
+					nuke_stage[2] = 0;
+				}
+				// Left side check
+				if (nuke_three_a.x > window_width)
+				{
+					nuke_respawn[2] = random(respawn_frames);
+					nuke_stage[2] = 0;
+				}
+				// Bottom check - eventully hit detection
+				if (nuke_three_a.y < 0)
+				{
+					nuke_respawn[2] = random(respawn_frames);
+					nuke_stage[2] = 0;
+				}
+
+				// Don't bother checking to see if the nuke hit the city if the city was already removed from the map
+				if (city_one.visible == true)
+				{
+					if (nuke_three_a touches city_one)	// Detect a hit
+					{
+						city_one.visible = false;	// Remove the city
+						// Reset the nuke
+						nuke_respawn[2] = random(respawn_frames);
+						nuke_stage[2] = 0;
+					}
+				}
+				if (city_two.visible == true)
+				{
+					if (nuke_three_a touches city_two)	// Detect a hit
+					{
+						city_two.visible = false;	// Remove the city
+						// Reset the nuke
+						nuke_respawn[2] = random(respawn_frames);
+						nuke_stage[2] = 0;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+animation boom_ani(circle yay)
+{
+	// Stage 0, we're waiting around.
+	if (boom_stage == 1)	// Explosion has been triggered, time to animate until we reach max size
+	{
+		yay.radius += 4;	// 4
+		yay.x = boom_x - (yay.radius);
+		yay.y = boom_y - (yay.radius);
+
+		yay.visible = true;	// Make sure we can see it
+
+		if (yay.radius >= 50)	// If it ain't 10 yet, keep going
+		{
+			// GPL BUG: width and height don't seem to be updated immeiditly after the radius is changed - takes a frame or two for the information to propogate
+			// In this case I can work around it by using radius, but I spent an hour or two trying to find the problem with my code until I figured out it was GPL not updating variable.
+			yay.radius = 1;	// Reset the radius
+			boom_stage = 0;
+			yay.visible = false;
+		}
+
+		// Hit detection
+		if (yay touches nuke_one)
+		{
+			nuke_respawn[0] = random(respawn_frames);
+			nuke_stage[0] = 0;
+			score_value += 1;
+		}
+		if (yay touches nuke_two)
+		{
+			nuke_respawn[1] = random(respawn_frames);
+			nuke_stage[1] = 0;
+			score_value += 1;
+		}
+		if (yay touches nuke_three)
+		{
+			nuke_respawn[2] = random(respawn_frames);
+			nuke_stage[2] = 0;
+			score_value += 1;
+		}
+
+		score.text = "Score: " + score_value;
+
+	}
+}
+
+// Player 'fire' button
+on space
+{
+	if (gameover.visible == false)
+	{
+		if (boom_stage != 1)
+		{
+			// Set the position
+			boom_x = cursor.x - (cursor.w/2);
+			boom_y = cursor.y - (cursor.h/2);
+
+			boom_stage = 1;
+		}
+	}
+}
+
+// when the user presses the up arrow, move the cursor up
+on uparrow
+{
+	if (gameover.visible == false)
+	{
+		if (cursor.y < window_height - 2*move_inc)
+			cursor.y += move_inc;
+	}
+}
+
+// when the user presses the down arrow, move the cursor down
+on downarrow
+{
+	if (gameover.visible == false)
+	{
+		if (cursor.y > move_inc)
+		    	cursor.y -= move_inc;
+	}
+}
+
+// when the user presses the up arrow, move the cursor up
+on leftarrow
+{
+	if (gameover.visible == false)
+	{
+		if (cursor.x > move_inc)
+    			cursor.x -= move_inc;
+	}
+}
+
+// when the user presses the down arrow, move the cursor down
+on rightarrow
+{
+	if (gameover.visible == false)
+	{
+		if (cursor.x < window_width - 2*move_inc)
+		    	cursor.x += move_inc;
+	}
+}

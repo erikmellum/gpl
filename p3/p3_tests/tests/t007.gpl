@@ -1,0 +1,9 @@
+int a = 4;
+int b = 5;
+on space
+{
+    if (a != b)
+        if (a < b)
+            print("a < b");
+        else print("a > b");
+}

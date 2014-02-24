@@ -1,0 +1,291 @@
+Terminals unused in grammar
+
+   T_INT
+   T_ERROR
+
+
+State 2 conflicts: 1 shift/reduce, 1 reduce/reduce
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: declaration_list
+
+    2 declaration_list: declaration_list declaration
+    3                 | empty
+
+    4 declaration: T_ID T_ASSIGN T_LBRACE values T_RBRACE T_SEMIC
+    5            | empty
+
+    6 $@1: /* empty */
+
+    7 values: $@1 int_values
+    8       | string_values
+    9       | double_values
+
+   10 int_values: int_values T_COMMA T_INT_CONSTANT
+   11           | T_INT_CONSTANT
+
+   12 string_values: string_values T_COMMA T_ID
+   13              | T_ID
+
+   14 double_values: double_values T_COMMA T_DOUBLE_CONSTANT
+   15              | T_DOUBLE_CONSTANT
+
+   16 empty: /* empty */
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+T_COMMA (258) 10 12 14
+T_ASSIGN (259) 4
+T_LBRACE (260) 4
+T_RBRACE (261) 4
+T_INT (262)
+T_SEMIC (263) 4
+T_INT_CONSTANT (264) 10 11
+T_ID (265) 4 12 13
+T_ERROR (266)
+T_DOUBLE_CONSTANT (267) 14 15
+
+
+Nonterminals, with rules where they appear
+
+$accept (13)
+    on left: 0
+program (14)
+    on left: 1, on right: 0
+declaration_list (15)
+    on left: 2 3, on right: 1 2
+declaration (16)
+    on left: 4 5, on right: 2
+values (17)
+    on left: 7 8 9, on right: 4
+$@1 (18)
+    on left: 6, on right: 7
+int_values (19)
+    on left: 10 11, on right: 7 10
+string_values (20)
+    on left: 12 13, on right: 8 12
+double_values (21)
+    on left: 14 15, on right: 9 14
+empty (22)
+    on left: 16, on right: 3 5
+
+
+state 0
+
+    0 $accept: . program $end
+
+    $default  reduce using rule 16 (empty)
+
+    program           go to state 1
+    declaration_list  go to state 2
+    empty             go to state 3
+
+
+state 1
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 4
+
+
+state 2
+
+    1 program: declaration_list .
+    2 declaration_list: declaration_list . declaration
+
+    T_ID  shift, and go to state 5
+
+    $end      reduce using rule 1 (program)
+    $end      [reduce using rule 16 (empty)]
+    T_ID      [reduce using rule 16 (empty)]
+    $default  reduce using rule 1 (program)
+
+    declaration  go to state 6
+    empty        go to state 7
+
+
+state 3
+
+    3 declaration_list: empty .
+
+    $default  reduce using rule 3 (declaration_list)
+
+
+state 4
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+state 5
+
+    4 declaration: T_ID . T_ASSIGN T_LBRACE values T_RBRACE T_SEMIC
+
+    T_ASSIGN  shift, and go to state 8
+
+
+state 6
+
+    2 declaration_list: declaration_list declaration .
+
+    $default  reduce using rule 2 (declaration_list)
+
+
+state 7
+
+    5 declaration: empty .
+
+    $default  reduce using rule 5 (declaration)
+
+
+state 8
+
+    4 declaration: T_ID T_ASSIGN . T_LBRACE values T_RBRACE T_SEMIC
+
+    T_LBRACE  shift, and go to state 9
+
+
+state 9
+
+    4 declaration: T_ID T_ASSIGN T_LBRACE . values T_RBRACE T_SEMIC
+
+    T_ID               shift, and go to state 10
+    T_DOUBLE_CONSTANT  shift, and go to state 11
+
+    $default  reduce using rule 6 ($@1)
+
+    values         go to state 12
+    $@1            go to state 13
+    string_values  go to state 14
+    double_values  go to state 15
+
+
+state 10
+
+   13 string_values: T_ID .
+
+    $default  reduce using rule 13 (string_values)
+
+
+state 11
+
+   15 double_values: T_DOUBLE_CONSTANT .
+
+    $default  reduce using rule 15 (double_values)
+
+
+state 12
+
+    4 declaration: T_ID T_ASSIGN T_LBRACE values . T_RBRACE T_SEMIC
+
+    T_RBRACE  shift, and go to state 16
+
+
+state 13
+
+    7 values: $@1 . int_values
+
+    T_INT_CONSTANT  shift, and go to state 17
+
+    int_values  go to state 18
+
+
+state 14
+
+    8 values: string_values .
+   12 string_values: string_values . T_COMMA T_ID
+
+    T_COMMA  shift, and go to state 19
+
+    $default  reduce using rule 8 (values)
+
+
+state 15
+
+    9 values: double_values .
+   14 double_values: double_values . T_COMMA T_DOUBLE_CONSTANT
+
+    T_COMMA  shift, and go to state 20
+
+    $default  reduce using rule 9 (values)
+
+
+state 16
+
+    4 declaration: T_ID T_ASSIGN T_LBRACE values T_RBRACE . T_SEMIC
+
+    T_SEMIC  shift, and go to state 21
+
+
+state 17
+
+   11 int_values: T_INT_CONSTANT .
+
+    $default  reduce using rule 11 (int_values)
+
+
+state 18
+
+    7 values: $@1 int_values .
+   10 int_values: int_values . T_COMMA T_INT_CONSTANT
+
+    T_COMMA  shift, and go to state 22
+
+    $default  reduce using rule 7 (values)
+
+
+state 19
+
+   12 string_values: string_values T_COMMA . T_ID
+
+    T_ID  shift, and go to state 23
+
+
+state 20
+
+   14 double_values: double_values T_COMMA . T_DOUBLE_CONSTANT
+
+    T_DOUBLE_CONSTANT  shift, and go to state 24
+
+
+state 21
+
+    4 declaration: T_ID T_ASSIGN T_LBRACE values T_RBRACE T_SEMIC .
+
+    $default  reduce using rule 4 (declaration)
+
+
+state 22
+
+   10 int_values: int_values T_COMMA . T_INT_CONSTANT
+
+    T_INT_CONSTANT  shift, and go to state 25
+
+
+state 23
+
+   12 string_values: string_values T_COMMA T_ID .
+
+    $default  reduce using rule 12 (string_values)
+
+
+state 24
+
+   14 double_values: double_values T_COMMA T_DOUBLE_CONSTANT .
+
+    $default  reduce using rule 14 (double_values)
+
+
+state 25
+
+   10 int_values: int_values T_COMMA T_INT_CONSTANT .
+
+    $default  reduce using rule 10 (int_values)

@@ -1,0 +1,11 @@
+parser.cpp::main() reading file tests/t002.in
+parser.cpp::main() about to call yyparse()
+type zero or more array declarations followed by ^D:
+
+nums[] = {1.1, 0.2, 0.3};
+
+parser.cpp::main() after call to yyparse()
+
+no errors found by yyparse()
+
+parser.cpp::main() end of program.

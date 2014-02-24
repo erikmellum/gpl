@@ -1,0 +1,12 @@
+
+int _;
+int __;
+int _0;
+int _0a01;
+int _0xfffff123;
+
+on space
+{
+    _ = __ - - _;
+}
+

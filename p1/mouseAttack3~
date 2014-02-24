@@ -1,0 +1,110 @@
+int window_width = 800;
+int window_height = 400;
+string window_title = "Mouseattack";
+
+int ball_x_increment = 5;
+int ball_y_increment = 5;
+int ball_size;
+int mouse_x;
+int mouse_y;
+int timer = 5000;
+int points = 100;
+forward animation ball_animate(circle cur_ball);
+
+ball_size = 10;
+circle ball(radius = ball_size/2, blue = 1, animation_block = ball_animate);
+
+ball_size = 15;
+circle ball1(radius = ball_size/2, green = 1, animation_block = ball_animate);
+
+ball_size = 20;
+circle ball2(radius = ball_size/2, blue = 1, green = 1, animation_block = ball_animate);
+
+ball_size = 25;
+circle ball3(radius = ball_size/2, red = 1, blue = 1, animation_block = ball_animate);
+
+ball_size = 30;
+circle ball4(radius = ball_size/2, green = 1, red = 1, animation_block = ball_animate);
+
+ball_size = 30;
+circle ball5(radius = ball_size/2, blue = 1, green = 1, red = 1, animation_block = ball_animate);
+
+ball_size = 30;
+circle ball6(radius = ball_size/2, blue = .5, red = .5, green = .5, animation_block = ball_animate);
+
+circle userball(x = window_width/2, y = window_height/2,radius = ball_size/2, red = 1.0);
+
+textbox title(x = 10, y = 10, text = "Avoid the dots, press space to begin", size = 0.1);
+
+animation ball_animate(circle cur_ball)
+{   
+    
+    if(start == 1)
+    {
+        title.text = "Time till next ball: " + timer + "  Points: "+ points;
+        if(points == 0)
+        {
+            title.text = "You ran out of points, Game Over!";
+            print("You ran out of points, Game Over!");
+            exit();
+        }    
+        if(userball touches cur_ball)
+        {
+            ball_x_increment = 0;
+            ball_y_increment = 0;
+            points = points-1;
+        }
+        if (cur_ball.x > mouse_x)
+            ball_x_increment = random(6)+3)*-1;
+        if(cur_ball.x < mouse_x)
+            ball_x_increment = random(6)+3;
+        if(cur_ball.y < mouse_y)
+            ball_y_increment = random(6)+3;
+        if (cur_ball.y > mouse_y)
+            ball_y_increment = (random(6)+3)*-1;
+        cur_ball.x += ball_x_increment;
+        cur_ball.y += ball_y_increment;
+        if(timer == 0)
+        {
+             print("You Win!!!!");    
+        }
+        else if(timer == 4500)
+        {
+            ball1.x = window_width/2;
+            ball1.y = window_height/2;
+        }    
+        else if(timer == 4000)
+        {
+            ball2.x = window_width/2;
+            ball2.y = window_height/2;
+        }
+        else if(timer == 3500)
+        {
+            ball3.x = window_width/2;
+            ball3.y = window_height/2;
+        }    
+        else if(timer == 3000)
+        {
+            ball4.x = window_width/2;
+            ball4.y = window_height/2;
+        }  
+        else if(timer == 2500)
+        {
+            ball5.x = window_width/2;
+            ball5.y = window_height/2;
+        }    
+        else if(timer == 2000)
+        {
+            ball6.x = window_width/2;
+            ball6.y = window_height/2;
+        }    
+        timer = timer - 1;
+    }
+}
+
+on mouse_move
+{
+    userball.x = mouse_x;
+    userball.y = mouse_y;
+}
+

@@ -1,0 +1,103 @@
+// this tests all tokens and most productions (I think) in the language
+// it does not make any sense at all... but it was fast to write
+
+int i;
+double x;
+string y;
+triangle t(x = 1);
+pixmap p(x = 1);
+circle c(x = 1);
+rectangle r(x = 1);
+textbox txt(x = 1, y = 2);
+
+forward animation foo(circle c);
+initialization
+{
+    a = b;
+}
+
+// event keys
+on space
+{
+    print("hello" + " " + "world");
+}
+on leftarrow
+{
+    print("hello");
+}
+on rightarrow
+{
+    print("hello");
+}
+on uparrow
+{
+    print("hello");
+}
+on downarrow
+{
+    print("hello");
+}
+on f1
+{
+    print("hello");
+    exit(0);
+}
+on akey
+{
+    print("hello");
+    exit(3 + 40);
+}
+on skey
+{
+    print("hello");
+}
+on dkey
+{
+    print("hello");
+}
+on fkey
+{
+    print("hello");
+}
+on hkey
+{
+    print("hello");
+}
+on jkey
+{
+    print("hello");
+}
+on kkey
+{
+    print("hello");
+}
+on lkey
+{
+    x = a touches b;
+    y = a near b;
+    x = sin(y+1*2/3%4);
+    x = cos(y+1*2/3%4);
+    x = tan(y+1*2/3%4);
+    x = asin (y+1*2/3%4);
+    x = acos(y+1*2/3%4);
+    x = atan(y+1*2/3%4);
+    x = sqrt(y+1*2/3%4);
+    x = abs(y+1*2/3%4);
+    x = floor(y+1*2/3%4);
+    x = random(y+1*2/3%4);
+    for (z = 2; a < 4; a += 2)
+    {
+        print("hello " + i);
+    }
+    if (a == true)
+        print("true");
+    else print("false");
+
+    a[1] = b[1];
+    a[1].b = b[1].a;
+    b += c;
+    b -= c;
+
+    if (a < b && a <= b && a > b && a >= b || a != b || !a)
+        print("false");
+}
