@@ -1,0 +1,14 @@
+// Since this tests generates random numbers it is possible that
+// your program will produce different output than my program.
+// 
+// If you fail this test, read your results/t016.myout file to see
+// if a,b,c have approriate random values
+//
+// SOMETIMES STUDENTS INCLUDE A -1 OR +1 THAT MAKES THE RANGE INCORRECT
+// random(10) should return numbers n such that:  0 <= n <= 9
+// look at test t017 and make sure you numbers are all in the correct
+// range
+// 
+int a = random(10);
+int b = random(100);
+int c = random(1000);

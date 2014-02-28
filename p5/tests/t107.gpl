@@ -1,0 +1,3 @@
+string a = "5";
+
+double my_values[12 + a];

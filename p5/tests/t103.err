@@ -1,0 +1,1 @@
+Semantic error on line 1: The array 'array' was declared with illegal size 'hello world'.  Arrays sizes must be integers of 1 or larger.

@@ -1,0 +1,3 @@
+// this is part of t008.gpl in p6
+int x = floor(100 * cos(20)) + 200;
+int y = floor(100 * sin(20));
