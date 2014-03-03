@@ -232,12 +232,15 @@ typedef union YYSTYPE
  int            union_int;
  std::string    *union_string;  // MUST be a pointer to a string (this sucks!)s
  double         union_double;
- Gpl_type       union_variable_type;
+ Gpl_type       union_gpl_type;
+ Operator_type  union_operator_type;
+ Expr           *union_expression_kind;
+ Variable       *union_variable_type;
 
 
 
 /* Line 2068 of yacc.c  */
-#line 241 "y.tab.h"
+#line 244 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

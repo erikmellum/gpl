@@ -26,7 +26,8 @@
 #include "symbol.h"
 #include "symbol_table.h"
 #include <string>
-
+#include "expr.h"
+#include "variable.h"
 #include "y.tab.h"
 
 #endif // #ifndef PARSER_H

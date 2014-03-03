@@ -1,12 +1,14 @@
+#pragma once
+#include "expr.h"
+
 class Variable
 {
-    public:
-        
+    public:      
         Variable(int value);
-                
-Variable(string value);
-        
+        Variable(string value);
+        Variable(string value, Expr* expr);
     private:
-        Variable* left;
-        Variable* right;
-}
+        string name;
+        Expr* left;
+        Expr* right;
+};

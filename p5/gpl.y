@@ -32,7 +32,7 @@ extern int line_count;      // the current line in the input; from array.l
 #include <iostream>
 #include <vector>
 #include <sstream>
-
+#include "expr.h"
 using namespace std;
 
 Symbol_table *symbol_table = Symbol_table::instance();
@@ -62,8 +62,10 @@ Symbol_table *symbol_table = Symbol_table::instance();
  int            union_int;
  std::string    *union_string;  // MUST be a pointer to a string (this sucks!)s
  double         union_double;
- Gpl_type       union_variable_type;
- expression     *union_expression_type;
+ Gpl_type       union_gpl_type;
+ Operator_type  union_operator_type;
+ Expr           *union_expression_kind;
+ Variable       *union_variable_type;
 }
 
 %token T_INT
@@ -165,8 +167,12 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %token <union_double> T_DOUBLE_CONSTANT
 %token <union_string> T_STRING_CONSTANT
 %token <union_int> T_PRINT
-%type <union_variable_type> simple_type
-%type <union_expression_type> variable_declaration
+%type <union_gpl_type> simple_type
+%type <union_variable_type> variable
+%type <union_expression_kind> expression
+%type <union_expression_kind> primary_expression
+%type <union_expression_kind> optional_initializer
+//%type <union_operator_type> math_operator
 // Grammar symbols that have values associated with them need to be
 // declared here.  The above union is used for the "ruturning" the value.
 // 
@@ -224,12 +230,12 @@ variable_declaration:
             {
                 int initial_value = 0;
                 
-                if($3 != null)
+                if($3 != NULL)
                 {
-                    if($3-> != T_INT_CONSTANT)
+                    if($3->getKind() == INT_CONST)
                     {
-                        // bad so throw error
-                    }d
+                        symbol_table->insert(new Symbol(id,$3->eval_int()));
+                    }
                     else
                     {
                         initial_value = $3->eval_int();
@@ -314,14 +320,12 @@ simple_type:
 optional_initializer:
     T_ASSIGN expression
     {
-        if($2 == T_INT_CONSTANT)
-            $$ = $2;
-        else if($2 == T_DOUBLE_CONSTANT)
-            $$ = $2;
-        else if($2 == T_STRING_CONSTANT)
-            $$ = $2;
+      $$ = $2;
     }
     | empty
+    {
+      $$ = NULL;
+    }
     ;
 
 //---------------------------------------------------------------------
@@ -499,9 +503,21 @@ assign_statement:
 //---------------------------------------------------------------------
 variable:
     T_ID
+    {
+        $$ = new Variable(*$1);
+    }
     | T_ID T_LBRACKET expression T_RBRACKET
+    {
+        $$ = new Variable(*$1, $3);
+    }
     | T_ID T_PERIOD T_ID
+    {
+        $$ = NULL;
+    }
     | T_ID T_LBRACKET expression T_RBRACKET T_PERIOD T_ID
+    {
+        $$= NULL;
+    }
     ;
 
 //---------------------------------------------------------------------
@@ -569,12 +585,33 @@ expression:
 //---------------------------------------------------------------------
 primary_expression:
     T_LPAREN  expression T_RPAREN
+    {
+        $$ = $2;
+    }
     | variable
+    {        
+        $$ = new Expr($1);   
+    }
     | T_INT_CONSTANT
+    {
+        $$ = new Expr($1);
+    }
     | T_TRUE
+    {
+        $$ = new Expr(1);
+    }  
     | T_FALSE
+    {
+        $$ = new Expr(0);
+    }
     | T_DOUBLE_CONSTANT
+    {
+        $$ = new Expr($1);
+    }
     | T_STRING_CONSTANT
+    {
+        $$ = new Expr(*$1);
+    }
     ;
 
 //---------------------------------------------------------------------

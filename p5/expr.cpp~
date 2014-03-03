@@ -1,48 +1,43 @@
-#include "Expr.h"
+#include "expr.h"
 
-using namespace std;
 Expr::Expr(int value)
 {
     type = INT;
+    int_value = value;
+    kind = INT_CONST;
 }
 Expr::Expr(double value)
 {
-    type = DOUBLE;
+    double_value = value;
 }
 Expr::Expr(string value)
 {
-    type = STRING;
+    string_value = value;
+}
+Expr::Expr(Variable* value)
+{
+    variable_value = value;
 }
 int Expr::eval_int()
 {
-    assert(m_type == INT)
-    switch on type
-    if the left is an int eval int
-    if the  right is an int eval int
-}
-string Expr::eval_string()
-{
-    if(m_type == int)
-        int type = eval int
-        cast tmp to string
-}
-
-
-
-
-
-
-
-
-
-int Expr::eval_int()
-{
-    
+    if(kind == INT_CONST)
+        return int_value;
 }
 double Expr::eval_double()
 {
-    
+    return 0;
+}
 string Expr::eval_string()
 {
-    
+    return "";
 }
+string Expr::getType()
+{
+    return type;
+}
+Kind Expr::getKind()
+{
+    return kind;
+}
+
+

@@ -16,6 +16,11 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
+int a 1
+int b 2
+int c 3
+int d 4
+int i 0
 string s "Hello world"
 double x 3.145
 double y 3.145

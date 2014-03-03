@@ -4,7 +4,7 @@ Symbol::Symbol(string newName, int value)
 {
     name = newName;
     type = INT;
-    int_value = 42;
+    int_value = value;
 }
 Symbol::Symbol(string newName, double value)
 {

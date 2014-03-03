@@ -16,6 +16,7 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
+int a 42
 double b 3.145
 double c 3.145
 double q 3.145
