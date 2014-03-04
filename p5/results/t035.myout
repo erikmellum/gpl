@@ -17,8 +17,8 @@ No errors found (parser probably worked correctly).
 
 Printing the symbol table from main()
 int f 0
-int should_be_0 0
-int should_be_1 0
+int should_be_0 1
+int should_be_1 1
 int t 1
 If graphics was enabled gpl program would execute now.
 

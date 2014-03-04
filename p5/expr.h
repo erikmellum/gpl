@@ -19,8 +19,8 @@ class Expr
         Expr(int value);
         Expr(double value);
         Expr(string value);
-        Expr(Operator_type type, Expr *newlhs, Expr *newrhs); // for the operators
-        Expr(Operator_type type, Expr *newlhs);
+        Expr(Operator_type newtype, Expr *newlhs, Expr *newrhs); // for the operators
+        Expr(Operator_type newtype, Expr *newlhs);
         Expr(Variable* value);
         int eval_int();
         double eval_double();
@@ -28,7 +28,8 @@ class Expr
         string getType();
         Kind getKind();
     private:
-        string type;
+        Gpl_type gpl_type;
+        Operator_type operator_type;
         Kind kind;
         int int_value;
         double double_value;

@@ -19,7 +19,7 @@ Printing the symbol table from main()
 int a 1
 int b 2
 int c 3
-int d 0
+int d 1
 double x 3.145
 If graphics was enabled gpl program would execute now.
 

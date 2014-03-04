@@ -1,5 +1,7 @@
 #pragma once
 #include "expr.h"
+#include "symbol_table.h"
+#include "symbol.h"
 
 class Variable
 {
@@ -7,6 +9,7 @@ class Variable
         Variable(int value);
         Variable(string value);
         Variable(string value, Expr* expr);
+        Symbol* eval();
     private:
         string name;
         Expr* left;

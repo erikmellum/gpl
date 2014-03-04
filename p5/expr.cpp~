@@ -1,3 +1,4 @@
+#include "variable.h"
 #include "expr.h"
 
 Expr::Expr(int value)
@@ -16,12 +17,23 @@ Expr::Expr(string value)
 }
 Expr::Expr(Variable* value)
 {
+    kind = VARIABLE;
+    type = value->eval()->getType();
     variable_value = value;
+}
+Expr::Expr(Operator_type newtype, Expr *newlhs, Expr *newrhs)
+{
+    type = newType;
+    lhs = newlhs;
+    rhs = newrhs;
 }
 int Expr::eval_int()
 {
     if(kind == INT_CONST)
         return int_value;
+    else if(kind == VARIABLE)
+        return variable_value->eval()->getInt();
+    return -1;
 }
 double Expr::eval_double()
 {
@@ -31,9 +43,15 @@ string Expr::eval_string()
 {
     return "";
 }
-string Expr::getType()
+Gpl_type Expr::getType()
 {
-    return type;
+    if(gpl_type)
+        return gpl_type;
+}
+Operator_type Expr::getType()
+{
+    if(operator_type)
+        return operator_type;
 }
 Kind Expr::getKind()
 {

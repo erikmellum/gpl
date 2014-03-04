@@ -561,6 +561,7 @@ expression:
     }
     | expression T_ASTERISK expression
     {
+        $$ = new Expr(MULTIPLY,$1,$3);
     }
     | expression T_DIVIDE expression
     {
