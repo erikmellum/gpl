@@ -29,7 +29,7 @@ class Expr
         Kind getKind();
     private:
         Gpl_type gpl_type;
-        Operator_type operator_type
+        Operator_type operator_type;
         Kind kind;
         int int_value;
         double double_value;

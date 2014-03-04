@@ -9,7 +9,9 @@ Expr::Expr(int value)
 }
 Expr::Expr(double value)
 {
+    gpl_type = DOUBLE;
     double_value = value;
+    kind = DOUBLE_CONST;
 }
 Expr::Expr(string value)
 {
@@ -24,16 +26,46 @@ Expr::Expr(Variable* value)
 Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
 {
     operator_type = type;
-    
-    //eval lhs
     lhs = newlhs;
-    //eval rhs
     rhs = newrhs;
-    //apply operator
+    kind = BINARY_OP;
+    if(operator_type == MULTIPLY)
+    {
+        if(lhs->getKind() == INT_CONST)
+        {
+            if(rhs->getKind() == INT_CONST)
+            {
+                kind = INT_CONST;
+            }
+            else if(rhs->getKind() == DOUBLE_CONST)
+            {
+                kind = DOUBLE_CONST;
+            }
+        }
+        else if(lhs->getKind() == DOUBLE_CONST)
+        {
+            if(rhs->getKind() == INT_CONST)
+            {
+                kind = INT_CONST;
+            }
+            else if(rhs->getKind() == DOUBLE_CONST)
+            {
+                kind = DOUBLE_CONST;
+            }
+        }
+        
+    }
 }
 int Expr::eval_int()
 {
-    if(kind == INT_CONST)
+    if(kind == BINARY_OP)
+    {
+        if(operator_type == MULTIPLY)
+        {            
+            return lhs->eval_int() * rhs->eval_int();
+        }
+    }
+    else if(kind == INT_CONST)
         return int_value;
     else if(kind == VARIABLE)
         return variable_value->eval()->getInt();
@@ -47,15 +79,13 @@ string Expr::eval_string()
 {
     return "";
 }
-Gpl_type Expr::getType()
+Gpl_type Expr::getGplType()
 {
-    if(gpl_type)
-        return gpl_type;
+    return gpl_type;
 }
-Operator_type Expr::getType()
+Operator_type Expr::getOperatorType()
 {
-    if(operator_type)
-        return operator_type;
+    return operator_type;
 }
 Kind Expr::getKind()
 {

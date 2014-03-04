@@ -20,10 +20,10 @@ int a 1
 double b 3.145
 string c "Hello world"
 double d 3.145
-int e 0
+int e -1
 int f 0
-int g 2
-int h 0
+int g -1
+int h -1
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

@@ -561,7 +561,16 @@ expression:
     }
     | expression T_ASTERISK expression
     {
-        $$ = new Expr(MULTIPLY,$1,$3);
+        if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
+        {
+            //$$ = new Expression(0);
+        }
+        else
+        {
+            $$ = new Expr(MULTIPLY,$1,$3);
+
+        }
+        
     }
     | expression T_DIVIDE expression
     {

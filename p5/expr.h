@@ -25,7 +25,8 @@ class Expr
         int eval_int();
         double eval_double();
         string eval_string();
-        string getType();
+        Gpl_type getGplType();
+        Operator_type getOperatorType();
         Kind getKind();
     private:
         Gpl_type gpl_type;

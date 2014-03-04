@@ -43,15 +43,9 @@ string Expr::eval_string()
 {
     return "";
 }
-Gpl_type Expr::getType()
+string Expr::getType()
 {
-    if(gpl_type)
-        return gpl_type;
-}
-Operator_type Expr::getType()
-{
-    if(operator_type)
-        return operator_type;
+    return type;
 }
 Kind Expr::getKind()
 {
