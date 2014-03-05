@@ -16,7 +16,7 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-double k 3.145
+double k 1.2
 int x 0
 int z 1
 If graphics was enabled gpl program would execute now.

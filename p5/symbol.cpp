@@ -10,13 +10,13 @@ Symbol::Symbol(string newName, double value)
 {
     name = newName;
     type = DOUBLE;
-    double_value = 3.145;
+    double_value = value;
 }
 Symbol::Symbol(string newName, string value)
 {
     name = newName;
     type = STRING;
-    string_value = "Hello world";
+    string_value = value;
 }
 /**
 Symbol::Symbol(string newName, Game_Object value)

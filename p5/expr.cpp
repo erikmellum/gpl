@@ -15,7 +15,9 @@ Expr::Expr(double value)
 }
 Expr::Expr(string value)
 {
+    gpl_type = STRING;
     string_value = value;
+    kind = STRING_CONST;
 }
 Expr::Expr(Variable* value)
 {
@@ -73,10 +75,29 @@ int Expr::eval_int()
 }
 double Expr::eval_double()
 {
-    return 0;
+    if(kind == BINARY_OP)
+    {
+        if(operator_type == MULTIPLY)
+        {            
+            return lhs->eval_double() * rhs->eval_double();
+        }
+    }
+    else if(kind == DOUBLE_CONST)
+        return double_value;
+    else if(kind == VARIABLE)
+        return variable_value->eval()->getDouble();
+    return -1;
 }
 string Expr::eval_string()
 {
+    if(kind == BINARY_OP)
+    {
+        
+    }
+    else if(kind == STRING_CONST)
+        return string_value;
+    else if(kind == VARIABLE)
+        return variable_value->eval()->getString();
     return "";
 }
 Gpl_type Expr::getGplType()

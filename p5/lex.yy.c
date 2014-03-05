@@ -746,17 +746,25 @@ int emit_int(int token)
 
   return token;
 }
-
+int emit_id(int token)
+{
+  yylval.union_string = new string(yytext);
+  return token;
+}
 int emit_string(int token)
 {
   // Would like to put a string in the union, but the way the union works
   // it has to be a pointer to a string
   // This is a potential memory leak.  Think carefully about where and when
   // this memory should be deleted.
-  yylval.union_string = new string(yytext);
-
+  
+  string tester = (string) yytext;
+  yylval.union_string = new string(tester.substr(1,tester.length()-2));
   return token;
 }
+
+
+
 
 int emit_double(int token)
 {
@@ -793,7 +801,7 @@ The %% below indicates the start of the rules flex/lex will use
 The left-hand-side (LHS) give a regular expression
 The right-hand-side (RHS) gives an action (code to execute)
 */
-#line 797 "lex.yy.c"
+#line 805 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -980,10 +988,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 102 "gpl.l"
+#line 110 "gpl.l"
 
 
-#line 987 "lex.yy.c"
+#line 995 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -1069,456 +1077,456 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 104 "gpl.l"
+#line 112 "gpl.l"
 line_count++; // count the lines for error reporting
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 105 "gpl.l"
+#line 113 "gpl.l"
 ; // ignore spaces, tabs and the microsoft line feed (\r)
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 106 "gpl.l"
+#line 114 "gpl.l"
 return T_OR;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 107 "gpl.l"
+#line 115 "gpl.l"
 return T_AND;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 108 "gpl.l"
+#line 116 "gpl.l"
 return T_EQUAL;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 109 "gpl.l"
+#line 117 "gpl.l"
 return T_NOT_EQUAL;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 110 "gpl.l"
+#line 118 "gpl.l"
 return T_GREATER_EQUAL;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 111 "gpl.l"
+#line 119 "gpl.l"
 return T_LESS_EQUAL;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 112 "gpl.l"
+#line 120 "gpl.l"
 return T_GREATER;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 113 "gpl.l"
+#line 121 "gpl.l"
 return T_LESS; 
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 114 "gpl.l"
+#line 122 "gpl.l"
 return T_MINUS;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 115 "gpl.l"
+#line 123 "gpl.l"
 return T_PLUS;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 116 "gpl.l"
+#line 124 "gpl.l"
 return T_ASTERISK;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 117 "gpl.l"
+#line 125 "gpl.l"
 return T_DIVIDE;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 118 "gpl.l"
+#line 126 "gpl.l"
 return T_MOD;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 119 "gpl.l"
+#line 127 "gpl.l"
 return T_NOT;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 120 "gpl.l"
+#line 128 "gpl.l"
 return T_LPAREN;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 121 "gpl.l"
+#line 129 "gpl.l"
 return T_RPAREN;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 122 "gpl.l"
+#line 130 "gpl.l"
 return T_LBRACKET;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 123 "gpl.l"
+#line 131 "gpl.l"
 return T_RBRACKET;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 124 "gpl.l"
+#line 132 "gpl.l"
 return T_PERIOD;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 125 "gpl.l"
+#line 133 "gpl.l"
 return T_COMMA;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 126 "gpl.l"
+#line 134 "gpl.l"
 return T_LBRACE;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 127 "gpl.l"
+#line 135 "gpl.l"
 return T_RBRACE;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 128 "gpl.l"
+#line 136 "gpl.l"
 return T_SEMIC;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 129 "gpl.l"
+#line 137 "gpl.l"
 return T_INT;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 130 "gpl.l"
+#line 138 "gpl.l"
 return T_DOUBLE;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 131 "gpl.l"
+#line 139 "gpl.l"
 return T_STRING;
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 132 "gpl.l"
+#line 140 "gpl.l"
 return T_ASSIGN;
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 133 "gpl.l"
+#line 141 "gpl.l"
 return T_MINUS_ASSIGN;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 134 "gpl.l"
+#line 142 "gpl.l"
 return T_PLUS_ASSIGN;
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 137 "gpl.l"
+#line 145 "gpl.l"
 return T_SIN;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 138 "gpl.l"
+#line 146 "gpl.l"
 return T_COS;
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 139 "gpl.l"
+#line 147 "gpl.l"
 return T_TAN;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 140 "gpl.l"
+#line 148 "gpl.l"
 return T_ASIN;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 141 "gpl.l"
+#line 149 "gpl.l"
 return T_ACOS;
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 142 "gpl.l"
+#line 150 "gpl.l"
 return T_ATAN;
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 143 "gpl.l"
+#line 151 "gpl.l"
 return T_SQRT;
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 144 "gpl.l"
+#line 152 "gpl.l"
 return T_ABS;
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 145 "gpl.l"
+#line 153 "gpl.l"
 return T_FLOOR;
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 146 "gpl.l"
+#line 154 "gpl.l"
 return T_RANDOM;
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 147 "gpl.l"
+#line 155 "gpl.l"
 return T_TRIANGLE;
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 148 "gpl.l"
+#line 156 "gpl.l"
 return T_PIXMAP;
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 149 "gpl.l"
+#line 157 "gpl.l"
 return T_CIRCLE;
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 150 "gpl.l"
+#line 158 "gpl.l"
 return T_RECTANGLE;
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 151 "gpl.l"
+#line 159 "gpl.l"
 return T_TEXTBOX;
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 152 "gpl.l"
+#line 160 "gpl.l"
 return T_FORWARD;
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 153 "gpl.l"
+#line 161 "gpl.l"
 return T_TOUCHES;
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 154 "gpl.l"
+#line 162 "gpl.l"
 return T_NEAR;
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 155 "gpl.l"
+#line 163 "gpl.l"
 return T_INITIALIZATION;
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 156 "gpl.l"
+#line 164 "gpl.l"
 return T_ON;
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 157 "gpl.l"
+#line 165 "gpl.l"
 return T_ANIMATION;
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 158 "gpl.l"
+#line 166 "gpl.l"
 return T_IF;
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 159 "gpl.l"
+#line 167 "gpl.l"
 return T_FOR;
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 160 "gpl.l"
+#line 168 "gpl.l"
 return T_ELSE;
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 161 "gpl.l"
+#line 169 "gpl.l"
 return T_EXIT;
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 162 "gpl.l"
+#line 170 "gpl.l"
 return T_PRINT;
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 163 "gpl.l"
+#line 171 "gpl.l"
 return T_TRUE;
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 164 "gpl.l"
+#line 172 "gpl.l"
 return T_FALSE;
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 165 "gpl.l"
+#line 173 "gpl.l"
 return T_SPACE;
 	YY_BREAK
 case 61:
 YY_RULE_SETUP
-#line 166 "gpl.l"
+#line 174 "gpl.l"
 return T_LEFTARROW;
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 167 "gpl.l"
+#line 175 "gpl.l"
 return T_RIGHTARROW;
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 168 "gpl.l"
+#line 176 "gpl.l"
 return T_UPARROW;
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 169 "gpl.l"
+#line 177 "gpl.l"
 return T_DOWNARROW;
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 170 "gpl.l"
+#line 178 "gpl.l"
 return T_LEFTMOUSE_DOWN; 
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 171 "gpl.l"
+#line 179 "gpl.l"
 return T_MIDDLEMOUSE_DOWN; 
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 172 "gpl.l"
+#line 180 "gpl.l"
 return T_RIGHTMOUSE_DOWN;
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 173 "gpl.l"
+#line 181 "gpl.l"
 return T_LEFTMOUSE_UP;
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 174 "gpl.l"
+#line 182 "gpl.l"
 return T_MIDDLEMOUSE_UP;
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 175 "gpl.l"
+#line 183 "gpl.l"
 return T_RIGHTMOUSE_UP;
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 176 "gpl.l"
+#line 184 "gpl.l"
 return T_MOUSE_MOVE;
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 177 "gpl.l"
+#line 185 "gpl.l"
 return T_MOUSE_DRAG;
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 178 "gpl.l"
+#line 186 "gpl.l"
 return T_F1;
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 179 "gpl.l"
+#line 187 "gpl.l"
 return T_WKEY;
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 180 "gpl.l"
+#line 188 "gpl.l"
 return T_AKEY;
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 181 "gpl.l"
+#line 189 "gpl.l"
 return T_SKEY;
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 182 "gpl.l"
+#line 190 "gpl.l"
 return T_DKEY;
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 183 "gpl.l"
+#line 191 "gpl.l"
 return T_FKEY;
 	YY_BREAK
 case 79:
 YY_RULE_SETUP
-#line 184 "gpl.l"
+#line 192 "gpl.l"
 return T_HKEY;
 	YY_BREAK
 case 80:
 YY_RULE_SETUP
-#line 185 "gpl.l"
+#line 193 "gpl.l"
 return T_JKEY;
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 186 "gpl.l"
+#line 194 "gpl.l"
 return T_KKEY;
 	YY_BREAK
 case 82:
 YY_RULE_SETUP
-#line 187 "gpl.l"
+#line 195 "gpl.l"
 return T_LKEY;
 	YY_BREAK
 case 83:
 YY_RULE_SETUP
-#line 188 "gpl.l"
+#line 196 "gpl.l"
 ;
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 190 "gpl.l"
+#line 198 "gpl.l"
 return emit_int(T_INT_CONSTANT);
 	YY_BREAK
 case 85:
 YY_RULE_SETUP
-#line 192 "gpl.l"
-return emit_string(T_ID);
+#line 200 "gpl.l"
+return emit_id(T_ID);
 	YY_BREAK
 case 86:
 /* rule 86 can match eol */
 YY_RULE_SETUP
-#line 194 "gpl.l"
+#line 202 "gpl.l"
 return emit_string(T_STRING_CONSTANT);
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 195 "gpl.l"
+#line 203 "gpl.l"
 return emit_double(T_DOUBLE_CONSTANT);
 	YY_BREAK
 case 88:
 YY_RULE_SETUP
-#line 196 "gpl.l"
+#line 204 "gpl.l"
 return emit_double(T_DOUBLE_CONSTANT);
 	YY_BREAK
 case 89:
 YY_RULE_SETUP
-#line 198 "gpl.l"
+#line 206 "gpl.l"
 return emit_error(T_ERROR);
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 201 "gpl.l"
+#line 209 "gpl.l"
 ECHO;
 	YY_BREAK
-#line 1522 "lex.yy.c"
+#line 1530 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2516,4 +2524,4 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 201 "gpl.l"
+#line 209 "gpl.l"

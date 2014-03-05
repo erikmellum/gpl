@@ -62,7 +62,7 @@ int emit_string(int token)
   // this memory should be deleted.
   
   string tester = (string) yytext;
-  yylval.union_string = new string(tester.substr(1,tester.length()-2));
+  yylval.union_string = new string(tester.substr(1,tester.length()-1));
   return token;
 }
 

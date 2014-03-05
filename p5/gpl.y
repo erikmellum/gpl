@@ -247,11 +247,39 @@ variable_declaration:
             }
             else if($1 == DOUBLE)
             {
-                symbol_table->insert(new Symbol(id,1.1));
+                double initial_value = 0;
+                
+                if($3 != NULL)
+                {
+                    if($3->getKind() == DOUBLE_CONST)
+                    {   
+                        symbol_table->insert(new Symbol(id,$3->eval_double()));
+                    }
+                    else
+                    {
+
+                        initial_value = $3->eval_double();
+                    }
+                    
+                }
+                symbol_table->insert(new Symbol(id,initial_value));
             }
             else if($1 == STRING)
             {
-                symbol_table->insert(new Symbol(id,"a"));
+                string initial_value = "";
+                if($3 != NULL)
+                {
+                    if($3->getKind() == STRING_CONST)
+                    {   
+                        initial_value = $3->eval_string();
+                    }
+                    else
+                    {
+                        initial_value = $3->eval_string();
+                    }
+                    
+                }
+                symbol_table->insert(new Symbol(id,initial_value));
             }
         }
         else
