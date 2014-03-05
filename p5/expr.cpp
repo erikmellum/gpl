@@ -35,22 +35,22 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
         {
             if(rhs->getKind() == INT_CONST)
             {
-                kind = INT_CONST;
+                gpl_type = INT;
             }
             else if(rhs->getKind() == DOUBLE_CONST)
             {
-                kind = DOUBLE_CONST;
+                gpl_type = DOUBLE;
             }
         }
         else if(lhs->getKind() == DOUBLE_CONST)
         {
             if(rhs->getKind() == INT_CONST)
             {
-                kind = INT_CONST;
+                gpl_type = INT;
             }
             else if(rhs->getKind() == DOUBLE_CONST)
             {
-                kind = DOUBLE_CONST;
+                gpl_type = DOUBLE;
             }
         }
         

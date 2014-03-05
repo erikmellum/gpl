@@ -233,11 +233,12 @@ variable_declaration:
                 if($3 != NULL)
                 {
                     if($3->getKind() == INT_CONST)
-                    {
+                    {   
                         symbol_table->insert(new Symbol(id,$3->eval_int()));
                     }
                     else
                     {
+
                         initial_value = $3->eval_int();
                     }
                     
