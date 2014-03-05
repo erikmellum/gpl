@@ -584,6 +584,10 @@ expression:
     }
     | expression T_PLUS expression 
     {
+        if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
+        {
+            $$ = new Expr(PLUS,$1,$3);
+        }
     }
     | expression T_MINUS expression
     {

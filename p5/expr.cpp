@@ -31,7 +31,7 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
     lhs = newlhs;
     rhs = newrhs;
     kind = BINARY_OP;
-    if(operator_type == MULTIPLY)
+    switch(operator_type == MULTIPLY)
     {
         if(lhs->getKind() == INT_CONST)
         {
@@ -56,6 +56,34 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
             }
         }
         
+    }
+    if(operator_type == PLUS)
+    {
+        if(lhs->getKind() == STRING_CONST)
+        {                
+            if(rhs->getKind() == STRING_CONST ||
+                rhs->getKind() == DOUBLE_CONST ||
+                rhs->getKind() == INT_CONST)
+                    gpl_type = STRING;
+        }
+        else if(rhs->getKind() == STRING_CONST)
+        {
+            if(lhs->getKind() == INT_CONST ||
+                lhs->getKind() == DOUBLE_CONST)
+                    gpl_type = STRING;
+        }
+        else if(lhs->getKind() == INT_CONST)
+        {
+            if(rhs->getKind() == INT_CONST)
+                gpl_type = INT;
+            else if(rhs->getKind() == DOUBLE_CONST)
+                gpl_type = DOUBLE;
+        }
+        else if(lhs->getKind() == DOUBLE_CONST)
+        {
+            if(rhs->getKind() == INT_CONST || rhs->getKind() == DOUBLE_CONST)
+                gpl_type = DOUBLE;
+        }
     }
 }
 int Expr::eval_int()
@@ -92,7 +120,10 @@ string Expr::eval_string()
 {
     if(kind == BINARY_OP)
     {
-        
+        if(operator_type == PLUS)
+        {
+            return lhs->eval_string() + rhs->eval_string();
+        }
     }
     else if(kind == STRING_CONST)
         return string_value;
