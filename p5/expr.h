@@ -11,6 +11,8 @@ enum Kind {
 #pragma once
 class Variable;
 #include <string>
+#include <cmath>
+#include "variable.h"
 #include "gpl_type.h"
 using namespace std;
 class Expr

@@ -1,0 +1,6 @@
+// this file tests automatic casting
+//  int casts to a double
+//  both int and double cast to a string
+int a = 42;
+double b = .9999;
+string d = (a + b);

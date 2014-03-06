@@ -21,10 +21,10 @@ int b 2
 int c 3
 int d 4
 int i 0
-string s ""
-double x -1
-double y -1
-double z -1
+string s "28"
+double x 5
+double y 6
+double z 7
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

@@ -22,10 +22,10 @@ int c 3
 int d 4
 int e 5
 int f 6
-int g 1
-int h 4
-int i 1
-int j 1
+int g -1
+int h -1
+int i -1
+int j -1
 int k 2
 int l 8
 If graphics was enabled gpl program would execute now.

@@ -172,7 +172,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %type <union_expression_kind> expression
 %type <union_expression_kind> primary_expression
 %type <union_expression_kind> optional_initializer
-//%type <union_operator_type> math_operator
+%type <union_operator_type> math_operator
 // Grammar symbols that have values associated with them need to be
 // declared here.  The above union is used for the "ruturning" the value.
 // 
@@ -269,14 +269,8 @@ variable_declaration:
                 string initial_value = "";
                 if($3 != NULL)
                 {
-                    if($3->getKind() == STRING_CONST)
-                    {   
-                        initial_value = $3->eval_string();
-                    }
-                    else
-                    {
-                        initial_value = $3->eval_string();
-                    }
+
+                    initial_value = $3->eval_string();
                     
                 }
                 symbol_table->insert(new Symbol(id,initial_value));
@@ -558,7 +552,7 @@ expression:
         if($1 == ??)
         else if($1 == ?)
         else if ($1 == ?)
-        $$ = new Expression(
+        $$ = new Expression(,$3yy
         **/
     }
     | expression T_AND expression
@@ -584,10 +578,7 @@ expression:
     }
     | expression T_PLUS expression 
     {
-        if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
-        {
-            $$ = new Expr(PLUS,$1,$3);
-        }
+        $$ = new Expr(PLUS,$1,$3);
     }
     | expression T_MINUS expression
     {
@@ -601,7 +592,6 @@ expression:
         else
         {
             $$ = new Expr(MULTIPLY,$1,$3);
-
         }
         
     }
@@ -619,6 +609,7 @@ expression:
     }
     | math_operator T_LPAREN expression T_RPAREN
     {
+        $$ = new Expr($1,$3);
     }
     | variable geometric_operator variable
     {
@@ -666,15 +657,45 @@ geometric_operator:
 //---------------------------------------------------------------------
 math_operator:
     T_SIN
+    {
+        $$ = SIN;
+    }
     | T_COS
+    {
+        $$ = COS;
+    }
     | T_TAN
+    {
+        $$ = TAN;
+    }
     | T_ASIN
+    {
+        $$ = ASIN;
+    }
     | T_ACOS
+    {
+        $$ = ACOS;
+    }
     | T_ATAN
+    {
+        $$ = ATAN;
+    }
     | T_SQRT
+    {
+        $$ = SQRT;
+    }
     | T_ABS
+    {
+        $$ = ABS;
+    }
     | T_FLOOR
+    {
+        $$ = FLOOR;
+    }
     | T_RANDOM
+    {
+        $$ = RANDOM;
+    }
     ;
 
 //---------------------------------------------------------------------

@@ -2,7 +2,7 @@
 #include "expr.h"
 #include "symbol_table.h"
 #include "symbol.h"
-
+class Expr;
 class Variable
 {
     public:      
@@ -11,7 +11,7 @@ class Variable
         Variable(string value, Expr* expr);
         Symbol* eval();
     private:
+        Symbol* symbol;
+        Expr* expression;
         string name;
-        Expr* left;
-        Expr* right;
 };

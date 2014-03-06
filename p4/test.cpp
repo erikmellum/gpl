@@ -14,11 +14,10 @@ int global_counter = 42;
 int
 main()
 {
-  Symbol_table *Symbol_table = Symbol_table::instance();
-  Symbol_table->insert(new Symbol("a", "abc"));
-  Symbol_table->insert(new Symbol("c", 43));
-  Symbol_table->insert(new Symbol("a", 4.3));
-  Symbol_table->print(cout);
+  int a = 42;
+double b = .9999;
+string c = "a + b = ";
+string d = c + a + " + " + b + " = " + (a + b);
 }
 
 

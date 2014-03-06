@@ -21,10 +21,10 @@ double b 2.2
 double c 3.3
 double d 4.4
 double e 5.5
-double g 1.1
-double h 3.63
-double i 1.1
-double j 1.1
+double g 3.3
+double h 9.13
+double i 3.3
+double j 7.7
 double k 2.42
 double l 10.648
 If graphics was enabled gpl program would execute now.

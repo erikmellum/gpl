@@ -11,7 +11,7 @@ Variable::Variable(string value)
 Variable::Variable(string value, Expr* expr)
 {
     name = value;
-    left = expr;
+    expression = expr;
 }
 Symbol* Variable::eval()
 {
