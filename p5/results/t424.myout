@@ -19,7 +19,7 @@ Printing the symbol table from main()
 int i 42
 string s "hello"
 double x 3.145
-double z -1
+double z 42
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

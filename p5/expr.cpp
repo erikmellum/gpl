@@ -39,8 +39,9 @@ Expr::Expr(Operator_type type, Expr *newlhs)
             gpl_type = DOUBLE;
     }
     else
+    {
         gpl_type = DOUBLE;
-    
+    }
     
 }
 Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
@@ -60,7 +61,6 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
             else if(rhs->getGplType() == DOUBLE)
             {
                 gpl_type = DOUBLE;
-                cout << "FUCKSTICK";
             }
         }
         else if(lhs->getGplType() == DOUBLE)
@@ -118,10 +118,6 @@ int Expr::eval_int()
     }
     else if(kind == UNARY_OP)
     {
-        if(operator_type == SIN)
-        {
-            return sin(lhs->eval_int());
-        }
     }
     else if(kind == INT_CONST)
         return int_value;
@@ -147,7 +143,40 @@ double Expr::eval_double()
     {
         if(operator_type == SIN)
         {
-            return sin(lhs->eval_double());
+
+            return sin(lhs->eval_double()*PI/180);
+        }
+        else if(operator_type == COS)
+        {
+            return cos(lhs->eval_int()*PI/180);
+        }
+        else if(operator_type == TAN)
+        {
+            return tan(lhs->eval_double()*PI/180);
+        }
+        else if(operator_type == ASIN)
+        {
+            return asin(lhs->eval_double()*PI/180);
+        }
+        else if(operator_type == ACOS)
+        {
+            return acos(lhs->eval_double()*PI/180);
+        }
+        else if(operator_type == ATAN)
+        {
+            return atan(lhs->eval_double()*PI/180);
+        }
+        else if(operator_type == SQRT)
+        {
+            return sqrt(lhs->eval_double());
+        }
+        else if(operator_type == ABS)
+        {
+            return abs(lhs->eval_double());
+        }
+        else if(operator_type == FLOOR)
+        {
+            return floor(lhs->eval_double());
         }
     }
     else if(kind == DOUBLE_CONST)
