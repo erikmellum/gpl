@@ -45,6 +45,10 @@ Expr::Expr(Operator_type type, Expr *newlhs)
         else if(lhs->getKind() == DOUBLE_CONST)
             gpl_type = DOUBLE;
     }
+    else if(type == RANDOM)
+    {
+        gpl_type = INT;
+    }
     else
     {
         gpl_type = DOUBLE;
@@ -122,12 +126,20 @@ int Expr::eval_int()
         {            
             return lhs->eval_int() * rhs->eval_int();
         }
+        else if(operator_type == MINUS)
+        {
+            return lhs->eval_int() - rhs->eval_int();
+        }
     }
     else if(kind == UNARY_OP)
     {
         if(operator_type == UNARY_MINUS)
         {
             return lhs->eval_int()*-1;
+        }
+        else if(operator_type == RANDOM)
+        {
+            return rand() % lhs->eval_int();
         }
     }
     else if(kind == INT_CONST)
@@ -148,6 +160,10 @@ double Expr::eval_double()
         else if(operator_type == PLUS)
         {
             return lhs->eval_double() + rhs->eval_double();
+        }
+        else if(operator_type == MINUS)
+        {
+            return lhs->eval_double() - rhs->eval_double();
         }
     }
     else if(kind == UNARY_OP)

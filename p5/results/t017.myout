@@ -16,35 +16,35 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-int r01 -1
-int r02 -1
-int r03 -1
-int r04 -1
-int r05 -1
-int r06 -1
-int r07 -1
-int r08 -1
-int r09 -1
-int r10 -1
-int r11 -1
-int r12 -1
-int r13 -1
-int r14 -1
-int r15 -1
-int r16 -1
-int r17 -1
-int r18 -1
-int r19 -1
-int r20 -1
-int r21 -1
-int r22 -1
-int r23 -1
-int r24 -1
-int r25 -1
-int r26 -1
-int r27 -1
-int r28 -1
-int r29 -1
+int r01 0
+int r02 0
+int r03 1
+int r04 1
+int r05 0
+int r06 0
+int r07 1
+int r08 0
+int r09 1
+int r10 1
+int r11 0
+int r12 1
+int r13 1
+int r14 0
+int r15 0
+int r16 0
+int r17 0
+int r18 0
+int r19 0
+int r20 1
+int r21 1
+int r22 0
+int r23 1
+int r24 1
+int r25 1
+int r26 1
+int r27 1
+int r28 0
+int r29 1
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

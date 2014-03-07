@@ -582,6 +582,10 @@ expression:
     }
     | expression T_MINUS expression
     {
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(MINUS,$1,$3);
     }
     | expression T_ASTERISK expression
     {

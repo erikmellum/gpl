@@ -12,6 +12,7 @@ enum Kind {
 class Variable;
 #include <string>
 #include <cmath>
+#include <stdlib.h>
 #define PI 3.14159265
 #include "variable.h"
 #include "gpl_type.h"
