@@ -17,13 +17,13 @@ No errors found (parser probably worked correctly).
 
 Printing the symbol table from main()
 double q 0.669131
-double r 0.999848
+double r 0.743145
 double s 0.900404
-double t 0.00872676
-double u 1.56207
-double v 0.00872642
+double t 30
+double u 60
+double v 26.5651
 double w 12
-double y 0
+double y 42
 double z 42
 If graphics was enabled gpl program would execute now.
 

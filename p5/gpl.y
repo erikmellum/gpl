@@ -603,6 +603,7 @@ expression:
     }
     | T_MINUS  expression %prec UNARY_OPS
     {
+        $$ = new Expr(UNARY_MINUS, $2);
     }
     | T_NOT  expression %prec UNARY_OPS
     {

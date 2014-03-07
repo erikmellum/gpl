@@ -38,6 +38,13 @@ Expr::Expr(Operator_type type, Expr *newlhs)
         else if(lhs->getKind() == DOUBLE_CONST)
             gpl_type = DOUBLE;
     }
+    else if(type == UNARY_MINUS)
+    {
+        if(lhs->getKind() == INT_CONST)
+            gpl_type = INT;
+        else if(lhs->getKind() == DOUBLE_CONST)
+            gpl_type = DOUBLE;
+    }
     else
     {
         gpl_type = DOUBLE;
@@ -118,6 +125,10 @@ int Expr::eval_int()
     }
     else if(kind == UNARY_OP)
     {
+        if(operator_type == UNARY_MINUS)
+        {
+            return lhs->eval_int()*-1;
+        }
     }
     else if(kind == INT_CONST)
         return int_value;
@@ -143,12 +154,11 @@ double Expr::eval_double()
     {
         if(operator_type == SIN)
         {
-
             return sin(lhs->eval_double()*PI/180);
         }
         else if(operator_type == COS)
         {
-            return cos(lhs->eval_int()*PI/180);
+            return cos(lhs->eval_double()*PI/180);
         }
         else if(operator_type == TAN)
         {
@@ -156,15 +166,15 @@ double Expr::eval_double()
         }
         else if(operator_type == ASIN)
         {
-            return asin(lhs->eval_double()*PI/180);
+            return asin(lhs->eval_double())*180/PI;
         }
         else if(operator_type == ACOS)
         {
-            return acos(lhs->eval_double()*PI/180);
+            return acos(lhs->eval_double())*180/PI;
         }
         else if(operator_type == ATAN)
         {
-            return atan(lhs->eval_double()*PI/180);
+            return atan(lhs->eval_double())*180/PI;
         }
         else if(operator_type == SQRT)
         {
@@ -177,6 +187,10 @@ double Expr::eval_double()
         else if(operator_type == FLOOR)
         {
             return floor(lhs->eval_double());
+        }
+        else if(operator_type == UNARY_MINUS)
+        {
+            return lhs->eval_double()*-1;
         }
     }
     else if(kind == DOUBLE_CONST)

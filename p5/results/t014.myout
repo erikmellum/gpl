@@ -16,11 +16,11 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-double q 0.0116788
-double r 1.55334
-double s 0.0157137
+double q 42
+double r 42
+double s 42
 double w 42.42
-double y 0
+double y 42
 double z 42
 If graphics was enabled gpl program would execute now.
 
