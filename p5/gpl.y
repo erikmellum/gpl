@@ -269,7 +269,6 @@ variable_declaration:
                 string initial_value = "";
                 if($3 != NULL)
                 {
-
                     initial_value = $3->eval_string();
                     
                 }
@@ -589,6 +588,7 @@ expression:
     }
     | expression T_ASTERISK expression
     {
+        
         if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
         {
             //$$ = new Expression(0);
@@ -611,9 +611,17 @@ expression:
     }
     | T_NOT  expression %prec UNARY_OPS
     {
+        if($2->getKind() == STRING_CONST)
+        {
+            assert(true);
+            //$$ = new Expression(0);
+        }
+        else
+            $$ = new Expr(NOT, $2);
     }
     | math_operator T_LPAREN expression T_RPAREN
     {
+
         $$ = new Expr($1,$3);
     }
     | variable geometric_operator variable
