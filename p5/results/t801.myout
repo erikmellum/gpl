@@ -21,12 +21,12 @@ double b 2.2
 double c 3.3
 double d 4.4
 double e 5.5
-double g -11.22
-double h 4.73
-double i 3.3
-double j 7.7
-double k 2.42
-double l 10.648
+double g 0.66
+double h 2.75
+double i 0.428571
+double j 6.16667
+double k 0.166667
+double l 3.22667
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

@@ -685,10 +685,10 @@ static const yytype_uint16 yyrline[] =
      453,   454,   455,   456,   457,   458,   463,   464,   469,   473,
      478,   484,   485,   490,   491,   492,   493,   494,   499,   500,
      505,   510,   515,   520,   521,   522,   527,   531,   535,   539,
-     547,   548,   557,   560,   563,   566,   569,   572,   575,   578,
-     582,   589,   602,   605,   608,   612,   622,   627,   634,   638,
-     642,   646,   650,   654,   658,   666,   667,   672,   676,   680,
-     684,   688,   692,   696,   700,   704,   708,   715
+     547,   548,   557,   561,   564,   567,   570,   573,   577,   580,
+     584,   591,   604,   615,   618,   622,   632,   637,   644,   648,
+     652,   656,   660,   664,   668,   676,   677,   682,   686,   690,
+     694,   698,   702,   706,   710,   714,   718,   725
 };
 #endif
 
@@ -2036,13 +2036,14 @@ yyreduce:
 /* Line 1806 of yacc.c  */
 #line 558 "gpl.y"
     {
+        (yyval.union_expression_kind) = new Expr(AND,(yyvsp[(1) - (3)].union_expression_kind),(yyvsp[(3) - (3)].union_expression_kind));
     }
     break;
 
   case 93:
 
 /* Line 1806 of yacc.c  */
-#line 561 "gpl.y"
+#line 562 "gpl.y"
     {
     }
     break;
@@ -2050,7 +2051,7 @@ yyreduce:
   case 94:
 
 /* Line 1806 of yacc.c  */
-#line 564 "gpl.y"
+#line 565 "gpl.y"
     {
     }
     break;
@@ -2058,7 +2059,7 @@ yyreduce:
   case 95:
 
 /* Line 1806 of yacc.c  */
-#line 567 "gpl.y"
+#line 568 "gpl.y"
     {
     }
     break;
@@ -2066,7 +2067,7 @@ yyreduce:
   case 96:
 
 /* Line 1806 of yacc.c  */
-#line 570 "gpl.y"
+#line 571 "gpl.y"
     {
     }
     break;
@@ -2074,15 +2075,16 @@ yyreduce:
   case 97:
 
 /* Line 1806 of yacc.c  */
-#line 573 "gpl.y"
+#line 574 "gpl.y"
     {
+        (yyval.union_expression_kind) = new Expr(EQUAL,(yyvsp[(1) - (3)].union_expression_kind),(yyvsp[(3) - (3)].union_expression_kind));
     }
     break;
 
   case 98:
 
 /* Line 1806 of yacc.c  */
-#line 576 "gpl.y"
+#line 578 "gpl.y"
     {
     }
     break;
@@ -2090,7 +2092,7 @@ yyreduce:
   case 99:
 
 /* Line 1806 of yacc.c  */
-#line 579 "gpl.y"
+#line 581 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(PLUS,(yyvsp[(1) - (3)].union_expression_kind),(yyvsp[(3) - (3)].union_expression_kind));
     }
@@ -2099,7 +2101,7 @@ yyreduce:
   case 100:
 
 /* Line 1806 of yacc.c  */
-#line 583 "gpl.y"
+#line 585 "gpl.y"
     {
         if((yyvsp[(1) - (3)].union_expression_kind)->getGplType() == STRING || (yyvsp[(3) - (3)].union_expression_kind)->getGplType() == STRING)
             assert(true);
@@ -2111,7 +2113,7 @@ yyreduce:
   case 101:
 
 /* Line 1806 of yacc.c  */
-#line 590 "gpl.y"
+#line 592 "gpl.y"
     {
         
         if((yyvsp[(1) - (3)].union_expression_kind)->getKind() == STRING_CONST || (yyvsp[(3) - (3)].union_expression_kind)->getKind() == STRING_CONST)
@@ -2129,15 +2131,23 @@ yyreduce:
   case 102:
 
 /* Line 1806 of yacc.c  */
-#line 603 "gpl.y"
+#line 605 "gpl.y"
     {
+        if((yyvsp[(1) - (3)].union_expression_kind)->getKind() == STRING_CONST || (yyvsp[(3) - (3)].union_expression_kind)->getKind() == STRING_CONST)
+        {
+            //$$ = new Expression(0);
+        }
+        else
+        {
+            (yyval.union_expression_kind) = new Expr(DIVIDE,(yyvsp[(1) - (3)].union_expression_kind),(yyvsp[(3) - (3)].union_expression_kind));
+        }
     }
     break;
 
   case 103:
 
 /* Line 1806 of yacc.c  */
-#line 606 "gpl.y"
+#line 616 "gpl.y"
     {
     }
     break;
@@ -2145,7 +2155,7 @@ yyreduce:
   case 104:
 
 /* Line 1806 of yacc.c  */
-#line 609 "gpl.y"
+#line 619 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(UNARY_MINUS, (yyvsp[(2) - (2)].union_expression_kind));
     }
@@ -2154,7 +2164,7 @@ yyreduce:
   case 105:
 
 /* Line 1806 of yacc.c  */
-#line 613 "gpl.y"
+#line 623 "gpl.y"
     {
         if((yyvsp[(2) - (2)].union_expression_kind)->getKind() == STRING_CONST)
         {
@@ -2169,7 +2179,7 @@ yyreduce:
   case 106:
 
 /* Line 1806 of yacc.c  */
-#line 623 "gpl.y"
+#line 633 "gpl.y"
     {
 
         (yyval.union_expression_kind) = new Expr((yyvsp[(1) - (4)].union_operator_type),(yyvsp[(3) - (4)].union_expression_kind));
@@ -2179,7 +2189,7 @@ yyreduce:
   case 107:
 
 /* Line 1806 of yacc.c  */
-#line 628 "gpl.y"
+#line 638 "gpl.y"
     {
     }
     break;
@@ -2187,7 +2197,7 @@ yyreduce:
   case 108:
 
 /* Line 1806 of yacc.c  */
-#line 635 "gpl.y"
+#line 645 "gpl.y"
     {
         (yyval.union_expression_kind) = (yyvsp[(2) - (3)].union_expression_kind);
     }
@@ -2196,7 +2206,7 @@ yyreduce:
   case 109:
 
 /* Line 1806 of yacc.c  */
-#line 639 "gpl.y"
+#line 649 "gpl.y"
     {        
         (yyval.union_expression_kind) = new Expr((yyvsp[(1) - (1)].union_variable_type));   
     }
@@ -2205,7 +2215,7 @@ yyreduce:
   case 110:
 
 /* Line 1806 of yacc.c  */
-#line 643 "gpl.y"
+#line 653 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr((yyvsp[(1) - (1)].union_int));
     }
@@ -2214,7 +2224,7 @@ yyreduce:
   case 111:
 
 /* Line 1806 of yacc.c  */
-#line 647 "gpl.y"
+#line 657 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(1);
     }
@@ -2223,7 +2233,7 @@ yyreduce:
   case 112:
 
 /* Line 1806 of yacc.c  */
-#line 651 "gpl.y"
+#line 661 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(0);
     }
@@ -2232,7 +2242,7 @@ yyreduce:
   case 113:
 
 /* Line 1806 of yacc.c  */
-#line 655 "gpl.y"
+#line 665 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr((yyvsp[(1) - (1)].union_double));
     }
@@ -2241,7 +2251,7 @@ yyreduce:
   case 114:
 
 /* Line 1806 of yacc.c  */
-#line 659 "gpl.y"
+#line 669 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(*(yyvsp[(1) - (1)].union_string));
     }
@@ -2250,7 +2260,7 @@ yyreduce:
   case 117:
 
 /* Line 1806 of yacc.c  */
-#line 673 "gpl.y"
+#line 683 "gpl.y"
     {
         (yyval.union_operator_type) = SIN;
     }
@@ -2259,7 +2269,7 @@ yyreduce:
   case 118:
 
 /* Line 1806 of yacc.c  */
-#line 677 "gpl.y"
+#line 687 "gpl.y"
     {
         (yyval.union_operator_type) = COS;
     }
@@ -2268,7 +2278,7 @@ yyreduce:
   case 119:
 
 /* Line 1806 of yacc.c  */
-#line 681 "gpl.y"
+#line 691 "gpl.y"
     {
         (yyval.union_operator_type) = TAN;
     }
@@ -2277,7 +2287,7 @@ yyreduce:
   case 120:
 
 /* Line 1806 of yacc.c  */
-#line 685 "gpl.y"
+#line 695 "gpl.y"
     {
         (yyval.union_operator_type) = ASIN;
     }
@@ -2286,7 +2296,7 @@ yyreduce:
   case 121:
 
 /* Line 1806 of yacc.c  */
-#line 689 "gpl.y"
+#line 699 "gpl.y"
     {
         (yyval.union_operator_type) = ACOS;
     }
@@ -2295,7 +2305,7 @@ yyreduce:
   case 122:
 
 /* Line 1806 of yacc.c  */
-#line 693 "gpl.y"
+#line 703 "gpl.y"
     {
         (yyval.union_operator_type) = ATAN;
     }
@@ -2304,7 +2314,7 @@ yyreduce:
   case 123:
 
 /* Line 1806 of yacc.c  */
-#line 697 "gpl.y"
+#line 707 "gpl.y"
     {
         (yyval.union_operator_type) = SQRT;
     }
@@ -2313,7 +2323,7 @@ yyreduce:
   case 124:
 
 /* Line 1806 of yacc.c  */
-#line 701 "gpl.y"
+#line 711 "gpl.y"
     {
         (yyval.union_operator_type) = ABS;
     }
@@ -2322,7 +2332,7 @@ yyreduce:
   case 125:
 
 /* Line 1806 of yacc.c  */
-#line 705 "gpl.y"
+#line 715 "gpl.y"
     {
         (yyval.union_operator_type) = FLOOR;
     }
@@ -2331,7 +2341,7 @@ yyreduce:
   case 126:
 
 /* Line 1806 of yacc.c  */
-#line 709 "gpl.y"
+#line 719 "gpl.y"
     {
         (yyval.union_operator_type) = RANDOM;
     }
@@ -2340,7 +2350,7 @@ yyreduce:
 
 
 /* Line 1806 of yacc.c  */
-#line 2344 "y.tab.c"
+#line 2354 "y.tab.c"
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

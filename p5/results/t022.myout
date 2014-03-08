@@ -16,9 +16,9 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-int a 0
+int a 1
 int b 0
-int c 0
+int c 1
 int d 1
 int e 1
 If graphics was enabled gpl program would execute now.

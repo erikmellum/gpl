@@ -556,6 +556,7 @@ expression:
     }
     | expression T_AND expression
     {
+        $$ = new Expr(AND,$1,$3);
     }
     | expression T_LESS_EQUAL expression
     {
@@ -571,6 +572,7 @@ expression:
     }
     | expression T_EQUAL expression
     {
+        $$ = new Expr(EQUAL,$1,$3);
     }
     | expression T_NOT_EQUAL expression
     {
@@ -601,6 +603,14 @@ expression:
     }
     | expression T_DIVIDE expression
     {
+        if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
+        {
+            //$$ = new Expression(0);
+        }
+        else
+        {
+            $$ = new Expr(DIVIDE,$1,$3);
+        }
     }
     | expression T_MOD expression
     {

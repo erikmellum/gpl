@@ -90,6 +90,11 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
         }
         
     }
+    else if(operator_type == DIVIDE)
+    {
+       gpl_type = DOUBLE;
+        
+    }
     else if(operator_type == PLUS)
     {
         if(lhs->getGplType() == STRING)
@@ -120,6 +125,19 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
                 gpl_type = DOUBLE;
         }
     }
+    else if(operator_type == EQUAL)
+    {
+
+        gpl_type = INT;
+    }
+    else if(operator_type == AND)
+    {
+        gpl_type = INT;
+    }
+    else if(operator_type == OR)
+    {
+        gpl_type = INT;
+    }
 }
 int Expr::eval_int()
 {
@@ -129,9 +147,81 @@ int Expr::eval_int()
         {            
             return lhs->eval_int() * rhs->eval_int();
         }
+        else if(operator_type == DIVIDE)
+        {
+            return lhs->eval_int() / rhs->eval_int();
+        }
         else if(operator_type == MINUS)
         {
             return lhs->eval_int() - rhs->eval_int();
+        }
+        else if(operator_type == EQUAL)
+        {
+            if(lhs->getGplType() == INT)
+            {
+                return lhs->eval_int() == rhs->eval_int();
+            }
+            else if(lhs->getGplType() == DOUBLE)
+            {
+                
+                return lhs->eval_double() == rhs->eval_double();
+            }
+            else if(lhs->getGplType() == STRING)
+            {
+                return lhs->eval_string() == rhs->eval_string();
+            }
+        }
+        else if(operator_type == AND)
+        {
+            if(lhs->getGplType() == INT)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                {
+                    return lhs->eval_int() && rhs->eval_double();
+                }
+                else if(rhs->getGplType() == INT)
+                {
+                    return lhs->eval_int() && rhs->eval_int();
+                }
+
+            }
+            else if(lhs->getGplType() == DOUBLE)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                {
+                    return lhs->eval_double() && rhs->eval_double();
+                }
+                else if(rhs->getGplType() == INT)
+                {
+                    return lhs->eval_double() && rhs->eval_int();
+                }
+            }
+        }
+        else if(operator_type == OR)
+        {
+            if(lhs->getGplType() == INT)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                {
+                    return lhs->eval_int() || rhs->eval_double();
+                }
+                else if(rhs->getGplType() == INT)
+                {
+                    return lhs->eval_int() || rhs->eval_int();
+                }
+
+            }
+            else if(lhs->getGplType() == DOUBLE)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                {
+                    return lhs->eval_double() || rhs->eval_double();
+                }
+                else if(rhs->getGplType() == INT)
+                {
+                    return lhs->eval_double() || rhs->eval_int();
+                }
+            }
         }
     }
     else if(kind == UNARY_OP)
@@ -154,9 +244,10 @@ int Expr::eval_int()
     }
     else if(kind == INT_CONST)
         return int_value;
+    else if(kind == DOUBLE_CONST)
+        return (int) double_value;
     else if(kind == VARIABLE)
         return variable_value->eval()->getInt();
-    return -1;
 }
 double Expr::eval_double()
 {
@@ -167,6 +258,10 @@ double Expr::eval_double()
         {            
             return lhs->eval_double() * rhs->eval_double();
         }
+        else if(operator_type == DIVIDE)
+        {
+            return lhs->eval_double() / rhs->eval_double();
+        }
         else if(operator_type == PLUS)
         {
             return lhs->eval_double() + rhs->eval_double();
@@ -174,6 +269,17 @@ double Expr::eval_double()
         else if(operator_type == MINUS)
         {
             return lhs->eval_double() - rhs->eval_double();
+        }
+        else if(operator_type == EQUAL)
+        {
+            if(lhs->getGplType() == INT)
+            {
+                return lhs->eval_int() == rhs->eval_double();
+            }
+            else if(lhs->getGplType() == DOUBLE)
+            {
+                return lhs->eval_double() == rhs->eval_double();
+            }
         }
     }
     else if(kind == UNARY_OP)
@@ -220,8 +326,14 @@ double Expr::eval_double()
         }
         else if(operator_type == NOT)
         {
-            if(lhs->eval_double() == 0)
-                return 1;
+            if(gpl_type == DOUBLE)
+            {
+                return !lhs->eval_double();
+            }
+            else if(gpl_type == INT)
+            {
+                return !lhs->eval_int();
+            }
             else
                 return 0;
         }
@@ -250,7 +362,6 @@ string Expr::eval_string()
         return string_value;
     else if(kind == VARIABLE)
     {        
-
         if(gpl_type == INT)
         {
             ostringstream oss;
@@ -295,6 +406,22 @@ string Expr::eval_string()
                 return oss.str();
             }
             return lhs->eval_string() + rhs->eval_string();
+        }
+        else if(operator_type == EQUAL)
+        {
+            if((lhs->getGplType() == INT || lhs->getGplType() == DOUBLE) && 
+            (rhs->getGplType() == INT || rhs->getGplType() == DOUBLE))
+            {
+                ostringstream oss;
+                oss << (lhs->eval_double() == rhs->eval_double());
+                return oss.str();
+            }
+            else if(lhs->getGplType() == STRING && rhs->getGplType() == STRING)
+            {
+                ostringstream oss;
+                oss << (lhs->eval_string() == rhs->eval_string());
+                return oss.str();
+            }
         }
     }
     else if(kind == UNARY_OP)
