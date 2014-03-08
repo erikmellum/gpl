@@ -52,7 +52,7 @@ int var010 0
 int var011 0
 int var012 0
 int var013 14
-int var014 1
+int var014 0
 int var015 1
 int var016 0
 int var017 0
@@ -219,7 +219,7 @@ int var177 0
 int var178 3
 int var179 12
 int var180 0
-int var181 1
+int var181 0
 int var182 1
 int var183 0
 int var184 18
@@ -266,7 +266,7 @@ int var224 14
 int var225 0
 int var226 0
 int var227 7
-int var228 1
+int var228 0
 int var229 1
 int var230 0
 int var231 0
@@ -275,7 +275,7 @@ int var233 0
 int var234 20
 int var235 4
 int var236 10
-int var237 1
+int var237 0
 int var238 0
 int var239 1
 int var240 0
@@ -286,7 +286,7 @@ int var244 0
 int var245 4
 int var246 69
 int var247 25
-int var248 1
+int var248 0
 int var249 0
 int var250 0
 int var251 -23
@@ -346,7 +346,7 @@ int var304 0
 int var305 3
 int var306 1
 int var307 0
-int var308 1
+int var308 0
 int var309 13
 int var310 0
 int var311 19
@@ -357,7 +357,7 @@ int var315 0
 int var316 0
 int var317 0
 int var318 18
-int var319 1
+int var319 0
 int var320 0
 int var321 0
 int var322 10
@@ -374,12 +374,12 @@ int var332 0
 int var333 0
 int var334 0
 int var335 0
-int var336 1
+int var336 0
 int var337 0
 int var338 0
 int var339 0
 int var340 1
-int var341 1
+int var341 0
 int var342 0
 int var343 0
 int var344 0
@@ -398,12 +398,12 @@ int var356 0
 int var357 0
 int var358 1925
 int var359 6
-int var360 1
+int var360 0
 int var361 0
 int var362 0
 int var363 0
 int var364 10
-int var365 1
+int var365 0
 int var366 0
 int var367 0
 int var368 0
@@ -428,7 +428,7 @@ int var386 1
 int var387 0
 int var388 1
 int var389 0
-int var390 1
+int var390 0
 int var391 0
 int var392 0
 int var393 1
@@ -521,7 +521,7 @@ int var479 1
 int var480 0
 int var481 0
 int var482 0
-int var483 1
+int var483 0
 int var484 25
 int var485 0
 int var486 0
@@ -540,7 +540,7 @@ int var498 0
 int var499 0
 int var500 0
 int var501 25
-int var502 0
+int var502 1
 int var503 1
 int var504 1
 int var505 0
@@ -555,7 +555,7 @@ int var513 0
 int var514 0
 int var515 1
 int var516 15
-int var517 1
+int var517 0
 int var518 0
 int var519 1
 int var520 0
@@ -612,7 +612,7 @@ int var570 0
 int var571 1
 int var572 0
 int var573 0
-int var574 1
+int var574 0
 int var575 1
 int var576 26
 int var577 0
@@ -636,7 +636,7 @@ int var594 10
 int var595 0
 int var596 0
 int var597 0
-int var598 1
+int var598 0
 int var599 0
 int var600 21
 int var601 0
@@ -765,7 +765,7 @@ int var723 0
 int var724 4
 int var725 24
 int var726 8
-int var727 1
+int var727 0
 int var728 0
 int var729 0
 int var730 0
@@ -812,7 +812,7 @@ int var770 0
 int var771 0
 int var772 0
 int var773 8
-int var774 1
+int var774 0
 int var775 0
 int var776 1
 int var777 0
@@ -850,7 +850,7 @@ int var808 0
 int var809 0
 int var810 0
 int var811 0
-int var812 1
+int var812 0
 int var813 0
 int var814 2
 int var815 1
@@ -886,7 +886,7 @@ int var844 0
 int var845 25
 int var846 1
 int var847 7
-int var848 1
+int var848 0
 int var849 300
 int var850 308
 int var851 17

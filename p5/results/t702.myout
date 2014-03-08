@@ -20,7 +20,7 @@ double a 1
 double b 4
 double c 9
 double d 16
-double should_be_1 -1
+double should_be_1 1
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

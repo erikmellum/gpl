@@ -14,10 +14,8 @@ int global_counter = 42;
 int
 main()
 {
-  int a = 42;
-double b = .9999;
-string c = "a + b = ";
-string d = c + a + " + " + b + " = " + (a + b);
+	int a = (1/2) == (0.25 * 2); 
+	cout << a << endl; 
 }
 
 

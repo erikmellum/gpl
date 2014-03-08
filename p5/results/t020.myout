@@ -16,10 +16,10 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-int a 1
+int a 0
 double b 0
 string c "0"
-double d -1
+double d 1
 int e 1
 int f 1
 int g 1
