@@ -16,7 +16,7 @@ No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-int result_should_be_1 42
+int result_should_be_1 1
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

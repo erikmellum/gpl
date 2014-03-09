@@ -1,7 +1,10 @@
 #include "expr.h"
-
+#include <iostream>
+#include <string>
+using namespace std;
 
 int main()
 {
-    Expr* expr = new Expr(2);
+    double c = .25 && .1;
+    cout << c << endl;
 }

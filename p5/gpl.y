@@ -547,28 +547,45 @@ expression:
     primary_expression
     | expression T_OR expression
     {
-        /**
-        if($1 == ??)
-        else if($1 == ?)
-        else if ($1 == ?)
-        $$ = new Expression(,$3yy
-        **/
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(OR,$1,$3);
     }
     | expression T_AND expression
     {
-        $$ = new Expr(AND,$1,$3);
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(AND,$1,$3);
     }
     | expression T_LESS_EQUAL expression
     {
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(LESS_THAN_EQUAL,$1,$3);
     }
     | expression T_GREATER_EQUAL  expression
     {
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(GREATER_THAN_EQUAL,$1,$3);
     }
     | expression T_LESS expression 
     {
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(LESS_THAN,$1,$3);
     }
     | expression T_GREATER  expression
     {
+        if($1->getGplType() == STRING || $3->getGplType() == STRING)
+            assert(true);
+        else
+            $$ = new Expr(GREATER_THAN,$1,$3);
     }
     | expression T_EQUAL expression
     {
