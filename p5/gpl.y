@@ -581,6 +581,7 @@ expression:
     }
     | expression T_NOT_EQUAL expression
     {
+        $$ = new Expr(NOT_EQUAL,$1,$3);
     }
     | expression T_PLUS expression 
     {
@@ -636,7 +637,6 @@ expression:
     }
     | math_operator T_LPAREN expression T_RPAREN
     {
-
         $$ = new Expr($1,$3);
     }
     | variable geometric_operator variable

@@ -1,5 +1,5 @@
 gpl.cpp::main()
-  input file(tests/t042.gpl)
+  input file(tests/t032.gpl)
   random seed(42)
   read_keypresses_from_standard_input(false)
   dump_pixels(false)
@@ -9,16 +9,14 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-
+SHIEETSHIEET
 gpl.cpp::main() after call to yyparse().
 
 No errors found (parser probably worked correctly).
 
 
 Printing the symbol table from main()
-double k 1.2
-int x 1
-int z 1
+int result_should_be_0 0
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

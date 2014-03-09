@@ -282,6 +282,10 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
                 gpl_type = DOUBLE;
         }
     }
+    else if(operator_type == NOT_EQUAL)
+    {
+        gpl_type = INT;
+    }
 }
 int Expr::eval_int()
 {
@@ -328,6 +332,34 @@ int Expr::eval_int()
 
             }         
             
+        }
+        else if(operator_type == NOT_EQUAL)
+        {
+            if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
+            {
+                return (lhs->eval_string() != rhs->eval_string());
+            }
+            else if(lhs->getGplType() == INT)
+            {
+
+                if(rhs->getGplType() == INT)
+                {
+                    return (lhs->eval_int() != rhs->eval_int());
+                }
+                else if(rhs->getGplType() == DOUBLE)
+                {
+
+                    return (lhs->eval_int() != rhs->eval_double());
+                }
+            }
+            else if(lhs->getGplType() == DOUBLE)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                    return (lhs->eval_double() != rhs->eval_double());
+                else if(rhs->getGplType() == INT)
+                    return (lhs->eval_double() != rhs->eval_int());
+
+            }    
         }
         else if(operator_type == AND)
         {
@@ -385,18 +417,34 @@ int Expr::eval_int()
         }
         else if(operator_type == GREATER_THAN_EQUAL)
         {
+            if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
+            {
+                return (lhs->eval_string() < rhs->eval_string());      
+            }
             return (lhs->eval_int() >= rhs->eval_int());
         }
         else if(operator_type == GREATER_THAN)
         {
+            if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
+            {
+                return (lhs->eval_string() < rhs->eval_string());      
+            }
             return (lhs->eval_int() > rhs->eval_int());
         }
         else if(operator_type == LESS_THAN_EQUAL)
         {
+            if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
+            {
+                return (lhs->eval_string() < rhs->eval_string());      
+            }
             return (lhs->eval_int() <= rhs->eval_int());
         }
         else if(operator_type == LESS_THAN)
         {
+            if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
+            {
+                return (lhs->eval_string() < rhs->eval_string());      
+            }
             return (lhs->eval_int() < rhs->eval_int());
         }
     }
@@ -584,7 +632,6 @@ double Expr::eval_double()
 }
 string Expr::eval_string()
 {
-    
     if(kind == STRING_CONST)
         return string_value;
     else if(kind == VARIABLE)
@@ -825,12 +872,10 @@ string Expr::eval_string()
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
             {
-                if(isdigit(left) && isdigit(right))
-                {
+
                     ostringstream oss;
-                    oss << (atoi(lhs->eval_string().at(0)) < atoi(rhs->eval_string().at(0)));
+                    oss << (lhs->eval_string() < rhs->eval_string());
                     return oss.str();
-                }
             }
             if(lhs->getGplType() == INT)
             {

@@ -685,8 +685,8 @@ static const yytype_uint16 yyrline[] =
      453,   454,   455,   456,   457,   458,   463,   464,   469,   473,
      478,   484,   485,   490,   491,   492,   493,   494,   499,   500,
      505,   510,   515,   520,   521,   522,   527,   531,   535,   539,
-     547,   548,   555,   562,   566,   570,   574,   578,   582,   585,
-     589,   596,   609,   620,   623,   627,   637,   642,   649,   653,
+     547,   548,   555,   562,   566,   570,   574,   578,   582,   586,
+     590,   597,   610,   621,   624,   628,   638,   642,   649,   653,
      657,   661,   665,   669,   673,   681,   682,   687,   691,   695,
      699,   703,   707,   711,   715,   719,   723,   730
 };
@@ -2091,13 +2091,14 @@ yyreduce:
 /* Line 1806 of yacc.c  */
 #line 583 "gpl.y"
     {
+        (yyval.union_expression_kind) = new Expr(NOT_EQUAL,(yyvsp[(1) - (3)].union_expression_kind),(yyvsp[(3) - (3)].union_expression_kind));
     }
     break;
 
   case 99:
 
 /* Line 1806 of yacc.c  */
-#line 586 "gpl.y"
+#line 587 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(PLUS,(yyvsp[(1) - (3)].union_expression_kind),(yyvsp[(3) - (3)].union_expression_kind));
     }
@@ -2106,7 +2107,7 @@ yyreduce:
   case 100:
 
 /* Line 1806 of yacc.c  */
-#line 590 "gpl.y"
+#line 591 "gpl.y"
     {
         if((yyvsp[(1) - (3)].union_expression_kind)->getGplType() == STRING || (yyvsp[(3) - (3)].union_expression_kind)->getGplType() == STRING)
             assert(true);
@@ -2118,7 +2119,7 @@ yyreduce:
   case 101:
 
 /* Line 1806 of yacc.c  */
-#line 597 "gpl.y"
+#line 598 "gpl.y"
     {
         
         if((yyvsp[(1) - (3)].union_expression_kind)->getKind() == STRING_CONST || (yyvsp[(3) - (3)].union_expression_kind)->getKind() == STRING_CONST)
@@ -2136,7 +2137,7 @@ yyreduce:
   case 102:
 
 /* Line 1806 of yacc.c  */
-#line 610 "gpl.y"
+#line 611 "gpl.y"
     {
         if((yyvsp[(1) - (3)].union_expression_kind)->getKind() == STRING_CONST || (yyvsp[(3) - (3)].union_expression_kind)->getKind() == STRING_CONST)
         {
@@ -2152,7 +2153,7 @@ yyreduce:
   case 103:
 
 /* Line 1806 of yacc.c  */
-#line 621 "gpl.y"
+#line 622 "gpl.y"
     {
     }
     break;
@@ -2160,7 +2161,7 @@ yyreduce:
   case 104:
 
 /* Line 1806 of yacc.c  */
-#line 624 "gpl.y"
+#line 625 "gpl.y"
     {
         (yyval.union_expression_kind) = new Expr(UNARY_MINUS, (yyvsp[(2) - (2)].union_expression_kind));
     }
@@ -2169,7 +2170,7 @@ yyreduce:
   case 105:
 
 /* Line 1806 of yacc.c  */
-#line 628 "gpl.y"
+#line 629 "gpl.y"
     {
         if((yyvsp[(2) - (2)].union_expression_kind)->getKind() == STRING_CONST)
         {
@@ -2184,9 +2185,8 @@ yyreduce:
   case 106:
 
 /* Line 1806 of yacc.c  */
-#line 638 "gpl.y"
+#line 639 "gpl.y"
     {
-
         (yyval.union_expression_kind) = new Expr((yyvsp[(1) - (4)].union_operator_type),(yyvsp[(3) - (4)].union_expression_kind));
     }
     break;
