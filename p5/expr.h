@@ -16,6 +16,7 @@ class Variable;
 #define PI 3.14159265
 #include "variable.h"
 #include "gpl_type.h"
+#include <ctype.h>
 using namespace std;
 class Expr
 {

@@ -18,7 +18,7 @@ No errors found (parser probably worked correctly).
 Printing the symbol table from main()
 int i 42
 string s "hello"
-string var "hello"
+string var "0"
 double x 3.145
 If graphics was enabled gpl program would execute now.
 

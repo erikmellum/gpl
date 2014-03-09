@@ -11,7 +11,41 @@ enum Kind {
 #pragma once
 class Variable;
 #include <string>
+#include <cmath>
+#include <stdlib.h>
+#define PI 3.14159265
+#include "variable.h"
 #include "gpl_type.h"
+if(lhs->getGplType() == INT)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                {
+                    ostringstream oss;
+                    oss << (lhs->eval_int() < rhs->eval_double());
+                    return oss.str();
+                }
+                else if(rhs->getGplType() == INT)
+                {
+                    ostringstream oss;
+                    oss << (lhs->eval_int() < rhs->eval_int());
+                    return oss.str();
+                }
+            }
+            else if(lhs->getGplType() == DOUBLE)
+            {
+                if(rhs->getGplType() == DOUBLE)
+                {
+                    ostringstream oss;
+                    oss << (lhs->eval_double() < rhs->eval_double());
+                    return oss.str();
+                }
+                else if(rhs->getGplType() == INT)
+                {
+                    ostringstream oss;
+                    oss << (lhs->eval_double() < rhs->eval_int());
+                    return oss.str();
+                }
+            }
 using namespace std;
 class Expr
 {
@@ -25,7 +59,8 @@ class Expr
         int eval_int();
         double eval_double();
         string eval_string();
-        string getType();
+        Gpl_type getGplType();
+        Operator_type getOperatorType();
         Kind getKind();
     private:
         Gpl_type gpl_type;

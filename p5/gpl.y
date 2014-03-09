@@ -561,30 +561,18 @@ expression:
     }
     | expression T_LESS_EQUAL expression
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
-        else
             $$ = new Expr(LESS_THAN_EQUAL,$1,$3);
     }
     | expression T_GREATER_EQUAL  expression
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
-        else
             $$ = new Expr(GREATER_THAN_EQUAL,$1,$3);
     }
     | expression T_LESS expression 
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
-        else
             $$ = new Expr(LESS_THAN,$1,$3);
     }
     | expression T_GREATER  expression
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
-        else
             $$ = new Expr(GREATER_THAN,$1,$3);
     }
     | expression T_EQUAL expression
