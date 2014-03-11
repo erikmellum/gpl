@@ -2,6 +2,7 @@
 #include "expr.h"
 #include "symbol_table.h"
 #include "symbol.h"
+#include <sstream>
 class Expr;
 class Variable
 {

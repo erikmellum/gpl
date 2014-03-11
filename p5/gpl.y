@@ -530,7 +530,17 @@ variable:
     }
     | T_ID T_LBRACKET expression T_RBRACKET
     {
-        $$ = new Variable(*$1, $3);
+        if($3->getGplType() == INT)
+        {
+            
+            $$ = new Variable(*$1, $3);
+        }
+        else
+        {
+            Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,  *$1);
+
+        }
+
     }
     | T_ID T_PERIOD T_ID
     {

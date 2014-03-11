@@ -1,0 +1,1 @@
+Is there a dummy symbol to return when eval can't find a symbol in the symbol table?
