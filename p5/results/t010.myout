@@ -9,6 +9,21 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
+string c "a + b = "
+string c "a + b = "
+int a 42
+int a 42
+double b 0.9999
+double b 0.9999
+int a 42
+int a 42
+double b 0.9999
+double b 0.9999
+int a 42
+double b 0.9999
+double b 0.9999
+int a 42
+string c "a + b = "
 
 gpl.cpp::main() after call to yyparse().
 

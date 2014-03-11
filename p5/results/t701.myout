@@ -9,8 +9,34 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-
-gpl.cpp::main() after call to yyparse().
-
-1 error found.
-gpl giving up.
+int i 1
+int i 1
+int j 2
+int j 2
+int k 4
+int k 4
+int l 8
+int l 8
+int l 8
+int l 8
+int k 4
+int k 4
+int j 2
+int j 2
+int l 8
+int k 4
+int j 2
+int l 8
+int k 4
+int j 2
+int l 8
+int k 4
+int j 2
+int i 1
+int i 1
+int k 4
+int k 4
+int i 1
+int k 4
+int i 1
+int i 1

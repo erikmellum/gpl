@@ -9,6 +9,30 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+int a 42
+double b 3.5
+double b 3.5
+double c 12.1
+double c 12.1
+double b 3.5
+double c 12.1
 
 gpl.cpp::main() after call to yyparse().
 

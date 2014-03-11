@@ -9,6 +9,10 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
+string s "hello"
+string s "hello"
+int i 42
+int i 42
 
 gpl.cpp::main() after call to yyparse().
 

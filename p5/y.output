@@ -19,7 +19,7 @@ Grammar
     6            | forward_declaration T_SEMIC
 
     7 variable_declaration: simple_type T_ID optional_initializer
-    8                     | simple_type T_ID T_LBRACKET T_INT_CONSTANT T_RBRACKET
+    8                     | simple_type T_ID T_LBRACKET expression T_RBRACKET
 
     9 simple_type: T_INT
    10            | T_DOUBLE
@@ -262,7 +262,7 @@ T_OR (338) 90
 T_NOT (339) 104
 UNARY_OPS (340)
 T_ID (341) 7 8 14 15 25 26 34 35 36 37 38 39 40 85 86 87 88
-T_INT_CONSTANT (342) 8 109
+T_INT_CONSTANT (342) 109
 T_DOUBLE_CONSTANT (343) 112
 T_STRING_CONSTANT (344) 113
 T_PRINT (345) 80
@@ -342,7 +342,7 @@ variable (125)
     on left: 85 86 87 88, on right: 82 83 84 106 108
 expression (126)
     on left: 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105
-    106, on right: 12 15 25 77 78 79 80 81 82 83 84 86 88 90 91 92
+    106, on right: 8 12 15 25 77 78 79 80 81 82 83 84 86 88 90 91 92
     93 94 95 96 97 98 99 100 101 102 103 104 105 107
 primary_expression (127)
     on left: 107 108 109 110 111 112 113, on right: 89
@@ -493,7 +493,7 @@ state 15
 state 16
 
     7 variable_declaration: simple_type . T_ID optional_initializer
-    8                     | simple_type . T_ID T_LBRACKET T_INT_CONSTANT T_RBRACKET
+    8                     | simple_type . T_ID T_LBRACKET expression T_RBRACKET
 
     T_ID  shift, and go to state 24
 
@@ -561,7 +561,7 @@ state 23
 state 24
 
     7 variable_declaration: simple_type T_ID . optional_initializer
-    8                     | simple_type T_ID . T_LBRACKET T_INT_CONSTANT T_RBRACKET
+    8                     | simple_type T_ID . T_LBRACKET expression T_RBRACKET
 
     T_LBRACKET  shift, and go to state 36
     T_ASSIGN    shift, and go to state 37
@@ -679,39 +679,62 @@ state 35
 
 state 36
 
-    8 variable_declaration: simple_type T_ID T_LBRACKET . T_INT_CONSTANT T_RBRACKET
+    8 variable_declaration: simple_type T_ID T_LBRACKET . expression T_RBRACKET
 
-    T_INT_CONSTANT  shift, and go to state 70
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
+
+    variable            go to state 89
+    expression          go to state 90
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 37
 
    12 optional_initializer: T_ASSIGN . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
-    expression          go to state 91
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    variable            go to state 89
+    expression          go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 38
@@ -746,30 +769,30 @@ state 41
 
    15 object_declaration: object_type T_ID T_LBRACKET . expression T_RBRACKET
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 99
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 42
@@ -981,233 +1004,273 @@ state 69
 
 state 70
 
-    8 variable_declaration: simple_type T_ID T_LBRACKET T_INT_CONSTANT . T_RBRACKET
-
-    T_RBRACKET  shift, and go to state 105
-
-
-state 71
-
   110 primary_expression: T_TRUE .
 
     $default  reduce using rule 110 (primary_expression)
 
 
-state 72
+state 71
 
   111 primary_expression: T_FALSE .
 
     $default  reduce using rule 111 (primary_expression)
 
 
-state 73
+state 72
 
   107 primary_expression: T_LPAREN . expression T_RPAREN
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
-    expression          go to state 106
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    variable            go to state 89
+    expression          go to state 105
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
-state 74
+state 73
 
   103 expression: T_MINUS . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
-    expression          go to state 107
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    variable            go to state 89
+    expression          go to state 106
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
-state 75
+state 74
 
   116 math_operator: T_SIN .
 
     $default  reduce using rule 116 (math_operator)
 
 
-state 76
+state 75
 
   117 math_operator: T_COS .
 
     $default  reduce using rule 117 (math_operator)
 
 
-state 77
+state 76
 
   118 math_operator: T_TAN .
 
     $default  reduce using rule 118 (math_operator)
 
 
-state 78
+state 77
 
   119 math_operator: T_ASIN .
 
     $default  reduce using rule 119 (math_operator)
 
 
-state 79
+state 78
 
   120 math_operator: T_ACOS .
 
     $default  reduce using rule 120 (math_operator)
 
 
-state 80
+state 79
 
   121 math_operator: T_ATAN .
 
     $default  reduce using rule 121 (math_operator)
 
 
-state 81
+state 80
 
   122 math_operator: T_SQRT .
 
     $default  reduce using rule 122 (math_operator)
 
 
-state 82
+state 81
 
   124 math_operator: T_FLOOR .
 
     $default  reduce using rule 124 (math_operator)
 
 
-state 83
+state 82
 
   123 math_operator: T_ABS .
 
     $default  reduce using rule 123 (math_operator)
 
 
-state 84
+state 83
 
   125 math_operator: T_RANDOM .
 
     $default  reduce using rule 125 (math_operator)
 
 
-state 85
+state 84
 
   104 expression: T_NOT . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
-    expression          go to state 108
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    variable            go to state 89
+    expression          go to state 107
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
-state 86
+state 85
 
    85 variable: T_ID .
    86         | T_ID . T_LBRACKET expression T_RBRACKET
    87         | T_ID . T_PERIOD T_ID
    88         | T_ID . T_LBRACKET expression T_RBRACKET T_PERIOD T_ID
 
-    T_LBRACKET  shift, and go to state 109
-    T_PERIOD    shift, and go to state 110
+    T_LBRACKET  shift, and go to state 108
+    T_PERIOD    shift, and go to state 109
 
     $default  reduce using rule 85 (variable)
 
 
-state 87
+state 86
 
   109 primary_expression: T_INT_CONSTANT .
 
     $default  reduce using rule 109 (primary_expression)
 
 
-state 88
+state 87
 
   112 primary_expression: T_DOUBLE_CONSTANT .
 
     $default  reduce using rule 112 (primary_expression)
 
 
-state 89
+state 88
 
   113 primary_expression: T_STRING_CONSTANT .
 
     $default  reduce using rule 113 (primary_expression)
 
 
-state 90
+state 89
 
   106 expression: variable . geometric_operator variable
   108 primary_expression: variable .
 
-    T_TOUCHES  shift, and go to state 111
-    T_NEAR     shift, and go to state 112
+    T_TOUCHES  shift, and go to state 110
+    T_NEAR     shift, and go to state 111
 
     $default  reduce using rule 108 (primary_expression)
 
-    geometric_operator  go to state 113
+    geometric_operator  go to state 112
+
+
+state 90
+
+    8 variable_declaration: simple_type T_ID T_LBRACKET expression . T_RBRACKET
+   90 expression: expression . T_OR expression
+   91           | expression . T_AND expression
+   92           | expression . T_LESS_EQUAL expression
+   93           | expression . T_GREATER_EQUAL expression
+   94           | expression . T_LESS expression
+   95           | expression . T_GREATER expression
+   96           | expression . T_EQUAL expression
+   97           | expression . T_NOT_EQUAL expression
+   98           | expression . T_PLUS expression
+   99           | expression . T_MINUS expression
+  100           | expression . T_ASTERISK expression
+  101           | expression . T_DIVIDE expression
+  102           | expression . T_MOD expression
+
+    T_RBRACKET       shift, and go to state 113
+    T_ASTERISK       shift, and go to state 114
+    T_DIVIDE         shift, and go to state 115
+    T_MOD            shift, and go to state 116
+    T_PLUS           shift, and go to state 117
+    T_MINUS          shift, and go to state 118
+    T_LESS           shift, and go to state 119
+    T_GREATER        shift, and go to state 120
+    T_LESS_EQUAL     shift, and go to state 121
+    T_GREATER_EQUAL  shift, and go to state 122
+    T_EQUAL          shift, and go to state 123
+    T_NOT_EQUAL      shift, and go to state 124
+    T_AND            shift, and go to state 125
+    T_OR             shift, and go to state 126
 
 
 state 91
+
+   89 expression: primary_expression .
+
+    $default  reduce using rule 89 (expression)
+
+
+state 92
+
+  105 expression: math_operator . T_LPAREN expression T_RPAREN
+
+    T_LPAREN  shift, and go to state 127
+
+
+state 93
 
    12 optional_initializer: T_ASSIGN expression .
    90 expression: expression . T_OR expression
@@ -1239,20 +1302,6 @@ state 91
     T_OR             shift, and go to state 126
 
     $default  reduce using rule 12 (optional_initializer)
-
-
-state 92
-
-   89 expression: primary_expression .
-
-    $default  reduce using rule 89 (expression)
-
-
-state 93
-
-  105 expression: math_operator . T_LPAREN expression T_RPAREN
-
-    T_LPAREN  shift, and go to state 127
 
 
 state 94
@@ -1372,13 +1421,6 @@ state 104
 
 state 105
 
-    8 variable_declaration: simple_type T_ID T_LBRACKET T_INT_CONSTANT T_RBRACKET .
-
-    $default  reduce using rule 8 (variable_declaration)
-
-
-state 106
-
    90 expression: expression . T_OR expression
    91           | expression . T_AND expression
    92           | expression . T_LESS_EQUAL expression
@@ -1410,7 +1452,7 @@ state 106
     T_OR             shift, and go to state 126
 
 
-state 107
+state 106
 
    90 expression: expression . T_OR expression
    91           | expression . T_AND expression
@@ -1430,7 +1472,7 @@ state 107
     $default  reduce using rule 103 (expression)
 
 
-state 108
+state 107
 
    90 expression: expression . T_OR expression
    91           | expression . T_AND expression
@@ -1450,515 +1492,522 @@ state 108
     $default  reduce using rule 104 (expression)
 
 
-state 109
+state 108
 
    86 variable: T_ID T_LBRACKET . expression T_RBRACKET
    88         | T_ID T_LBRACKET . expression T_RBRACKET T_PERIOD T_ID
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 143
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
-state 110
+state 109
 
    87 variable: T_ID T_PERIOD . T_ID
 
     T_ID  shift, and go to state 144
 
 
-state 111
+state 110
 
   114 geometric_operator: T_TOUCHES .
 
     $default  reduce using rule 114 (geometric_operator)
 
 
-state 112
+state 111
 
   115 geometric_operator: T_NEAR .
 
     $default  reduce using rule 115 (geometric_operator)
 
 
-state 113
+state 112
 
   106 expression: variable geometric_operator . variable
 
-    T_ID  shift, and go to state 86
+    T_ID  shift, and go to state 85
 
     variable  go to state 145
+
+
+state 113
+
+    8 variable_declaration: simple_type T_ID T_LBRACKET expression T_RBRACKET .
+
+    $default  reduce using rule 8 (variable_declaration)
 
 
 state 114
 
   100 expression: expression T_ASTERISK . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 146
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 115
 
   101 expression: expression T_DIVIDE . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 147
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 116
 
   102 expression: expression T_MOD . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 148
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 117
 
    98 expression: expression T_PLUS . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 149
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 118
 
    99 expression: expression T_MINUS . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 150
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 119
 
    94 expression: expression T_LESS . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 151
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 120
 
    95 expression: expression T_GREATER . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 152
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 121
 
    92 expression: expression T_LESS_EQUAL . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 153
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 122
 
    93 expression: expression T_GREATER_EQUAL . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 154
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 123
 
    96 expression: expression T_EQUAL . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 155
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 124
 
    97 expression: expression T_NOT_EQUAL . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 156
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 125
 
    91 expression: expression T_AND . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 157
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 126
 
    90 expression: expression T_OR . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 158
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 127
 
   105 expression: math_operator T_LPAREN . expression T_RPAREN
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 159
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 128
 
    25 parameter: T_ID T_ASSIGN . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 160
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 129
@@ -1993,7 +2042,7 @@ state 132
     T_FOR     shift, and go to state 163
     T_EXIT    shift, and go to state 164
     T_RBRACE  shift, and go to state 165
-    T_ID      shift, and go to state 86
+    T_ID      shift, and go to state 85
     T_PRINT   shift, and go to state 166
 
     statement         go to state 167
@@ -2689,30 +2738,30 @@ state 182
    77 if_statement: T_IF T_LPAREN . expression T_RPAREN if_block
    78             | T_IF T_LPAREN . expression T_RPAREN if_block T_ELSE if_block
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 195
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 183
@@ -2728,30 +2777,30 @@ state 184
 
    81 exit_statement: T_EXIT T_LPAREN . expression T_RPAREN
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 197
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 185
@@ -2765,30 +2814,30 @@ state 186
 
    80 print_statement: T_PRINT T_LPAREN . expression T_RPAREN
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 198
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 187
@@ -2816,90 +2865,90 @@ state 190
 
    82 assign_statement: variable T_ASSIGN . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 199
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 191
 
    83 assign_statement: variable T_PLUS_ASSIGN . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 200
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 192
 
    84 assign_statement: variable T_MINUS_ASSIGN . expression
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 201
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 193
@@ -2956,7 +3005,7 @@ state 196
 
    79 for_statement: T_FOR T_LPAREN statement_block_creator . assign_statement end_of_statement_block T_SEMIC expression T_SEMIC statement_block_creator assign_statement end_of_statement_block T_RPAREN statement_block
 
-    T_ID  shift, and go to state 86
+    T_ID  shift, and go to state 85
 
     assign_statement  go to state 205
     variable          go to state 173
@@ -3193,7 +3242,7 @@ state 208
     T_FOR     shift, and go to state 163
     T_EXIT    shift, and go to state 164
     T_RBRACE  shift, and go to state 213
-    T_ID      shift, and go to state 86
+    T_ID      shift, and go to state 85
     T_PRINT   shift, and go to state 166
 
     statement         go to state 167
@@ -3229,7 +3278,7 @@ state 211
     T_IF     shift, and go to state 162
     T_FOR    shift, and go to state 163
     T_EXIT   shift, and go to state 164
-    T_ID     shift, and go to state 86
+    T_ID     shift, and go to state 85
     T_PRINT  shift, and go to state 166
 
     statement         go to state 215
@@ -3283,30 +3332,30 @@ state 216
 
    79 for_statement: T_FOR T_LPAREN statement_block_creator assign_statement end_of_statement_block T_SEMIC . expression T_SEMIC statement_block_creator assign_statement end_of_statement_block T_RPAREN statement_block
 
-    T_TRUE             shift, and go to state 71
-    T_FALSE            shift, and go to state 72
-    T_LPAREN           shift, and go to state 73
-    T_MINUS            shift, and go to state 74
-    T_SIN              shift, and go to state 75
-    T_COS              shift, and go to state 76
-    T_TAN              shift, and go to state 77
-    T_ASIN             shift, and go to state 78
-    T_ACOS             shift, and go to state 79
-    T_ATAN             shift, and go to state 80
-    T_SQRT             shift, and go to state 81
-    T_FLOOR            shift, and go to state 82
-    T_ABS              shift, and go to state 83
-    T_RANDOM           shift, and go to state 84
-    T_NOT              shift, and go to state 85
-    T_ID               shift, and go to state 86
-    T_INT_CONSTANT     shift, and go to state 87
-    T_DOUBLE_CONSTANT  shift, and go to state 88
-    T_STRING_CONSTANT  shift, and go to state 89
+    T_TRUE             shift, and go to state 70
+    T_FALSE            shift, and go to state 71
+    T_LPAREN           shift, and go to state 72
+    T_MINUS            shift, and go to state 73
+    T_SIN              shift, and go to state 74
+    T_COS              shift, and go to state 75
+    T_TAN              shift, and go to state 76
+    T_ASIN             shift, and go to state 77
+    T_ACOS             shift, and go to state 78
+    T_ATAN             shift, and go to state 79
+    T_SQRT             shift, and go to state 80
+    T_FLOOR            shift, and go to state 81
+    T_ABS              shift, and go to state 82
+    T_RANDOM           shift, and go to state 83
+    T_NOT              shift, and go to state 84
+    T_ID               shift, and go to state 85
+    T_INT_CONSTANT     shift, and go to state 86
+    T_DOUBLE_CONSTANT  shift, and go to state 87
+    T_STRING_CONSTANT  shift, and go to state 88
 
-    variable            go to state 90
+    variable            go to state 89
     expression          go to state 220
-    primary_expression  go to state 92
-    math_operator       go to state 93
+    primary_expression  go to state 91
+    math_operator       go to state 92
 
 
 state 217
@@ -3376,7 +3425,7 @@ state 222
 
    79 for_statement: T_FOR T_LPAREN statement_block_creator assign_statement end_of_statement_block T_SEMIC expression T_SEMIC statement_block_creator . assign_statement end_of_statement_block T_RPAREN statement_block
 
-    T_ID  shift, and go to state 86
+    T_ID  shift, and go to state 85
 
     assign_statement  go to state 223
     variable          go to state 173

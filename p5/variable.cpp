@@ -27,5 +27,5 @@ Symbol* Variable::eval()
     {
         return symbol_table->retrieve(name);
     }
-    return r;
+    return new Symbol("dummy", 0);
 }

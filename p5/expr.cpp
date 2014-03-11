@@ -20,7 +20,20 @@ Expr::Expr(string value)
 Expr::Expr(Variable* value)
 {
     kind = VARIABLE;
+
     gpl_type = value->eval()->getType();
+    if(gpl_type == STRING)
+    {
+        string_value = value->eval()->getString();
+    }
+    else if(gpl_type == DOUBLE)
+    {
+        double_value = value->eval()->getDouble();
+    }
+    else if(gpl_type == INT)
+    {
+        int_value = value->eval()->getInt();
+    }
     variable_value = value;
 }
 Expr::Expr(Operator_type type, Expr *newlhs)
@@ -471,7 +484,10 @@ int Expr::eval_int()
     else if(kind == DOUBLE_CONST)
         return (int) double_value;
     else if(kind == VARIABLE)
+    {
+
         return variable_value->eval()->getInt();
+    }
 }
 double Expr::eval_double()
 {
