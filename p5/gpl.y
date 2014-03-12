@@ -232,13 +232,17 @@ variable_declaration:
                 
                 if($3 != NULL)
                 {
-                    if($3->getKind() == INT_CONST)
+                    if($3->getKind() == STRING_CONST || $3->getKind() == DOUBLE_CONST
+                        || $3->getGplType() == STRING || $3->getGplType() == DOUBLE)
+                    {
+                        Error::error(Error::INVALID_TYPE_FOR_INITIAL_VALUE, id);
+                    }
+                    else if($3->getKind() == INT_CONST)
                     {   
                         symbol_table->insert(new Symbol(id,$3->eval_int()));
                     }
                     else
                     {
-
                         initial_value = $3->eval_int();
                     }
                     
@@ -251,7 +255,11 @@ variable_declaration:
                 
                 if($3 != NULL)
                 {
-                    if($3->getKind() == DOUBLE_CONST)
+                    if($3->getKind() == STRING_CONST)
+                    {
+                        Error::error(Error::INVALID_TYPE_FOR_INITIAL_VALUE, id);
+                    }
+                    else if($3->getKind() == DOUBLE_CONST)
                     {   
                         symbol_table->insert(new Symbol(id,$3->eval_double()));
                     }
@@ -281,15 +289,18 @@ variable_declaration:
         }
     }
     | simple_type T_ID T_LBRACKET expression T_RBRACKET
-    {        
+    {   
+        string id = *$2;     
         if($4->getGplType() == STRING || $4->getGplType() == DOUBLE)
-            {
+        {
             Error::error(Error::INVALID_ARRAY_SIZE,*$2,$4->eval_string());
         }
-        string id = *$2;
-        if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
+        else if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
-
+            if($4->eval_int() == 0)
+            {
+                Error::error(Error::INVALID_ARRAY_SIZE,*$2,$4->eval_string());
+            }
             if($1 == INT)
             {
                 for(int i = 0; i < $4->eval_int(); i++)
@@ -530,7 +541,15 @@ assign_statement:
 variable:
     T_ID
     {
-        $$ = new Variable(*$1);
+        if(symbol_table->lookup(*$1))
+        {
+            $$ = new Variable(*$1);
+        }
+        else 
+        {
+            Error::error(Error::UNDECLARED_VARIABLE,*$1);
+            $$ = new Variable(*$1);
+        }
     }
     | T_ID T_LBRACKET expression T_RBRACKET
     {

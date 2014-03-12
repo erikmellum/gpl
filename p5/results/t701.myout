@@ -12,35 +12,5 @@ gpl.cpp::main() Calling yyparse()
 
 gpl.cpp::main() after call to yyparse().
 
-No errors found (parser probably worked correctly).
-
-
-Printing the symbol table from main()
-int i 1
-int j 2
-int k 4
-int l 8
-int num1[0] 0
-int num1[1] 0
-int num2[0] 0
-int num2[1] 0
-int num2[2] 0
-int num4[0] 0
-int num4[1] 0
-int num4[2] 0
-int num4[3] 0
-int num4[4] 0
-int num4[5] 0
-int num4[6] 0
-int num4[7] 0
-int num7[0] 0
-int num7[1] 0
-int num7[2] 0
-int num7[3] 0
-int num7[4] 0
-int num7[5] 0
-int num7[6] 0
-int num7[7] 0
-If graphics was enabled gpl program would execute now.
-
-gpl.cpp::main() done.
+5 errors found.
+gpl giving up.
