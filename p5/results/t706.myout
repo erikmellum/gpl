@@ -9,7 +9,8 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-name: nums[2]
-int nums[2] 0
-name: nums[2][2]
-couldn't find nums[2][2]
+
+gpl.cpp::main() after call to yyparse().
+
+1 error found.
+gpl giving up.

@@ -282,10 +282,14 @@ variable_declaration:
     }
     | simple_type T_ID T_LBRACKET expression T_RBRACKET
     {        
-        string identifier;
+        if($4->getGplType() == STRING || $4->getGplType() == DOUBLE)
+            {
+            Error::error(Error::INVALID_ARRAY_SIZE,*$2,$4->eval_string());
+        }
         string id = *$2;
         if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
+
             if($1 == INT)
             {
                 for(int i = 0; i < $4->eval_int(); i++)
@@ -532,7 +536,20 @@ variable:
     {
         if($3->getGplType() == INT)
         {
-            $$ = new Variable(*$1, $3);
+
+            string name;
+            int i = $3->eval_int();
+            stringstream ss;
+            ss << name << "[" << i << "]";
+            name = ss.str();
+            
+            if(!symbol_table->lookup(name))
+            {
+                $$ = new Variable(*$1, $3);
+                Error::error(Error::ARRAY_INDEX_OUT_OF_BOUNDS,*$1, $3->eval_string());
+            }
+            else
+                $$ = new Variable(*$1, $3);
         }
         else if($3->getGplType() == DOUBLE)
         {
@@ -540,7 +557,7 @@ variable:
             Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A double expression");
         }
         else if($3->getGplType() == STRING)
-        {                
+        {         
             $$ = new Variable(*$1, $3);
             Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A string expression");
         }

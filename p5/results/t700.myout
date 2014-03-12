@@ -9,13 +9,6 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-int i 2
-int i 2
-int i 2
-int i 2
-int i 2
-int i 2
-int i 2
 
 gpl.cpp::main() after call to yyparse().
 

@@ -1,0 +1,5 @@
+Semantic error on line 4: Index value '' is out of bounds for array 'iii'.
+Semantic error on line 7: Index value '0' is out of bounds for array 'iii'.
+Semantic error on line 7: Index value '1' is out of bounds for array 'iii'.
+Semantic error on line 7: Index value '2' is out of bounds for array 'iii'.
+Semantic error on line 7: Index value '0' is out of bounds for array 'iii'.
