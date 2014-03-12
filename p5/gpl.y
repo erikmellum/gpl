@@ -52,7 +52,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
 // 
 // Unions do not have any error checking.  For example, if you put an int in
 // the following union  (my_union.union_int = 42)  and then attempt to use it
-// as a string (cout << my_union.union_string) you will get garbage.
+// as a string (f << my_union.union_string) you will get garbage.
 
 // The "%union" is bison syntax
 // The "union_" is my convention to indicate a member of the union 
@@ -236,13 +236,10 @@ variable_declaration:
                     {   
                         symbol_table->insert(new Symbol(id,$3->eval_int()));
                     }
-                    else if($3->getKind() == DOUBLE_CONST)
+                    else
                     {
-                        cout << "You must implement double to int" << endl;
-                    }
-                    else if($3->getKind() == STRING_CONST)
-                    {
-                        Error::error(Error::ASSIGNMENT_TYPE_ERROR, id,"int","string");
+
+                        initial_value = $3->eval_int();
                     }
                     
                 }
@@ -273,6 +270,7 @@ variable_declaration:
                 if($3 != NULL)
                 {
                     initial_value = $3->eval_string();
+                    
                 }
                 symbol_table->insert(new Symbol(id,initial_value));
             }
@@ -288,26 +286,6 @@ variable_declaration:
         string id = *$2;
         if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
-            if($4->getKind() == VARIABLE)
-            {
-                if($4->getGplType() == STRING)
-                {
-                    Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$2, "A string expression");
-                }
-                else if($4->getGplType() == DOUBLE)
-                {
-                    Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$2, "A double expression");
-                }
-            }
-            else if($4->getKind() == STRING)
-            {
-                Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$2, "A string expression");
-            }
-            else if($4->getKind() == DOUBLE)
-            {
-                Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$2, "A double expression");
-            }
-
             if($1 == INT)
             {
                 for(int i = 0; i < $4->eval_int(); i++)
@@ -552,41 +530,17 @@ variable:
     }
     | T_ID T_LBRACKET expression T_RBRACKET
     {
-
-        if($3->getKind() == VARIABLE)
-        {
-            
-            if($3->getGplType() == INT)
-            {
-                $$ = new Variable(*$1, $3);
-            }
-            else if($3->getGplType() == DOUBLE)
-            {
-                
-                $$ = new Variable(*$1, $3);
-                Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A double expression");
-                
-            }
-            else if($3->getGplType() == STRING)
-            {                
-
-                
-                $$ = new Variable(*$1, $3);
-                Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A string expression");
-                
-            }
-        }
-        if($3->getKind() == INT_CONST)
+        if($3->getGplType() == INT)
         {
             $$ = new Variable(*$1, $3);
         }
-        else if($3->getKind() == DOUBLE_CONST) 
+        else if($3->getGplType() == DOUBLE)
         {
             $$ = new Variable(*$1, $3);
             Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A double expression");
         }
-        else if($3->getKind() == STRING_CONST) 
-        {
+        else if($3->getGplType() == STRING)
+        {                
             $$ = new Variable(*$1, $3);
             Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A string expression");
         }
@@ -604,6 +558,9 @@ variable:
 //---------------------------------------------------------------------
 expression:
     primary_expression
+    {
+        $$ = $1;
+    }
     | expression T_OR expression
     {
         if($1->getGplType() == STRING || $3->getGplType() == STRING)

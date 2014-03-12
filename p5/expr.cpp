@@ -654,6 +654,7 @@ string Expr::eval_string()
     {        
         if(gpl_type == INT)
         {
+
             ostringstream oss;
             oss << variable_value->eval()->getInt();
             return oss.str();

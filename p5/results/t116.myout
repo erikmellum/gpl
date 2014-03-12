@@ -9,12 +9,6 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-int value 1
-int value 1
-double x 5.5
-double x 5.5
-string str "value = "
-string str "value = "
 
 gpl.cpp::main() after call to yyparse().
 

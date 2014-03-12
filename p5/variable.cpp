@@ -1,5 +1,4 @@
 #include "variable.h"
-
 #pragma once
 
 using namespace std;
@@ -7,6 +6,7 @@ using namespace std;
 Variable::Variable(string value)
 {
     name = value;
+    expression = NULL;
 }
 Variable::Variable(string value, Expr* expr)
 {
@@ -16,6 +16,7 @@ Variable::Variable(string value, Expr* expr)
 Symbol* Variable::eval()
 {
     Symbol_table *symbol_table = Symbol_table::instance();
+    
     if(expression)
     {
     	int i = expression->eval_int();

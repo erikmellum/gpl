@@ -9,8 +9,6 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-string a "5"
-string a "5"
 
 gpl.cpp::main() after call to yyparse().
 

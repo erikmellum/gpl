@@ -9,8 +9,6 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-int i 86
-int i 86
 
 gpl.cpp::main() after call to yyparse().
 
@@ -19,7 +17,7 @@ No errors found (parser probably worked correctly).
 
 Printing the symbol table from main()
 int i 86
-int j 0
+int j 86
 If graphics was enabled gpl program would execute now.
 
 gpl.cpp::main() done.

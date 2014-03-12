@@ -9,9 +9,6 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-double x 42.4222
-double x 42.4222
-double x 42.4222
 
 gpl.cpp::main() after call to yyparse().
 

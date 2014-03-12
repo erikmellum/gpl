@@ -11,11 +11,19 @@ gpl.cpp::main() Calling yyparse()
 
 double c 9
 double c 9
+set c type: 2
+double c 9
 double d 16
+double d 16
+set d type: 2
 double d 16
 double a 1
+double a 1
+set a type: 2
 double a 1
 double b 4
+double b 4
+set b type: 2
 double b 4
 double c 9
 double d 16

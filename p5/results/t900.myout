@@ -11,9 +11,25 @@ gpl.cpp::main() Calling yyparse()
 
 int ii 0
 int ii 0
+set ii type: 1
 int ii 0
 int ii 0
 int ii 0
+set ii type: 1
 int ii 0
 int ii 0
 int ii 0
+set ii type: 1
+int ii 0
+int ii 0
+int ii 0
+set ii type: 1
+int ii 0
+int ii 0
+expression value: 0
+int ii 0
+name: iii[0]
+couldn't find iii[0]
+int ii 0
+name: iii[0][0]
+couldn't find iii[0][0]

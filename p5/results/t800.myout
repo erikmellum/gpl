@@ -11,79 +11,68 @@ gpl.cpp::main() Calling yyparse()
 
 int a 1
 int a 1
+set a type: 1
+int a 1
 int b 2
+int b 2
+set b type: 1
 int b 2
 int c 3
+int c 3
+set c type: 1
 int c 3
 int d 4
+int d 4
+set d type: 1
 int d 4
 int e 5
 int e 5
-int f 6
-int f 6
-int a 1
-int a 1
-int b 2
-int b 2
-int c 3
-int c 3
-int d 4
-int d 4
-int e 5
+set e type: 1
 int e 5
 int f 6
 int f 6
-int a 1
-int a 1
-int b 2
-int b 2
-int c 3
-int c 3
-int d 4
-int d 4
-int a 1
-int a 1
-int b 2
-int b 2
-int c 3
-int c 3
-int d 4
-int d 4
-int a 1
-int a 1
-int b 2
-int b 2
-int c 3
-int c 3
-int d 4
-int d 4
-int a 1
-int a 1
-int b 2
-int b 2
-int c 3
-int c 3
-int d 4
-int d 4
-
-gpl.cpp::main() after call to yyparse().
-
-No errors found (parser probably worked correctly).
-
-
-Printing the symbol table from main()
-int a 1
-int b 2
+set f type: 1
+int f 6
 int c 3
 int d 4
 int e 5
+int a 1
+int a 1
+set a type: 1
+int a 1
+int b 2
+int b 2
+set b type: 1
+int b 2
+int c 3
+int c 3
+set c type: 1
+int c 3
+int d 4
+int d 4
+set d type: 1
+int d 4
+int e 5
+int e 5
+set e type: 1
+int e 5
 int f 6
-int g 0
-int h 0
-int i 0
-int j 0
-int k 0
-int l 0
-If graphics was enabled gpl program would execute now.
-
-gpl.cpp::main() done.
+int f 6
+set f type: 1
+int f 6
+int a 1
+int a 1
+set a type: 1
+int a 1
+int b 2
+int b 2
+set b type: 1
+int b 2
+int c 3
+int c 3
+set c type: 1
+int c 3
+int d 4
+int d 4
+set d type: 1
+int d 4

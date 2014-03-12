@@ -9,9 +9,6 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
-string s "gpl is fun"
-string s "gpl is fun"
-string s "gpl is fun"
 
 gpl.cpp::main() after call to yyparse().
 
