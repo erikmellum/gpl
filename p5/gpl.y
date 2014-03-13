@@ -239,13 +239,12 @@ variable_declaration:
                     }
                     else if($3->getKind() == INT_CONST)
                     {   
-                        symbol_table->insert(new Symbol(id,$3->eval_int()));
+                        initial_value = $3->eval_int();
                     }
                     else
                     {
                         initial_value = $3->eval_int();
-                    }
-                    
+                    }               
                 }
                 symbol_table->insert(new Symbol(id,initial_value));
             }
@@ -259,16 +258,18 @@ variable_declaration:
                     {
                         Error::error(Error::INVALID_TYPE_FOR_INITIAL_VALUE, id);
                     }
-                    else if($3->getKind() == DOUBLE_CONST)
+                    else if($3->getKind() == INT_CONST || $3->getGplType() == INT)
+                    {
+                        initial_value = $3->eval_int();
+                    }
+                    else if($3->getKind() == DOUBLE_CONST || $3->getGplType() == DOUBLE)
                     {   
-                        symbol_table->insert(new Symbol(id,$3->eval_double()));
+                        initial_value = $3->eval_double();
                     }
                     else
                     {
-
                         initial_value = $3->eval_double();
-                    }
-                    
+                    }        
                 }
                 symbol_table->insert(new Symbol(id,initial_value));
             }

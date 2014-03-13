@@ -1,0 +1,31 @@
+double a = 1;
+double b = 2;
+double c = 3;
+double d = 4;
+double e = 5;
+double f = 6;
+double g = 7;
+double h = 8;
+double i = 9;
+double j = 10;
+double k = 11;
+double l = 12;
+double m = 13;
+double n = 14;
+double o = 15;
+double p = 16;
+double q = 17;
+double r = 18;
+double s = 19;
+double t = 20;
+double u = 21;
+double v = 22;
+double w = 23;
+double x = 24;
+double y = 25;
+double z = 26;
+double var013 = t / w >= l && s;
+
+
+
+
