@@ -159,6 +159,23 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
                 gpl_type = DOUBLE;
         }
     }
+    else if(operator_type == MINUS)
+    {
+        if(lhs->getGplType() == INT)
+        {
+            if(rhs->getGplType() == INT)
+                gpl_type = INT;
+            else if(rhs->getGplType() == DOUBLE)
+            {
+                gpl_type = DOUBLE;
+            }
+        }
+        else if(lhs->getGplType() == DOUBLE)
+        {
+            if(rhs->getGplType() == INT || rhs->getGplType() == DOUBLE)
+                gpl_type = DOUBLE;
+        }
+    }
     else if(operator_type == EQUAL || operator_type == AND || operator_type == OR
     || operator_type == GREATER_THAN_EQUAL || operator_type == GREATER_THAN ||
     operator_type == LESS_THAN_EQUAL || operator_type == LESS_THAN 

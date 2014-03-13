@@ -611,15 +611,31 @@ expression:
     }
     | expression T_OR expression
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
+        if($1->getKind() == STRING_CONST || $1->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_LEFT_OPERAND_TYPE, "||");
+            $$ = new Expr(0);
+        }
+        else if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "||");
+            $$ = new Expr(0);
+        }
         else
             $$ = new Expr(OR,$1,$3);
     }
     | expression T_AND expression
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
+        if($1->getKind() == STRING_CONST || $1->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_LEFT_OPERAND_TYPE, "&&");
+            $$ = new Expr(0);
+        }
+        else if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "&&");
+            $$ = new Expr(0);
+        }
         else
             $$ = new Expr(AND,$1,$3);
     }
@@ -653,17 +669,31 @@ expression:
     }
     | expression T_MINUS expression
     {
-        if($1->getGplType() == STRING || $3->getGplType() == STRING)
-            assert(true);
+        if($1->getKind() == STRING_CONST || $1->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_LEFT_OPERAND_TYPE, "-");
+            $$ = new Expr(0);
+        }
+        else if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "-");
+            $$ = new Expr(0);
+        }
         else
             $$ = new Expr(MINUS,$1,$3);
     }
     | expression T_ASTERISK expression
     {
         
-        if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
+        if($1->getKind() == STRING_CONST || $1->getGplType() == STRING)
         {
-            //$$ = new Expression(0);
+            Error::error(Error::INVALID_LEFT_OPERAND_TYPE, "*");
+            $$ = new Expr(0);
+        }
+        else if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "*");
+            $$ = new Expr(0);
         }
         else
         {
@@ -673,9 +703,15 @@ expression:
     }
     | expression T_DIVIDE expression
     {
-        if($1->getKind() == STRING_CONST || $3->getKind() == STRING_CONST)
+        if($1->getKind() == STRING_CONST || $1->getGplType() == STRING)
         {
-            //$$ = new Expression(0);
+            Error::error(Error::INVALID_LEFT_OPERAND_TYPE, "/");
+            $$ = new Expr(0);
+        }
+        else if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "/");
+            $$ = new Expr(0);
         }
         else
         {
@@ -686,7 +722,7 @@ expression:
     {
     }
     | T_MINUS  expression %prec UNARY_OPS
-    {
+    {       
         $$ = new Expr(UNARY_MINUS, $2);
     }
     | T_NOT  expression %prec UNARY_OPS
