@@ -255,7 +255,7 @@ variable_declaration:
                 
                 if($3 != NULL)
                 {
-                    if($3->getKind() == STRING_CONST)
+                    if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
                     {
                         Error::error(Error::INVALID_TYPE_FOR_INITIAL_VALUE, id);
                     }
@@ -277,8 +277,20 @@ variable_declaration:
                 string initial_value = "";
                 if($3 != NULL)
                 {
-                    initial_value = $3->eval_string();
-                    
+                    if($3->getGplType() == INT)
+                    {
+                        ostringstream oss;
+                        oss << $3->eval_int();
+                        initial_value = oss.str();
+                    }
+                    else if($3->getGplType() == DOUBLE)
+                    {
+                        ostringstream oss;
+                        oss << $3->eval_double();
+                        initial_value = oss.str();
+                    }
+                    else
+                        initial_value = $3->eval_string();  
                 }
                 symbol_table->insert(new Symbol(id,initial_value));
             }

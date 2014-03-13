@@ -1,31 +1,5 @@
-Semantic error on line 1: Incorrect type for initial value of variable 'ii'.
-Semantic error on line 2: The array 'iii' was declared with illegal size ''.  Arrays sizes must be integers of 1 or larger.
 Semantic error on line 4: Index value '' is out of bounds for array 'iii'.
 Semantic error on line 7: Index value '0' is out of bounds for array 'iii'.
 Semantic error on line 7: Index value '1' is out of bounds for array 'iii'.
 Semantic error on line 7: Index value '2' is out of bounds for array 'iii'.
-Semantic error on line 7: Index value '0' is out of bounds for array 'iii'.
-Semantic error on line 42: Incorrect type for initial value of variable 'i9'.
-Semantic error on line 43: Incorrect type for initial value of variable 'i10'.
-Semantic error on line 44: Incorrect type for initial value of variable 'i11'.
-Semantic error on line 45: Incorrect type for initial value of variable 'i12'.
-Semantic error on line 49: Incorrect type for initial value of variable 'i15'.
-Semantic error on line 50: Incorrect type for initial value of variable 'i16'.
-Semantic error on line 51: Incorrect type for initial value of variable 'i17'.
-Semantic error on line 52: Incorrect type for initial value of variable 'i18'.
-Semantic error on line 64: Incorrect type for initial value of variable 'i51'.
-Semantic error on line 65: Incorrect type for initial value of variable 'i52'.
-Semantic error on line 66: Incorrect type for initial value of variable 'i53'.
-Semantic error on line 67: Incorrect type for initial value of variable 'i54'.
-Semantic error on line 69: Incorrect type for initial value of variable 'i55'.
-Semantic error on line 70: Incorrect type for initial value of variable 'i56'.
-Semantic error on line 71: Incorrect type for initial value of variable 'i57'.
-Semantic error on line 72: Incorrect type for initial value of variable 'i58'.
-Semantic error on line 74: Incorrect type for initial value of variable 'i59'.
-Semantic error on line 75: Incorrect type for initial value of variable 'i60'.
-Semantic error on line 76: Incorrect type for initial value of variable 'i61'.
-Semantic error on line 77: Incorrect type for initial value of variable 'i62'.
-Semantic error on line 79: Incorrect type for initial value of variable 'i63'.
-Semantic error on line 80: Incorrect type for initial value of variable 'i64'.
-Semantic error on line 81: Incorrect type for initial value of variable 'i65'.
-Semantic error on line 82: Incorrect type for initial value of variable 'i66'.
+Semantic error on line 7: Index value '2' is out of bounds for array 'iii'.
