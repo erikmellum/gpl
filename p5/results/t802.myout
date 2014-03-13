@@ -96,10 +96,10 @@ int var054 1
 int var055 1
 int var056 0
 int var057 0
-int var058 0
+int var058 1
 int var059 1
 int var060 1
-int var061 0
+int var061 1
 int var062 1
 int var063 0
 int var064 1
@@ -109,7 +109,7 @@ int var067 1
 int var068 1
 int var069 1
 int var070 1
-int var071 1
+int var071 0
 int var072 0
 int var073 1
 int var074 1
@@ -208,7 +208,7 @@ int var166 1
 int var167 0
 int var168 1
 int var169 0
-int var170 1
+int var170 0
 int var171 1
 int var172 1
 int var173 0
@@ -237,7 +237,7 @@ int var195 1
 int var196 1
 int var197 1
 int var198 1
-int var199 0
+int var199 1
 int var200 1
 int var201 1
 int var202 0
@@ -291,7 +291,7 @@ int var249 0
 int var250 1
 int var251 1
 int var252 0
-int var253 1
+int var253 0
 int var254 1
 int var255 1
 int var256 1
@@ -312,7 +312,7 @@ int var270 1
 int var271 1
 int var272 1
 int var273 0
-int var274 0
+int var274 1
 int var275 0
 int var276 0
 int var277 1
@@ -328,7 +328,7 @@ int var286 0
 int var287 0
 int var288 1
 int var289 0
-int var290 1
+int var290 0
 int var291 1
 int var292 0
 int var293 1
@@ -490,7 +490,7 @@ int var448 1
 int var449 0
 int var450 1
 int var451 1
-int var452 0
+int var452 1
 int var453 1
 int var454 0
 int var455 1
@@ -518,11 +518,11 @@ int var476 1
 int var477 1
 int var478 0
 int var479 1
-int var480 0
+int var480 1
 int var481 1
 int var482 0
 int var483 1
-int var484 1
+int var484 0
 int var485 0
 int var486 1
 int var487 0
@@ -674,7 +674,7 @@ int var632 1
 int var633 1
 int var634 1
 int var635 0
-int var636 1
+int var636 0
 int var637 1
 int var638 0
 int var639 1
@@ -724,7 +724,7 @@ int var682 1
 int var683 0
 int var684 0
 int var685 0
-int var686 0
+int var686 1
 int var687 0
 int var688 0
 int var689 1
@@ -769,15 +769,15 @@ int var727 1
 int var728 0
 int var729 1
 int var730 1
-int var731 1
+int var731 0
 int var732 1
 int var733 1
-int var734 1
+int var734 0
 int var735 1
 int var736 1
 int var737 0
 int var738 0
-int var739 0
+int var739 1
 int var740 0
 int var741 1
 int var742 1
@@ -823,7 +823,7 @@ int var781 0
 int var782 1
 int var783 1
 int var784 1
-int var785 1
+int var785 0
 int var786 1
 int var787 0
 int var788 1
@@ -881,7 +881,7 @@ int var839 1
 int var840 1
 int var841 1
 int var842 1
-int var843 0
+int var843 1
 int var844 0
 int var845 1
 int var846 0
@@ -893,7 +893,7 @@ int var851 1
 int var852 1
 int var853 0
 int var854 1
-int var855 0
+int var855 1
 int var856 1
 int var857 1
 int var858 1
@@ -902,7 +902,7 @@ int var860 1
 int var861 0
 int var862 1
 int var863 0
-int var864 1
+int var864 0
 int var865 1
 int var866 1
 int var867 1
@@ -944,7 +944,7 @@ int var902 1
 int var903 1
 int var904 1
 int var905 1
-int var906 0
+int var906 1
 int var907 1
 int var908 1
 int var909 0
@@ -1001,7 +1001,7 @@ int var959 0
 int var960 1
 int var961 1
 int var962 1
-int var963 1
+int var963 0
 int var964 1
 int var965 1
 int var966 1

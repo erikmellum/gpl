@@ -567,8 +567,7 @@ variable:
     {
         if($3->getGplType() == INT)
         {
-
-            string name;
+            string name = *$1;
             int i = $3->eval_int();
             stringstream ss;
             ss << name << "[" << i << "]";
@@ -641,19 +640,19 @@ expression:
     }
     | expression T_LESS_EQUAL expression
     {
-            $$ = new Expr(LESS_THAN_EQUAL,$1,$3);
+        $$ = new Expr(LESS_THAN_EQUAL,$1,$3);
     }
     | expression T_GREATER_EQUAL  expression
     {
-            $$ = new Expr(GREATER_THAN_EQUAL,$1,$3);
+        $$ = new Expr(GREATER_THAN_EQUAL,$1,$3);
     }
     | expression T_LESS expression 
     {
-            $$ = new Expr(LESS_THAN,$1,$3);
+        $$ = new Expr(LESS_THAN,$1,$3);
     }
     | expression T_GREATER  expression
     {
-            $$ = new Expr(GREATER_THAN,$1,$3);
+        $$ = new Expr(GREATER_THAN,$1,$3);
     }
     | expression T_EQUAL expression
     {
@@ -720,24 +719,101 @@ expression:
     }
     | expression T_MOD expression
     {
+        if($1->getKind() == STRING_CONST || $1->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_LEFT_OPERAND_TYPE, "%");
+            $$ = new Expr(0);
+        }
+        else if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "%");
+            $$ = new Expr(0);
+        }
+        else
+        {
+            $$ = new Expr(MOD,$1,$3);
+        }
     }
     | T_MINUS  expression %prec UNARY_OPS
     {       
+        if($2->getKind() == STRING_CONST || $2->getGplType() == STRING)
+        {    
+            $$ = new Expr(0);
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "-");
+        }
         $$ = new Expr(UNARY_MINUS, $2);
     }
     | T_NOT  expression %prec UNARY_OPS
     {
-        if($2->getKind() == STRING_CONST)
-        {
-            assert(true);
-            //$$ = new Expression(0);
+        if($2->getKind() == STRING_CONST || $2->getGplType() == STRING)
+        {   
+            $$ = new Expr(0);
+            Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "!");
         }
         else
             $$ = new Expr(NOT, $2);
     }
     | math_operator T_LPAREN expression T_RPAREN
     {
-        $$ = new Expr($1,$3);
+        if($3->getKind() == STRING_CONST || $3->getGplType() == STRING)
+        {
+            if($1 == SIN)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "sin");
+                $$ = new Expr(0);
+            }
+            else if($1 == COS)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "cos");
+                $$ = new Expr(0);
+            }
+            else if($1 == TAN)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "tan");
+                $$ = new Expr(0);
+            }
+            else if($1 == ASIN)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "asin");
+                $$ = new Expr(0);
+            }
+            else if($1 == ACOS)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "acos");
+                $$ = new Expr(0);
+            }
+            else if($1 == ATAN)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "atan");
+                $$ = new Expr(0);
+            }
+            else if($1 == SQRT)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "sqrt");
+                $$ = new Expr(0);
+            }
+            else if($1 == FLOOR)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "floor");
+                $$ = new Expr(0);
+            }
+            else if($1 == RANDOM)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "random");
+                $$ = new Expr(0);
+            }
+            else if($1 == ABS)
+            {
+                Error::error(Error::INVALID_RIGHT_OPERAND_TYPE, "abs");
+                $$ = new Expr(0);
+            }
+            
+           
+        }
+        else
+        {
+            $$ = new Expr($1,$3);
+        }
     }
     | variable geometric_operator variable
     {
