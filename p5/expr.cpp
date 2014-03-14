@@ -270,11 +270,11 @@ int Expr::eval_int()
         {
             if(lhs->getGplType() == INT)
             {
-                return !lhs->eval_int();
+                return lhs->eval_int() ? 0 : 1;
             }
             else if(lhs->getGplType() == DOUBLE)
             {
-                return !lhs->eval_double();
+                return lhs->eval_double() ? 0 : 1;
             }
         }
         else if(operator_type == FLOOR)
@@ -304,10 +304,15 @@ int Expr::eval_int()
         else
             return variable_value->eval()->getInt();
     }
+    return 0;
 }
 double Expr::eval_double()
 {
-    if(kind == BINARY_OP)
+    if(gpl_type == INT)
+    {
+        return eval_int();
+    }
+    else if(kind == BINARY_OP)
     {
         if(operator_type == MULTIPLY)
         {            
@@ -395,19 +400,14 @@ double Expr::eval_double()
     }
     else if(kind == DOUBLE_CONST)
         return double_value;
-    else if(kind == INT_CONST)
-        return int_value;
     else if(kind == VARIABLE)
     {
-        if(gpl_type == INT)
-        {
-            return variable_value->eval()->getInt();
-        }
-        else if(gpl_type == DOUBLE)
+        if(gpl_type == DOUBLE)
         {
             return variable_value->eval()->getDouble();
         }
     }
+    return 0;
 }
 string Expr::eval_string()
 {

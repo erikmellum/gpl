@@ -24,8 +24,5 @@ double w = 23;
 double x = 24;
 double y = 25;
 double z = 26;
-double var013 = t / w >= l && s;
-
-
-
+double var002 = d / e && s + r == b * n + c - y <= g && x - k;
 
