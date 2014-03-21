@@ -316,47 +316,19 @@ double Expr::eval_double()
     {
         if(operator_type == MULTIPLY)
         {            
-            if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
-                return (lhs->eval_int() * rhs->eval_int());
-            }
-            else
-            {
-                return (lhs->eval_double() * rhs->eval_double());
-            }
+            return (lhs->eval_double() * rhs->eval_double());
         }
         else if(operator_type == DIVIDE)
         {
-            if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
-                return (lhs->eval_int() / rhs->eval_int());
-            }
-            else
-            {
-                return (lhs->eval_double() / rhs->eval_double());
-            }
+            return (lhs->eval_double() / rhs->eval_double());
         }
         else if(operator_type == PLUS)
         {
-            if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
-                return (lhs->eval_int() + rhs->eval_int());
-            }
-            else
-            {
-                return (lhs->eval_double() + rhs->eval_double());
-            }
+            return (lhs->eval_double() + rhs->eval_double());
         }
         else if(operator_type == MINUS)
         {
-            if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
-                return (lhs->eval_int() - rhs->eval_int());
-            }
-            else
-            {
-                return (lhs->eval_double() - rhs->eval_double());
-            }
+            return (lhs->eval_double() - rhs->eval_double());
         }    
     }
     else if(kind == UNARY_OP)
@@ -399,13 +371,12 @@ double Expr::eval_double()
         }
     }
     else if(kind == DOUBLE_CONST)
+    {
         return double_value;
+    }
     else if(kind == VARIABLE)
     {
-        if(gpl_type == DOUBLE)
-        {
-            return variable_value->eval()->getDouble();
-        }
+        return variable_value->eval()->getDouble();
     }
     return 0;
 }
