@@ -35,7 +35,7 @@ extern int line_count;      // the current line in the input; from array.l
 #include "expr.h"
 #include "animation_block.h"
 using namespace std;
-
+Game_object *cur_object_under_construction;
 Symbol_table *symbol_table = Symbol_table::instance();
 // use this global variable to store all the values in the array
 // add vectors here for additional types
@@ -176,7 +176,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %type <union_expression_kind> primary_expression
 %type <union_expression_kind> optional_initializer
 %type <union_operator_type> math_operator
-%type <union_game_object> object_type
+%type <union_int> object_type
 %type <union_animation_block> animation_block
 // Grammar symbols that have values associated with them need to be
 // declared here.  The above union is used for the "ruturning" the value.
@@ -385,54 +385,95 @@ optional_initializer:
 
 //---------------------------------------------------------------------
 object_declaration:
-    object_type T_ID T_LPAREN parameter_list_or_empty T_RPAREN
+    object_type T_ID
     {
         string id = *$2;
-        
-        if($1->type() == "Triangle")
+        switch($1)
         {
-            symbol_table->insert(new Symbol(id, $1));
+            case T_TRIANGLE:
+                cur_object_under_construction = new Triangle();
+                break;
+            case T_PIXMAP:
+                cur_object_under_construction = new Pixmap();
+                break;
+            case T_CIRCLE:
+                cur_object_under_construction = new Circle();
+                break;
+            case T_RECTANGLE:
+                cur_object_under_construction = new Rectangle();
+                break;
+            case T_TEXTBOX:
+                cur_object_under_construction = new Textbox();
+                break;
         }
-        else if($1->type() == "Pixmap")
-        {
-            symbol_table->insert(new Symbol(id, $1));
-        }
-        else if($1->type() == "Circle")
-        {
-            symbol_table->insert(new Symbol(id, $1));
-        }
-        else if($1->type() == "Rectangle")
-        {
-            symbol_table->insert(new Symbol(id, $1));
-        }
-        else if($1->type() == "Textbox")
-        {
-            symbol_table->insert(new Symbol(id, $1));
-        }
+        symbol_table->insert(new Symbol(id, $1));
+    } 
+    T_LPAREN parameter_list_or_empty T_RPAREN
+    {
         
     }
     | object_type T_ID T_LBRACKET expression T_RBRACKET
     {
         string id = *$2;
-        if($1->type() == "Triangle")
+        if($4->getGplType() == STRING || $4->getGplType() == DOUBLE)
         {
-            symbol_table->insert(new Symbol(id, $1));
+            Error::error(Error::INVALID_ARRAY_SIZE,*$2,$4->eval_string());
         }
-        else if($1->type() == "Pixmap")
+        else if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
-            symbol_table->insert(new Symbol(id, $1));
+            if($4->eval_int() == 0)
+            {
+                Error::error(Error::INVALID_ARRAY_SIZE,*$2,$4->eval_string());
+            }
+            if($1 == T_TRIANGLE)
+            {
+                for(int i = 0; i < $4->eval_int(); i++)
+                {
+                    stringstream ss;
+                    ss << id << "[" << i << "]";
+                    symbol_table->insert(new Symbol(ss.str(),new Triangle()));
+                }
+            }
+            else if($1 == T_PIXMAP)
+            {
+                for(int i = 0; i < $4->eval_int(); i++)
+                {
+                    stringstream ss;
+                    ss << id << "[" << i << "]";
+                    symbol_table->insert(new Symbol(ss.str(),new Pixmap()));
+                }
+            }
+            else if($1 == T_CIRCLE)
+            {
+                for(int i = 0; i < $4->eval_int(); i++)
+                {
+                    stringstream ss;
+                    ss << id << "[" << i << "]";
+                    symbol_table->insert(new Symbol(ss.str(),new Circle()));
+                }
+            }
+            else if($1 == T_RECTANGLE)
+            {
+                for(int i = 0; i < $4->eval_int(); i++)
+                {
+                    stringstream ss;
+                    ss << id << "[" << i << "]";
+                    symbol_table->insert(new Symbol(ss.str(),new Rectangle()));
+                }
+            }
+            else if($1 == T_TEXTBOX)
+            {
+                for(int i = 0; i < $4->eval_int(); i++)
+                {
+                    stringstream ss;
+                    ss << id << "[" << i << "]";
+                    symbol_table->insert(new Symbol(ss.str(),new Textbox()));
+                }
+            }
         }
-        else if($1->type() == "Circle")
+        else
         {
-            symbol_table->insert(new Symbol(id, $1));
-        }
-        else if($1->type() == "Rectangle")
-        {
-            symbol_table->insert(new Symbol(id, $1));
-        }
-        else if($1->type() == "Textbox")
-        {
-            symbol_table->insert(new Symbol(id, $1));
+            Error::error(Error::PREVIOUSLY_DECLARED_VARIABLE, id);
         }
     }
     ;
@@ -441,23 +482,23 @@ object_declaration:
 object_type:
     T_TRIANGLE
     {
-        $$ = new Triangle();
+        $$ = T_TRIANGLE;
     }
     | T_PIXMAP
     {
-        $$ = new Pixmap();
+        $$ = T_PIXMAP;
     }
     | T_CIRCLE
     {
-        $$ = new Circle();
+        $$ = T_CIRCLE;
     }
     | T_RECTANGLE
     {
-        $$ = new Rectangle();
+        $$ = T_RECTANGLE;
     }
     | T_TEXTBOX
     {
-        $$ = new Textbox();
+        $$ = T_TEXTBOX;
     }
     ;
 

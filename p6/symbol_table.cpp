@@ -42,56 +42,48 @@ bool Symbol_table::lookup(string name)
     // returns false if symbol not in the map
     return false;
 }
-Symbol* Symbol_table::get(string name, int newValue)
+bool Symbol_table::get(string name, int &value)
 {
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setInt(newValue);
-    }
-    return symbol_table.at(name);
+   Symbol *cur = retrieve(name);
+   if (!cur || !cur->getType() == INT)
+      return false;
+
+   value = cur->getInt();
+   return true;
 }
-Symbol* Symbol_table::get(string name, double newValue)
+bool Symbol_table::get(string name, double &value)
 {
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setDouble(newValue);
-    }
-    return symbol_table.at(name);
+   Symbol *cur = retrieve(name);
+   if (!cur || !cur->getType() == DOUBLE)
+      return false;
+
+   value = cur->getDouble();
+   return true;
 }
-Symbol* Symbol_table::get(string name, string newValue)
+bool Symbol_table::get(string name, string &value)
 {
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setString(newValue);
-    }
-    return symbol_table.at(name);
+   Symbol *cur = retrieve(name);
+   if (!cur || !cur->getType() == STRING)
+      return false;
+
+   value = cur->getString();
+   return true;
 }
-void Symbol_table::set(string name, int newValue)
+bool Symbol_table::get_type(string name, Gpl_type &type)
 {
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setInt(newValue);
-    }
+   Symbol *cur = retrieve(name);
+   if (!cur)
+      return false;
+
+   type = cur->getType();
+   return true;
 }
-void Symbol_table::set(string name, double newValue)
+bool Symbol_table::set(string name, int value)
 {
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setDouble(newValue);
-    }
-}
-void Symbol_table::set(string name, string newValue)
-{
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setString(newValue);
-    }
-}
-Gpl_type Symbol_table::get_type(string name, Gpl_type type)
-{
-    if(symbol_table.at(name))
-    {
-        symbol_table.at(name)->setType(type);
-    }
-    return symbol_table.at(name)->getType();
+    Symbol *cur = retrieve(name);
+    if (!cur || !cur->getType() == INT)
+      return false;
+
+    cur->setInt(value);
+    return true;
 }
