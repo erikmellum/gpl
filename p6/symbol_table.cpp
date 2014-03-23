@@ -42,3 +42,56 @@ bool Symbol_table::lookup(string name)
     // returns false if symbol not in the map
     return false;
 }
+Symbol* Symbol_table::get(string name, int newValue)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setInt(newValue);
+    }
+    return symbol_table.at(name);
+}
+Symbol* Symbol_table::get(string name, double newValue)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setDouble(newValue);
+    }
+    return symbol_table.at(name);
+}
+Symbol* Symbol_table::get(string name, string newValue)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setString(newValue);
+    }
+    return symbol_table.at(name);
+}
+void Symbol_table::set(string name, int newValue)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setInt(newValue);
+    }
+}
+void Symbol_table::set(string name, double newValue)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setDouble(newValue);
+    }
+}
+void Symbol_table::set(string name, string newValue)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setString(newValue);
+    }
+}
+Gpl_type Symbol_table::get_type(string name, Gpl_type type)
+{
+    if(symbol_table.at(name))
+    {
+        symbol_table.at(name)->setType(type);
+    }
+    return symbol_table.at(name)->getType();
+}
