@@ -87,3 +87,25 @@ bool Symbol_table::set(string name, int value)
     cur->setInt(value);
     return true;
 }
+string gpl_type_to_string(Gpl_type myType)
+{
+    switch(myType)
+    {
+        case INT:
+            return "int";
+            break;
+        case DOUBLE:
+            return "double";
+            break;
+        case STRING:
+            return "string";
+            break;
+        case GAME_OBJECT:
+            return "game_object";
+            break;
+        case ANIMATION_BLOCK:
+            return "animation_block";
+            break;
+    }
+    return "";
+}

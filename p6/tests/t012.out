@@ -1,0 +1,456 @@
+gpl.cpp::main()
+  input file(tests/t012.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(false)
+  dump_pixels(true, file = results/t012.mypixels)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+game_object r1
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(200),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(240),
+    x = int(0),
+    y = int(0)
+  }
+game_object r2
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(100),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(120),
+    x = int(240),
+    y = int(200)
+  }
+game_object r3
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(50),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(60),
+    x = int(360),
+    y = int(300)
+  }
+game_object r4
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(25),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(30),
+    x = int(420),
+    y = int(350)
+  }
+game_object r5
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(12),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(15),
+    x = int(450),
+    y = int(375)
+  }
+game_object r6
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(6),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(7),
+    x = int(465),
+    y = int(387)
+  }
+game_object r7
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(3),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(3),
+    x = int(472),
+    y = int(393)
+  }
+string window_title "p6 t012.gpl -- compare to t012.jpg"
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+
+Printing the symbol table from signal_handler()
+game_object r1
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(200),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(240),
+    x = int(0),
+    y = int(0)
+  }
+game_object r2
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(100),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(120),
+    x = int(240),
+    y = int(200)
+  }
+game_object r3
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(50),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(60),
+    x = int(360),
+    y = int(300)
+  }
+game_object r4
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(25),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(30),
+    x = int(420),
+    y = int(350)
+  }
+game_object r5
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(12),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(15),
+    x = int(450),
+    y = int(375)
+  }
+game_object r6
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(6),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(7),
+    x = int(465),
+    y = int(387)
+  }
+game_object r7
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(3),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(3),
+    x = int(472),
+    y = int(393)
+  }
+string window_title "p6 t012.gpl -- compare to t012.jpg"

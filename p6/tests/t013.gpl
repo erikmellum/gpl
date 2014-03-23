@@ -1,0 +1,9 @@
+string window_title = "p6 t013.gpl -- compare to t013.jpg";
+
+circle c1(x = 40, y = 40, radius = 50);
+circle c2(x = c1.x + c1.radius * 6, y = c1.y, radius = c1.radius);
+circle c3(x = c1.x + (c2.x - c1.x)/2,
+          y = c2.x + c2.radius/2, radius = c2.radius);
+
+triangle t(x = c1.x, y = c1.y, size = c2.x - c1.x + 2 * c1.radius);
+

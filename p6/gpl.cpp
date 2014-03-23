@@ -34,7 +34,7 @@
 #include "window.h"
 #endif
 #include "gpl_assert.h"
-
+#include "gpl_type.h"
 #include <iostream>
 #include <signal.h>
 #include <fstream>

@@ -1,0 +1,5 @@
+string window_title = "p6 t004.gpl -- compare to t004.jpg";
+
+rectangle my_rectangle(x = 42, y = 2, h = 100, w = 200, green = 1.0);
+
+int x = my_rectangle.x * my_rectangle.y;

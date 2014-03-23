@@ -1,0 +1,30 @@
+string window_title = "p6 t015.gpl -- compare to t015.jpg";
+int window_width = 600;
+int window_height = 600;
+
+rectangle r1(x = 300, y = 300, w = 10, h = 10,
+             red = 0.5, green = 1.0, blue = 1.0);
+
+rectangle r2(x = r1.x - r1.w/2, y = r1.y - r1.h/2, w = r1.w*2, h = r1.h*2,
+             red = r1.red, green = r1.green*.9, blue = r1.blue*.8,
+             rotation = 30);
+
+rectangle r3(x = r2.x - r2.w/2, y = r2.y - r2.h/2, w = r2.w*2, h = r2.h*2,
+             red = r2.red, green = r2.green*.9, blue = r2.blue*.8,
+             rotation = r2.rotation*2);
+
+rectangle r4(x = r3.x - r3.w/2, y = r3.y - r3.h/2, w = r3.w*2, h = r3.h*2,
+             red = r3.red, green = r3.green*.9, blue = r3.blue*.8,
+             rotation = r2.rotation*3);
+
+rectangle r5(x = r4.x - r4.w/2, y = r4.y - r4.h/2, w = r4.w*2, h = r4.h*2,
+             red = r4.red, green = r4.green*.9, blue = r4.blue*.8,
+             rotation = r2.rotation*4);
+
+rectangle r6(x = r5.x - r5.w/2, y = r5.y - r5.h/2, w = r5.w*2, h = r5.h*2,
+             red = r5.red, green = r5.green*.9, blue = r5.blue*.8,
+             rotation = r2.rotation*5);
+
+rectangle r7(x = r6.x - r6.w/2, y = r6.y - r6.h/2, w = r6.w*2, h = r6.h*2,
+             red = r6.red, green = r6.green*.9, blue = r6.blue*.8,
+             rotation = r2.rotation*6);

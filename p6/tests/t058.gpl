@@ -1,0 +1,3 @@
+int i;
+
+double d = i.x;

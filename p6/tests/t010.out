@@ -1,0 +1,150 @@
+gpl.cpp::main()
+  input file(tests/t010.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(false)
+  dump_pixels(true, file = results/t010.mypixels)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+game_object aho
+  Pixmap
+  {
+    animation_block = animation_block(0),
+    blue = double(0.5),
+    drawing_order = int(0),
+    filename = string("tests/aho.bmp"),
+    green = double(0.5),
+    h = int(10),
+    proximity = int(4),
+    red = double(0.5),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(100),
+    y = int(200)
+  }
+game_object title
+  Textbox
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(11),
+    proximity = int(4),
+    red = double(0),
+    size = double(0.1),
+    space = int(10),
+    text = string("Al Aho (the author of the book)"),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(10),
+    y = int(10)
+  }
+string window_title "p6 t010.gpl -- compare to t010.jpg"
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+
+Printing the symbol table from signal_handler()
+game_object aho
+  Pixmap
+  {
+    animation_block = animation_block(0),
+    blue = double(0.5),
+    drawing_order = int(0),
+    filename = string("tests/aho.bmp"),
+    green = double(0.5),
+    h = int(248),
+    proximity = int(4),
+    red = double(0.5),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(168),
+    x = int(100),
+    y = int(200)
+  }
+game_object title
+  Textbox
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(11),
+    proximity = int(4),
+    red = double(0),
+    size = double(0.1),
+    space = int(10),
+    text = string("Al Aho (the author of the book)"),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(247),
+    x = int(10),
+    y = int(10)
+  }
+string window_title "p6 t010.gpl -- compare to t010.jpg"

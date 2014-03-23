@@ -2037,7 +2037,7 @@ yyreduce:
                 cur_object_under_construction = new Textbox();
                 break;
         }
-        symbol_table->insert(new Symbol(id, (yyvsp[(1) - (2)].union_int)));
+        symbol_table->insert(new Symbol(id, cur_object_under_construction));
     }
     break;
 

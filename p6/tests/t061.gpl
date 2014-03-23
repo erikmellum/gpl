@@ -1,0 +1,2 @@
+int window_width = 42;
+string window_height = "window_height must be of type int";

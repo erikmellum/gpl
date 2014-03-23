@@ -1,0 +1,9 @@
+string window_title = "p6 t012.gpl -- compare to t012.jpg";
+
+rectangle r1(x = 0, y = 0, w = 240, h = 200);
+rectangle r2(x = r1.x + r1.w, y = r1.y + r1.h, w = r1.w/2, h = r1.h/2);
+rectangle r3(x = r2.x + r2.w, y = r2.y + r2.h, w = r2.w/2, h = r2.h/2);
+rectangle r4(x = r3.x + r3.w, y = r3.y + r3.h, w = r3.w/2, h = r3.h/2);
+rectangle r5(x = r4.x + r4.w, y = r4.y + r4.h, w = r4.w/2, h = r4.h/2);
+rectangle r6(x = r5.x + r5.w, y = r5.y + r5.h, w = r5.w/2, h = r5.h/2);
+rectangle r7(x = r6.x + r6.w, y = r6.y + r6.h, w = r6.w/2, h = r6.h/2);

@@ -406,7 +406,7 @@ object_declaration:
                 cur_object_under_construction = new Textbox();
                 break;
         }
-        symbol_table->insert(new Symbol(id, $1));
+        symbol_table->insert(new Symbol(id, cur_object_under_construction));
     } 
     T_LPAREN parameter_list_or_empty T_RPAREN
     {

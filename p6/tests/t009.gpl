@@ -1,0 +1,5 @@
+string window_title = "p6 t009.gpl -- compare to t009.jpg";
+
+textbox text1(x = 100, y = 100, text = 42, size = 0.1);
+textbox text2(x = 200, y = 100, text = 42.2, size = 0.2);
+textbox text3(x = 300, y = 100, text = "forty-two", size = 0.3);

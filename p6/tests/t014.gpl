@@ -1,0 +1,38 @@
+string window_title = "p6 t014.gpl -- compare to t014.jpg";
+int window_width = 800;
+int window_height = 200;
+
+
+triangle t1(x = 0, y = 0, size = 80, skew = 2, 
+            red = 0.0, green = 0.0, blue = 0.0);
+
+triangle t2(x = t1.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t1.red+0.1, green = t1.green+0.1, blue = t1.blue+0.1);
+
+triangle t3(x = t2.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t2.red+0.1, green = t2.green+0.1, blue = t2.blue+0.1);
+
+triangle t4(x = t3.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t3.red+0.1, green = t3.green+0.1, blue = t3.blue+0.1);
+
+triangle t5(x = t4.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t4.red+0.1, green = t4.green+0.1, blue = t4.blue+0.1);
+
+triangle t6(x = t5.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t5.red+0.1, green = t5.green+0.1, blue = t5.blue+0.1);
+
+triangle t7(x = t6.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t6.red+0.1, green = t6.green+0.1, blue = t6.blue+0.1);
+
+triangle t8(x = t7.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t7.red+0.1, green = t7.green+0.1, blue = t7.blue+0.1);
+
+triangle t9(x = t8.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t8.red+0.1, green = t8.green+0.1, blue = t8.blue+0.1);
+
+triangle t10(x = t9.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t9.red+0.1, green = t9.green+0.1, blue = t9.blue+0.1);
+
+triangle t11(x = t10.x + t1.size, y = 0, size = t1.size, skew = t1.skew, 
+            red = t10.red+0.1, green = t10.green+0.1, blue = t10.blue+0.1);
+

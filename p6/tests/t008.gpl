@@ -1,0 +1,12 @@
+string window_title = "p6 t008.gpl -- compare to t008.jpg";
+
+circle c00(x = floor(100 * cos(00)) + 200, y = floor(100 * sin(00)));
+circle c01(x = floor(100 * cos(20)) + 200, y = floor(100 * sin(20)));
+circle c02(x = floor(100 * cos(40)) + 200, y = floor(100 * sin(40)));
+circle c03(x = floor(100 * cos(60)) + 200, y = floor(100 * sin(60)));
+circle c04(x = floor(100 * cos(80)) + 200, y = floor(100 * sin(80)));
+circle c05(x = floor(100 * cos(100)) + 200, y = floor(100 * sin(100)));
+circle c06(x = floor(100 * cos(120)) + 200, y = floor(100 * sin(120)));
+circle c07(x = floor(100 * cos(140)) + 200, y = floor(100 * sin(140)));
+circle c08(x = floor(100 * cos(160)) + 200, y = floor(100 * sin(160)));
+circle c10(x = floor(100 * cos(180)) + 200, y = floor(100 * sin(180)));

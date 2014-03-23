@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+# this script assumes that the tests (t001.gpl, t001.out, t002.err, etc) live
+# in the directory ./tests (where . is the directory containing the executable)
+# you can change this so that the tests are in the current directory by
+# changing the following line to:  test_dir=.
+test_dir=tests
+
+# this script puts the results in the directory ./results
+# you can modify this script so results are put in the current directory by
+# changing the following line to:  result_dir=.
+result_dir=results
+
+passed=0
+failed=0
+
+#NOTE: I always seed the random number generator at 42 so the random 
+# operator will always return the same value
+
+# create the results directory if it does not exist 
+#  (mkdir does nothing if it already exists.  the error will be ignored)
+mkdir $result_dir 2>/dev/null
+
+for gpl_test_file in $test_dir/t[0-9][0-9][0-9].gpl ; do
+    test_name=${gpl_test_file%.gpl}
+    test_name=${test_name##*/}
+
+
+    if [ -f $test_dir/$test_name.jpg ] ; then
+      # create an empty pixels file
+      echo "no pixel file created" > $result_dir/$test_name.mypixels
+      dump_pixel_flag="-dump_pixels $result_dir/$test_name.mypixels"
+    else
+      dump_pixel_flag=""
+    fi
+
+    if [ -f $test_dir/$test_name.keypresses ] ; then
+        ./gpl -stdin -s 42 $dump_pixel_flag $gpl_test_file < $test_dir/$test_name.keypresses > $result_dir/$test_name.myout 2> $result_dir/$test_name.myerr_raw
+    else 
+        ./gpl -s 42 $dump_pixel_flag $gpl_test_file > $result_dir/$test_name.myout 2> $result_dir/$test_name.myerr_raw
+    fi
+
+    # get rid of damn openGL warnings
+   sed '/freeglut.*/, /This may hurt.*/ d' < $result_dir/$test_name.myerr_raw | sed '/unknown.*/ d' > $result_dir/$test_name.myerr
+
+    rm $result_dir/$test_name.myerr_raw
+
+    if diff $result_dir/$test_name.myout $test_dir/$test_name.out >& /dev/null &&
+       diff $result_dir/$test_name.myerr $test_dir/$test_name.err >& /dev/null &&
+       ( [ ! -f $test_dir/$test_name.jpg ] || diff $result_dir/$test_name.mypixels $test_dir/$test_name.pixels >& /dev/null )
+    then 
+        (( passed++ ))
+        echo "Passed $test_name"
+    else
+        if diff $result_dir/$test_name.myout $test_dir/$test_name.out >& /dev/null ; then
+          out=""
+        else 
+          out="<stdout incorrect>"
+        fi
+        if diff $result_dir/$test_name.myerr $test_dir/$test_name.err >& /dev/null ; then
+          err=""
+        else 
+          err="<stderr incorrect>"
+        fi
+        if ( [ ! -f $test_dir/$test_name.jpg ] || diff $result_dir/$test_name.mypixels $test_dir/$test_name.pixels >& /dev/null ) ; then
+          pixels=""
+        else 
+          pixels="<pixels incorrect>"
+        fi
+        echo "Failed $test_name: $out $err $pixels"
+        (( failed++ ))
+         diff $result_dir/$test_name.mypixels $test_dir/$test_name.out >& /dev/null 
+    fi        
+
+done
+
+
+total=$passed
+(( total += failed ))
+echo "Passed $passed out of $total tests."
+echo "Failed $failed out of $total tests."

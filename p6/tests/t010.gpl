@@ -1,0 +1,5 @@
+string window_title = "p6 t010.gpl -- compare to t010.jpg";
+
+pixmap aho(x = 100, y = 200, filename = "tests/aho.bmp");
+
+textbox title(x = 10, y = 10, text = "Al Aho (the author of the book)");

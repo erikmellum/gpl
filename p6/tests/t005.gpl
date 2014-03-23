@@ -1,0 +1,5 @@
+string window_title = "p6 t005.gpl -- compare to t005.jpg";
+
+triangle t[3];
+
+int sum = t[0].x + t[1].x + t[2].x;

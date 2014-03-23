@@ -1,0 +1,3 @@
+int bounce;
+
+forward animation bounce(rectangle cur_rect);

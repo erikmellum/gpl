@@ -1,0 +1,4 @@
+string window_title = "p6 t003.gpl -- compare to t003.jpg";
+forward animation bounce(rectangle cur_rectangle);
+
+rectangle my_rectangle(animation_block = bounce);

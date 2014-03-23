@@ -1,0 +1,1 @@
+rectangle r(bad_member = 100);

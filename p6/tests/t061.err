@@ -1,0 +1,1 @@
+Semantic error on line 3: Incorrect type for reserved variable 'window_height'  It was declared with type 'string'.  It must be of type 'int'.

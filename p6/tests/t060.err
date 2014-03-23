@@ -1,0 +1,1 @@
+Semantic error on line 10: The type of object 'my_circle' does not match the type of the parameter to the animation block 'rectangle_bounce'

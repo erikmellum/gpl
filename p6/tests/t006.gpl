@@ -1,0 +1,5 @@
+string window_title = "p6 t006.gpl -- compare to t006.jpg";
+
+rectangle my_rectangles[10];
+
+int x = my_rectangles[4].w + my_rectangles[4].h;

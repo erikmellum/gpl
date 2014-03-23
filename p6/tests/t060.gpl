@@ -1,0 +1,10 @@
+// The type of the object (circle in this example) does not match
+// the type of the parameter to the animation block (rectangle in this example).
+// The error is: Error:: TYPE_MISMATCH_BETWEEN_ANIMATION_BLOCK_AND_OBJECT
+// This error is found in the rule:
+// parameter: T_ID T_ASSIGN expression
+// when the type of the expression is ANIMATION_BLOCK
+
+forward animation rectangle_bounce(rectangle cur_rectangle);
+
+circle my_circle(animation_block = rectangle_bounce);
