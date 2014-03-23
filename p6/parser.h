@@ -25,6 +25,11 @@
 #include "gpl_type.h"
 #include "symbol.h"
 #include "game_object.h"
+#include "triangle.h"
+#include "rectangle.h"
+#include "circle.h"
+#include "textbox.h"
+#include "pixmap.h"
 #include "symbol_table.h"
 #include <string>
 #include "expr.h"

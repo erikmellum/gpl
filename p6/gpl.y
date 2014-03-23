@@ -67,8 +67,8 @@ Symbol_table *symbol_table = Symbol_table::instance();
  Operator_type   union_operator_type;
  Expr            *union_expression_kind;
  Variable        *union_variable_type;
- Game_object     union_game_object;
- Animation_block union_animation_block;
+ Game_object     *union_game_object;
+ Animation_block *union_animation_block;
 }
 
 %token T_INT
@@ -388,49 +388,51 @@ object_declaration:
     object_type T_ID T_LPAREN parameter_list_or_empty T_RPAREN
     {
         string id = *$2;
-        if($1 == TRIANGLE)
+        
+        if($1->type() == "Triangle")
         {
-            symbol_table->insert(new Symbol(id, new Triangle()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == PIXMAP)
+        else if($1->type() == "Pixmap")
         {
-            symbol_table->insert(new Symbol(id, new Pixmap()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == CIRCLE)
+        else if($1->type() == "Circle")
         {
-            symbol_table->insert(new Symbol(id, new Circle()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == RECTANGLE)
+        else if($1->type() == "Rectangle")
         {
-            symbol_table->insert(new Symbol(id, new Rectangle()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == TEXTBOX)
+        else if($1->type() == "Textbox")
         {
-            symbol_table->insert(new Symbol(id, new Textbox()));
+            symbol_table->insert(new Symbol(id, $1));
         }
+        
     }
     | object_type T_ID T_LBRACKET expression T_RBRACKET
     {
         string id = *$2;
-        if($1 == TRIANGLE)
+        if($1->type() == "Triangle")
         {
-            symbol_table->insert(new Symbol(id, new Triangle()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == PIXMAP)
+        else if($1->type() == "Pixmap")
         {
-            symbol_table->insert(new Symbol(id, new Pixmap()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == CIRCLE)
+        else if($1->type() == "Circle")
         {
-            symbol_table->insert(new Symbol(id, new Circle()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == RECTANGLE)
+        else if($1->type() == "Rectangle")
         {
-            symbol_table->insert(new Symbol(id, new Rectangle()));
+            symbol_table->insert(new Symbol(id, $1));
         }
-        else if($1 == TEXTBOX)
+        else if($1->type() == "Textbox")
         {
-            symbol_table->insert(new Symbol(id, new Textbox()));
+            symbol_table->insert(new Symbol(id, $1));
         }
     }
     ;
@@ -439,23 +441,23 @@ object_declaration:
 object_type:
     T_TRIANGLE
     {
-        $$ = TRIANGLE;
+        $$ = new Triangle();
     }
     | T_PIXMAP
     {
-        $$ = PIXMAP;
+        $$ = new Pixmap();
     }
     | T_CIRCLE
     {
-        $$ = CIRCLE;
+        $$ = new Circle();
     }
     | T_RECTANGLE
     {
-        $$ = RECTANGLE;
+        $$ = new Rectangle();
     }
     | T_TEXTBOX
     {
-        $$ = TEXTBOX;
+        $$ = new Textbox();
     }
     ;
 
@@ -502,6 +504,9 @@ initialization_block:
 //---------------------------------------------------------------------
 animation_block:
     T_ANIMATION T_ID T_LPAREN check_animation_parameter T_RPAREN T_LBRACE { } statement_list T_RBRACE end_of_statement_block
+    {
+        //$$ = new Animation_block();
+    }
     ;
 
 //---------------------------------------------------------------------

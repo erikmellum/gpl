@@ -32,8 +32,8 @@ class Expr
         int eval_int();
         double eval_double();
         string eval_string();
-        Game_object eval_game_object();
-        Animation_block eval_animation_block();
+        Game_object* eval_game_object();
+        Animation_block* eval_animation_block();
         Gpl_type getGplType();
         Operator_type getOperatorType();
         Kind getKind();

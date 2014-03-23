@@ -1,0 +1,19 @@
+gpl: game_object.o gpl_type.o animation_block.o indent.o gpl_assert.o symbol.o
+	g++ -o gpl game_object.o gpl_type.o animation_block.o indent.o gpl_assert.o symbol.o
+
+game_object.o: game_object.cpp
+	g++ -c game_object.cpp
+
+animation_block.o: animation_block.cpp
+	g++ -c animation_block.cpp
+
+gpl_type.o: gpl_type.cpp
+	g++ -c gpl_type.cpp
+
+indent.o: indent.cpp
+	g++ -c indent.cpp
+
+gpl_assert.o: gpl_assert.cpp
+	g++ -c gpl_assert.cpp
+
+symbol.o: symbol.cpp

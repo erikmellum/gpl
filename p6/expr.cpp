@@ -435,23 +435,23 @@ string Expr::eval_string()
     }
     return "";
 }
-Game_object Expr::eval_game_object()
+Game_object* Expr::eval_game_object()
 {
     if(kind == VARIABLE)
     {
         if(gpl_type == GAME_OBJECT)
         {
-            return(*variable_value->eval()->getGameObject())
+            return(variable_value->eval()->getGameObject())
         }
     }
 }
-Animation_block Expr::eval_animation_block()
+Animation_block* Expr::eval_animation_block()
 {
     if(kind == VARIABLE)
     {
         if(gpl_type == ANIMATION_BLOCK)
         {
-            return(*variable_value->eval()->getAnimationBlock()) 
+            return(variable_value->eval()->getAnimationBlock()) 
         }
     }
 }

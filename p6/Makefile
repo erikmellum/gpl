@@ -42,9 +42,9 @@ LIBS = -lX11 -lglut -lGL -lGLU -lm -lfl
 # list, and also put a .o version in the C++OBJ list
 # Use a \ at the end of the line to continue on next line
 
-C++SRC = error.cpp gpl_assert.cpp gpl.cpp indent.cpp symbol.cpp symbol_table.cpp expr.cpp variable.cpp game_object.cpp animation_block.cpp
+C++SRC = error.cpp gpl_assert.cpp gpl.cpp indent.cpp symbol.cpp symbol_table.cpp expr.cpp variable.cpp game_object.cpp animation_block.cpp triangle.cpp rectangle.cpp textbox.cpp circle.cpp pixmap.cpp window.cpp statement_block.cpp event_manager.cpp
 	 
-C++OBJ = error.o gpl_assert.o gpl.o indent.o symbol.o symbol_table.o expr.o variable.o game_object.o animation_block.o
+C++OBJ = error.o gpl_assert.o gpl.o indent.o symbol.o symbol_table.o expr.o variable.o game_object.o animation_block.o triangle.o rectangle.o textbox.o circle.o pixmap.o window.o statement_block.o event_manager.o
 
 # command to compile the gpl executable
 gpl: y.tab.o lex.yy.o $(C++OBJ)

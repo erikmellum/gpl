@@ -72,19 +72,19 @@ void Symbol::setDouble(double newDouble)
 }
 Game_object* Symbol::getGameObject()
 {
-    return Game_object_value;
+    return game_object_value;
 }
 void Symbol::setGameObject(Game_object* newGameObject)
 {
-    Game_object_value = newGameObject;
+    game_object_value = newGameObject;
 }
 Animation_block* Symbol::getAnimationBlock()
 {
-    return Animation_block_value;
+    return animation_block_value;
 }
 void Symbol::setAnimationBlock(Animation_block* newAnimationBlock)
 {
-    Animation_block_value = newAnimationBlock;
+    animation_block_value = newAnimationBlock;
 }
 void Symbol::print(ostream &out)
 {
@@ -92,22 +92,21 @@ void Symbol::print(ostream &out)
     {
         case INT:
             out << "int" << " " << name << " " << int_value;
-        break;
+            break;
         case DOUBLE:
             out << "double" << " " << name << " " << double_value;
-        break;
+            break;
         case STRING:
             out << "string" << " " << name << " \"" << string_value << "\"";
-        break;
-        
-        case Game_object:
+            break;
+        case GAME_OBJECT:
             cerr << "Not ready..." << endl;
             out << "game object" << " " << name << " " << *game_object_value;
-        break;
-        case Animation_block:
+            break;
+        case ANIMATION_BLOCK:
             cerr << "Not ready..." << endl;
             out << "animation block" << " " << name << " " << *animation_block_value;
-        break;
+            break;
     }
     out << endl;
 }

@@ -24,10 +24,12 @@
 // of "string"
 #include "gpl_type.h"
 #include "symbol.h"
+#include "game_object.h"
 #include "symbol_table.h"
 #include <string>
 #include "expr.h"
 #include "variable.h"
 #include "y.tab.h"
+#include "animation_block.h"
 
 #endif // #ifndef PARSER_H
