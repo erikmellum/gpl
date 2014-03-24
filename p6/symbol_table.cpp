@@ -30,7 +30,12 @@ void Symbol_table::remove(string symbolToRemove)
 }
 Symbol* Symbol_table::retrieve(string name)
 {
-    return symbol_table.at(name);
+    for (map<string,Symbol*>::iterator it=symbol_table.begin(); it!=symbol_table.end(); ++it)
+    {
+        if(it->second->getName() == name)
+            return it->second;
+    }
+    return NULL;
 }
 bool Symbol_table::lookup(string name)
 {

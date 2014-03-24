@@ -100,12 +100,12 @@ void Symbol::print(ostream &out)
             out << "string" << " " << name << " \"" << string_value << "\"";
             break;
         case GAME_OBJECT:
-            cerr << "Not ready..." << endl;
-            out << "game object" << " " << name << " " << *game_object_value;
+            indent++;
+            out << "game_object" << " " << name << endl << *game_object_value << indent;
+            indent--;
             break;
         case ANIMATION_BLOCK:
-            cerr << "Not ready..." << endl;
-            out << "animation block" << " " << name << " " << *animation_block_value;
+            out << "animation_block" << " " << name << " " << *animation_block_value;
             break;
     }
     out << endl;

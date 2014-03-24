@@ -444,6 +444,7 @@ Game_object* Expr::eval_game_object()
             return(variable_value->eval()->getGameObject());
         }
     }
+    return NULL;
 }
 Animation_block* Expr::eval_animation_block()
 {
@@ -454,6 +455,7 @@ Animation_block* Expr::eval_animation_block()
             return(variable_value->eval()->getAnimationBlock());
         }
     }
+    return NULL;
 }
 //////////////////////
 // Helper functions //
