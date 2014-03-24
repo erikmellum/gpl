@@ -44,7 +44,7 @@ game_object c00
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c01
   Circle
   {
@@ -75,7 +75,7 @@ game_object c01
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c02
   Circle
   {
@@ -106,7 +106,7 @@ game_object c02
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c03
   Circle
   {
@@ -137,7 +137,7 @@ game_object c03
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c04
   Circle
   {
@@ -168,7 +168,7 @@ game_object c04
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c05
   Circle
   {
@@ -199,7 +199,7 @@ game_object c05
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c06
   Circle
   {
@@ -230,7 +230,7 @@ game_object c06
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c07
   Circle
   {
@@ -261,7 +261,7 @@ game_object c07
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c08
   Circle
   {
@@ -292,7 +292,7 @@ game_object c08
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
 game_object c10
   Circle
   {
@@ -323,5 +323,320 @@ game_object c10
     w = int(20),
     x = int(0),
     y = int(0)
-  }  
+  }
+string window_title "p6 t008.gpl -- compare to t008.jpg"
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+
+Printing the symbol table from signal_handler()
+game_object c00
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c01
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c02
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c03
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c04
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c05
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c06
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c07
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c08
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object c10
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
 string window_title "p6 t008.gpl -- compare to t008.jpg"

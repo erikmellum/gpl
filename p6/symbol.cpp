@@ -101,7 +101,7 @@ void Symbol::print(ostream &out)
             break;
         case GAME_OBJECT:
             indent++;
-            out << "game_object" << " " << name << endl << *game_object_value << indent;
+            out << "game_object" << " " << name << endl << *game_object_value;
             indent--;
             break;
         case ANIMATION_BLOCK:
