@@ -9,3 +9,8 @@ gpl.cpp::main()
 
 gpl.cpp::main() Calling yyparse()
 
+
+gpl.cpp::main() after call to yyparse().
+
+1 error found.
+gpl giving up.

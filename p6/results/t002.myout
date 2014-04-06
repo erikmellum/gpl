@@ -42,8 +42,8 @@ game_object my_rectangle
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(100),
+    y = int(100)
   }
 string window_title "p6 t002.gpl -- compare to t002.jpg"
 gpl.cpp::main() Calling window->initialize().
@@ -78,7 +78,7 @@ game_object my_rectangle
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(100),
+    y = int(100)
   }
 string window_title "p6 t002.gpl -- compare to t002.jpg"

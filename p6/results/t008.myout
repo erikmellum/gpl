@@ -42,7 +42,7 @@ game_object c00
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
+    x = int(300),
     y = int(0)
   }
 game_object c01
@@ -73,8 +73,8 @@ game_object c01
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(293),
+    y = int(34)
   }
 game_object c02
   Circle
@@ -104,8 +104,8 @@ game_object c02
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(276),
+    y = int(64)
   }
 game_object c03
   Circle
@@ -135,8 +135,8 @@ game_object c03
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(250),
+    y = int(86)
   }
 game_object c04
   Circle
@@ -166,8 +166,8 @@ game_object c04
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(217),
+    y = int(98)
   }
 game_object c05
   Circle
@@ -197,8 +197,8 @@ game_object c05
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(182),
+    y = int(98)
   }
 game_object c06
   Circle
@@ -228,8 +228,8 @@ game_object c06
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(150),
+    y = int(86)
   }
 game_object c07
   Circle
@@ -259,8 +259,8 @@ game_object c07
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(123),
+    y = int(64)
   }
 game_object c08
   Circle
@@ -290,8 +290,8 @@ game_object c08
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(106),
+    y = int(34)
   }
 game_object c10
   Circle
@@ -321,7 +321,7 @@ game_object c10
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
+    x = int(100),
     y = int(0)
   }
 string window_title "p6 t008.gpl -- compare to t008.jpg"
@@ -357,7 +357,7 @@ game_object c00
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
+    x = int(300),
     y = int(0)
   }
 game_object c01
@@ -388,8 +388,8 @@ game_object c01
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(293),
+    y = int(34)
   }
 game_object c02
   Circle
@@ -419,8 +419,8 @@ game_object c02
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(276),
+    y = int(64)
   }
 game_object c03
   Circle
@@ -450,8 +450,8 @@ game_object c03
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(250),
+    y = int(86)
   }
 game_object c04
   Circle
@@ -481,8 +481,8 @@ game_object c04
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(217),
+    y = int(98)
   }
 game_object c05
   Circle
@@ -512,8 +512,8 @@ game_object c05
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(182),
+    y = int(98)
   }
 game_object c06
   Circle
@@ -543,8 +543,8 @@ game_object c06
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(150),
+    y = int(86)
   }
 game_object c07
   Circle
@@ -574,8 +574,8 @@ game_object c07
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(123),
+    y = int(64)
   }
 game_object c08
   Circle
@@ -605,8 +605,8 @@ game_object c08
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(106),
+    y = int(34)
   }
 game_object c10
   Circle
@@ -636,7 +636,7 @@ game_object c10
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
+    x = int(100),
     y = int(0)
   }
 string window_title "p6 t008.gpl -- compare to t008.jpg"

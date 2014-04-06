@@ -36,6 +36,7 @@ extern int line_count;      // the current line in the input; from array.l
 #include "animation_block.h"
 using namespace std;
 Game_object *cur_object_under_construction;
+string cur_object_name;
 Symbol_table *symbol_table = Symbol_table::instance();
 // use this global variable to store all the values in the array
 // add vectors here for additional types
@@ -69,6 +70,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
  Variable        *union_variable_type;
  Game_object     *union_game_object;
  Animation_block *union_animation_block;
+ Symbol          *union_symbol;
 }
 
 %token T_INT
@@ -178,6 +180,8 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %type <union_operator_type> math_operator
 %type <union_int> object_type
 %type <union_animation_block> animation_block
+%type <union_symbol> animation_parameter
+%type <union_int> T_FORWARD
 // Grammar symbols that have values associated with them need to be
 // declared here.  The above union is used for the "ruturning" the value.
 // 
@@ -387,7 +391,7 @@ optional_initializer:
 object_declaration:
     object_type T_ID
     {
-        string id = *$2;
+        string id = cur_object_name = *$2;
         switch($1)
         {
             case T_TRIANGLE:
@@ -410,7 +414,7 @@ object_declaration:
     } 
     T_LPAREN parameter_list_or_empty T_RPAREN
     {
-        
+                
     }
     | object_type T_ID T_LBRACKET expression T_RBRACKET
     {
@@ -517,11 +521,52 @@ parameter_list :
 //---------------------------------------------------------------------
 parameter:
     T_ID T_ASSIGN expression
+    {
+        /**
+        Gpl_type gpl_type;
+        cur_object_under_construction->get_member_variable_type(*$1, gpl_type);
+        if(gpl_type == ANIMATION_BLOCK)
+        {
+            
+        }
+        **/
+        if($1)
+        {
+            if($3->getGplType() == INT)
+            {
+                cur_object_under_construction->set_member_variable(*$1, $3->eval_int());
+            }
+            else if($3->getGplType() == DOUBLE)
+            {
+                cur_object_under_construction->set_member_variable(*$1, $3->eval_double());
+            }
+            else if($3->getGplType() == STRING)
+            {
+                cur_object_under_construction->set_member_variable(*$1, $3->eval_string());
+            }
+            else if($3->getGplType() == ANIMATION_BLOCK)
+            {
+                cur_object_under_construction->set_member_variable(*$1, $3->eval_animation_block());
+            }
+            else
+            {
+                Error::error(Error::INCORRECT_CONSTRUCTOR_PARAMETER_TYPE, cur_object_name);
+            }
+         }
+         else
+         {
+            Error::error(Error::UNKNOWN_CONSTRUCTOR_PARAMETER, cur_object_name);
+         }
+    }
     ;
 
 //---------------------------------------------------------------------
 forward_declaration:
     T_FORWARD T_ANIMATION T_ID T_LPAREN animation_parameter T_RPAREN
+    {
+        string id = *$3;
+        symbol_table->insert(new Symbol(id, new Animation_block($1, $5, *$3)));
+    }
     ;
 
 //---------------------------------------------------------------------
@@ -546,22 +591,63 @@ initialization_block:
 animation_block:
     T_ANIMATION T_ID T_LPAREN check_animation_parameter T_RPAREN T_LBRACE { } statement_list T_RBRACE end_of_statement_block
     {
-        //$$ = new Animation_block();
+        
+
     }
     ;
 
 //---------------------------------------------------------------------
 animation_parameter:
     object_type T_ID
+    {
+        string id = cur_object_name = *$2;
+        switch($1)
+        {
+            case T_TRIANGLE:
+                cur_object_under_construction = new Triangle();
+                break;
+            case T_PIXMAP:
+                cur_object_under_construction = new Pixmap();
+                break;
+            case T_CIRCLE:
+                cur_object_under_construction = new Circle();
+                break;
+            case T_RECTANGLE:
+                cur_object_under_construction = new Rectangle();
+                break;
+            case T_TEXTBOX:
+                cur_object_under_construction = new Textbox();
+                break;
+        }
+
+        cur_object_under_construction->never_animate();
+        cur_object_under_construction->never_draw();
+        symbol_table->insert(new Symbol(id, cur_object_under_construction));
+    }
     ;
 
 //---------------------------------------------------------------------
 check_animation_parameter:
     T_TRIANGLE T_ID
+    {
+        
+    }
     | T_PIXMAP T_ID
+    {
+       
+    }
     | T_CIRCLE T_ID
+    {
+        
+    }
     | T_RECTANGLE T_ID
+    {
+       
+    }
     | T_TEXTBOX T_ID
+    {
+        
+    }
     ;
 
 //---------------------------------------------------------------------
@@ -671,7 +757,7 @@ variable:
         else 
         {
             Error::error(Error::UNDECLARED_VARIABLE,*$1);
-            $$ = new Variable(*$1);
+            $$ = new Variable("0");
         }
     }
     | T_ID T_LBRACKET expression T_RBRACKET
@@ -705,7 +791,16 @@ variable:
     }
     | T_ID T_PERIOD T_ID
     {
-        $$ = NULL;
+        Symbol* symbol = symbol_table->retrieve(*$1);
+        if(symbol->getType() == GAME_OBJECT)
+        {
+            $$ = new Variable(*$1, *$3);
+        }
+        else
+        {
+            Error::error(Error::UNDECLARED_VARIABLE,*$1);
+            $$ = new Variable("0");
+        }
     }
     | T_ID T_LBRACKET expression T_RBRACKET T_PERIOD T_ID
     {

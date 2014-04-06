@@ -20,7 +20,7 @@ game_object aho
     animation_block = animation_block(0),
     blue = double(0.5),
     drawing_order = int(0),
-    filename = string(""),
+    filename = string("tests/aho.bmp"),
     green = double(0.5),
     h = int(10),
     proximity = int(4),
@@ -42,8 +42,8 @@ game_object aho
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(100),
+    y = int(200)
   }
 game_object title
   Textbox
@@ -57,7 +57,7 @@ game_object title
     red = double(0),
     size = double(0.1),
     space = int(10),
-    text = string(""),
+    text = string("Al Aho (the author of the book)"),
     user_double = double(0),
     user_double2 = double(0),
     user_double3 = double(0),
@@ -75,8 +75,8 @@ game_object title
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(10),
+    y = int(10)
   }
 string window_title "p6 t010.gpl -- compare to t010.jpg"
 gpl.cpp::main() Calling window->initialize().
@@ -89,9 +89,9 @@ game_object aho
     animation_block = animation_block(0),
     blue = double(0.5),
     drawing_order = int(0),
-    filename = string(""),
+    filename = string("tests/aho.bmp"),
     green = double(0.5),
-    h = int(80),
+    h = int(248),
     proximity = int(4),
     red = double(0.5),
     user_double = double(0),
@@ -110,9 +110,9 @@ game_object aho
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(112),
-    x = int(0),
-    y = int(0)
+    w = int(168),
+    x = int(100),
+    y = int(200)
   }
 game_object title
   Textbox
@@ -126,7 +126,7 @@ game_object title
     red = double(0),
     size = double(0.1),
     space = int(10),
-    text = string(""),
+    text = string("Al Aho (the author of the book)"),
     user_double = double(0),
     user_double2 = double(0),
     user_double3 = double(0),
@@ -143,8 +143,8 @@ game_object title
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(0),
-    x = int(0),
-    y = int(0)
+    w = int(247),
+    x = int(10),
+    y = int(10)
   }
 string window_title "p6 t010.gpl -- compare to t010.jpg"

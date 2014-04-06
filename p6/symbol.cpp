@@ -105,7 +105,9 @@ void Symbol::print(ostream &out)
             indent--;
             break;
         case ANIMATION_BLOCK:
-            out << "animation_block" << " " << name << " " << *animation_block_value;
+            indent++;
+            out << "animation_block" << " " << name << endl << *animation_block_value;
+            indent--;
             break;
     }
     out << endl;

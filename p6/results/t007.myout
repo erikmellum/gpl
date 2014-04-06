@@ -21,9 +21,9 @@ game_object c1
     blue = double(1),
     drawing_order = int(0),
     green = double(0),
-    h = int(20),
+    h = int(80),
     proximity = int(4),
-    radius = int(10),
+    radius = int(40),
     red = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -41,9 +41,9 @@ game_object c1
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(20),
-    x = int(0),
-    y = int(0)
+    w = int(80),
+    x = int(200),
+    y = int(200)
   }
 game_object r1
   Rectangle
@@ -51,10 +51,10 @@ game_object r1
     animation_block = animation_block(0),
     blue = double(0),
     drawing_order = int(0),
-    green = double(0),
-    h = int(10),
+    green = double(1),
+    h = int(100),
     proximity = int(4),
-    red = double(1),
+    red = double(0),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -72,22 +72,22 @@ game_object r1
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
-    x = int(0),
-    y = int(0)
+    w = int(75),
+    x = int(100),
+    y = int(100)
   }
 game_object t1
   Triangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.75),
     drawing_order = int(0),
     green = double(1),
     h = int(10),
     proximity = int(4),
     red = double(0),
     rotation = double(0),
-    size = int(10),
+    size = int(70),
     skew = double(1),
     user_double = double(0),
     user_double2 = double(0),
@@ -106,8 +106,8 @@ game_object t1
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(300),
+    y = int(300)
   }
 game_object tb1
   Textbox
@@ -121,7 +121,7 @@ game_object tb1
     red = double(0),
     size = double(0.1),
     space = int(10),
-    text = string(""),
+    text = string("test t06"),
     user_double = double(0),
     user_double2 = double(0),
     user_double3 = double(0),
@@ -139,8 +139,8 @@ game_object tb1
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(50),
+    y = int(300)
   }
 string window_title "p6 t007.gpl -- compare to t007.jpg"
 gpl.cpp::main() Calling window->initialize().
@@ -154,9 +154,9 @@ game_object c1
     blue = double(1),
     drawing_order = int(0),
     green = double(0),
-    h = int(20),
+    h = int(80),
     proximity = int(4),
-    radius = int(10),
+    radius = int(40),
     red = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -174,9 +174,9 @@ game_object c1
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(20),
-    x = int(0),
-    y = int(0)
+    w = int(80),
+    x = int(200),
+    y = int(200)
   }
 game_object r1
   Rectangle
@@ -184,10 +184,10 @@ game_object r1
     animation_block = animation_block(0),
     blue = double(0),
     drawing_order = int(0),
-    green = double(0),
-    h = int(10),
+    green = double(1),
+    h = int(100),
     proximity = int(4),
-    red = double(1),
+    red = double(0),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -205,22 +205,22 @@ game_object r1
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
-    x = int(0),
-    y = int(0)
+    w = int(75),
+    x = int(100),
+    y = int(100)
   }
 game_object t1
   Triangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.75),
     drawing_order = int(0),
     green = double(1),
-    h = int(11),
+    h = int(78),
     proximity = int(4),
     red = double(0),
     rotation = double(0),
-    size = int(10),
+    size = int(70),
     skew = double(1),
     user_double = double(0),
     user_double2 = double(0),
@@ -238,9 +238,9 @@ game_object t1
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
-    x = int(0),
-    y = int(0)
+    w = int(70),
+    x = int(300),
+    y = int(300)
   }
 game_object tb1
   Textbox
@@ -254,7 +254,7 @@ game_object tb1
     red = double(0),
     size = double(0.1),
     space = int(10),
-    text = string(""),
+    text = string("test t06"),
     user_double = double(0),
     user_double2 = double(0),
     user_double3 = double(0),
@@ -271,8 +271,8 @@ game_object tb1
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(0),
-    x = int(0),
-    y = int(0)
+    w = int(58),
+    x = int(50),
+    y = int(300)
   }
 string window_title "p6 t007.gpl -- compare to t007.jpg"

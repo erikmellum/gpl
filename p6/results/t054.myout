@@ -14,9 +14,19 @@ gpl.cpp::main() after call to yyparse().
 
 
 Printing the symbol table from main()
+animation_block bounce
+  Animation_block[-1]
+  {
+    animation block not implemented yet
+  }
 int cur_rect 0
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
 
 Printing the symbol table from signal_handler()
+animation_block bounce
+  Animation_block[-1]
+  {
+    animation block not implemented yet
+  }
 int cur_rect 0

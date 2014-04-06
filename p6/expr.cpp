@@ -454,6 +454,10 @@ Animation_block* Expr::eval_animation_block()
         {
             return(variable_value->eval()->getAnimationBlock());
         }
+        else
+        {
+            cout <<" HELLO WORLD";
+        }
     }
     return NULL;
 }

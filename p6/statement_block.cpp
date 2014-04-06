@@ -17,7 +17,7 @@ bool Statement_block::empty()
   // So define it when you implement p7
 
   // **** remove this assert when you implement empty();
-  assert(false); 
+  //assert(false); 
 
   // place holder to keep the compiler from issuing a warning
   return true;

@@ -11,12 +11,13 @@ class Expr;
 class Variable
 {
     public:      
-        Variable(int value);
         Variable(string value);
         Variable(string value, Expr* expr);
+        Variable(string value, string parameter);
         Symbol* eval();
     private:
         Symbol* symbol;
         Expr* expression;
         string name;
+        string second;
 };

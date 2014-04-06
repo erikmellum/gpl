@@ -44,8 +44,8 @@ game_object text1
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(100),
+    y = int(100)
   }
 game_object text2
   Textbox
@@ -57,7 +57,7 @@ game_object text2
     h = int(11),
     proximity = int(4),
     red = double(0),
-    size = double(0.1),
+    size = double(0.2),
     space = int(10),
     text = string(""),
     user_double = double(0),
@@ -77,8 +77,8 @@ game_object text2
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(200),
+    y = int(100)
   }
 game_object text3
   Textbox
@@ -90,9 +90,9 @@ game_object text3
     h = int(11),
     proximity = int(4),
     red = double(0),
-    size = double(0.1),
+    size = double(0.3),
     space = int(10),
-    text = string(""),
+    text = string("forty-two"),
     user_double = double(0),
     user_double2 = double(0),
     user_double3 = double(0),
@@ -110,8 +110,8 @@ game_object text3
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(300),
+    y = int(100)
   }
 string window_title "p6 t009.gpl -- compare to t009.jpg"
 gpl.cpp::main() Calling window->initialize().
@@ -148,8 +148,8 @@ game_object text1
     user_string5 = string(""),
     visible = int(1),
     w = int(0),
-    x = int(0),
-    y = int(0)
+    x = int(100),
+    y = int(100)
   }
 game_object text2
   Textbox
@@ -158,10 +158,10 @@ game_object text2
     blue = double(0),
     drawing_order = int(0),
     green = double(0),
-    h = int(11),
+    h = int(21),
     proximity = int(4),
     red = double(0),
-    size = double(0.1),
+    size = double(0.2),
     space = int(10),
     text = string(""),
     user_double = double(0),
@@ -181,8 +181,8 @@ game_object text2
     user_string5 = string(""),
     visible = int(1),
     w = int(0),
-    x = int(0),
-    y = int(0)
+    x = int(200),
+    y = int(100)
   }
 game_object text3
   Textbox
@@ -191,12 +191,12 @@ game_object text3
     blue = double(0),
     drawing_order = int(0),
     green = double(0),
-    h = int(11),
+    h = int(31),
     proximity = int(4),
     red = double(0),
-    size = double(0.1),
+    size = double(0.3),
     space = int(10),
-    text = string(""),
+    text = string("forty-two"),
     user_double = double(0),
     user_double2 = double(0),
     user_double3 = double(0),
@@ -213,8 +213,8 @@ game_object text3
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(0),
-    x = int(0),
-    y = int(0)
+    w = int(194),
+    x = int(300),
+    y = int(100)
   }
 string window_title "p6 t009.gpl -- compare to t009.jpg"
