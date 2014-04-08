@@ -111,7 +111,7 @@ game_object c100
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(78),
@@ -669,7 +669,7 @@ game_object c117
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.2),
     h = int(34),
@@ -1010,7 +1010,7 @@ game_object c127
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(54),
@@ -1072,7 +1072,7 @@ game_object c129
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0),
     h = int(28),
@@ -1475,7 +1475,7 @@ game_object c140
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.8),
     h = int(6),
@@ -1568,7 +1568,7 @@ game_object c143
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(8),
@@ -1630,7 +1630,7 @@ game_object c145
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.3),
     h = int(62),
@@ -1878,7 +1878,7 @@ game_object c152
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.3),
     h = int(52),
@@ -2157,7 +2157,7 @@ game_object c160
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(4),
@@ -2529,7 +2529,7 @@ game_object c171
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.3),
     h = int(44),
@@ -2591,7 +2591,7 @@ game_object c173
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.1),
     h = int(4),
@@ -2653,7 +2653,7 @@ game_object c175
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(34),
@@ -3025,7 +3025,7 @@ game_object c186
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(28),
@@ -3490,7 +3490,7 @@ game_object c2
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(52),
@@ -3521,7 +3521,7 @@ game_object c20
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(34),
@@ -3676,7 +3676,7 @@ game_object c25
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(46),
@@ -4234,7 +4234,7 @@ game_object c41
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.2),
     h = int(20),
@@ -4358,7 +4358,7 @@ game_object c45
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(98),
@@ -4482,7 +4482,7 @@ game_object c49
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.5),
     h = int(32),
@@ -4544,7 +4544,7 @@ game_object c50
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(84),
@@ -4978,7 +4978,7 @@ game_object c63
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.2),
     h = int(68),
@@ -5164,7 +5164,7 @@ game_object c69
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(92),
@@ -5226,7 +5226,7 @@ game_object c70
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(94),
@@ -5350,7 +5350,7 @@ game_object c74
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(54),
@@ -6156,7 +6156,7 @@ game_object c98
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(76),
@@ -6316,7 +6316,7 @@ game_object c100
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(78),
@@ -6874,7 +6874,7 @@ game_object c117
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.2),
     h = int(34),
@@ -7215,7 +7215,7 @@ game_object c127
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(54),
@@ -7277,7 +7277,7 @@ game_object c129
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0),
     h = int(28),
@@ -7680,7 +7680,7 @@ game_object c140
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.8),
     h = int(6),
@@ -7773,7 +7773,7 @@ game_object c143
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(8),
@@ -7835,7 +7835,7 @@ game_object c145
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.3),
     h = int(62),
@@ -8083,7 +8083,7 @@ game_object c152
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.3),
     h = int(52),
@@ -8362,7 +8362,7 @@ game_object c160
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(4),
@@ -8734,7 +8734,7 @@ game_object c171
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.3),
     h = int(44),
@@ -8796,7 +8796,7 @@ game_object c173
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.1),
     h = int(4),
@@ -8858,7 +8858,7 @@ game_object c175
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(34),
@@ -9230,7 +9230,7 @@ game_object c186
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(28),
@@ -9695,7 +9695,7 @@ game_object c2
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(52),
@@ -9726,7 +9726,7 @@ game_object c20
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(34),
@@ -9881,7 +9881,7 @@ game_object c25
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(46),
@@ -10439,7 +10439,7 @@ game_object c41
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.2),
     h = int(20),
@@ -10563,7 +10563,7 @@ game_object c45
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(98),
@@ -10687,7 +10687,7 @@ game_object c49
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.5),
     h = int(32),
@@ -10749,7 +10749,7 @@ game_object c50
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(84),
@@ -11183,7 +11183,7 @@ game_object c63
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.2),
     h = int(68),
@@ -11369,7 +11369,7 @@ game_object c69
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(92),
@@ -11431,7 +11431,7 @@ game_object c70
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.6),
     h = int(94),
@@ -11555,7 +11555,7 @@ game_object c74
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.4),
     h = int(54),
@@ -12361,7 +12361,7 @@ game_object c98
   Circle
   {
     animation_block = animation_block(0),
-    blue = double(1),
+    blue = double(0),
     drawing_order = int(0),
     green = double(0.9),
     h = int(76),

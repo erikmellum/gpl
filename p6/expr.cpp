@@ -72,7 +72,7 @@ Expr::Expr(Operator_type type, Expr *newlhs, Expr *newrhs)
         else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
         {
             gpl_type = INT;
-        }    
+        }   
     }
     else if(operator_type == DIVIDE)
     {
@@ -295,14 +295,16 @@ int Expr::eval_int()
     }
     else if(kind == INT_CONST)
         return int_value;
-    else if(kind == DOUBLE_CONST)
-        return (int) double_value;
     else if(kind == VARIABLE)
     {
-        if(variable_value->eval()->getType() == DOUBLE)
-            return (int) variable_value->eval()->getDouble();
+        if(variable_value->eval()->getType() == GAME_OBJECT)
+        {
+            return variable_value->getIntValue(variable_value->eval());
+        }
         else
+        {
             return variable_value->eval()->getInt();
+        }
     }
     return 0;
 }
@@ -376,7 +378,10 @@ double Expr::eval_double()
     }
     else if(kind == VARIABLE)
     {
-        return variable_value->eval()->getDouble();
+        if(variable_value->eval()->getType() == DOUBLE)
+            return variable_value->eval()->getDouble();
+        else if(variable_value->eval()->getType() == GAME_OBJECT)
+            return variable_value->getDoubleValue(variable_value->eval());
     }
     return 0;
 }
@@ -400,6 +405,8 @@ string Expr::eval_string()
         }
         else if(gpl_type == STRING)
             return variable_value->eval()->getString();
+        else if(variable_value->eval()->getType() == GAME_OBJECT)
+            return variable_value->getStringValue(variable_value->eval());
     }        
     else if(kind == INT_CONST)
     {
@@ -453,10 +460,6 @@ Animation_block* Expr::eval_animation_block()
         if(gpl_type == ANIMATION_BLOCK)
         {
             return(variable_value->eval()->getAnimationBlock());
-        }
-        else
-        {
-            cout <<" HELLO WORLD";
         }
     }
     return NULL;

@@ -392,25 +392,32 @@ object_declaration:
     object_type T_ID
     {
         string id = cur_object_name = *$2;
-        switch($1)
+        if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
-            case T_TRIANGLE:
-                cur_object_under_construction = new Triangle();
-                break;
-            case T_PIXMAP:
-                cur_object_under_construction = new Pixmap();
-                break;
-            case T_CIRCLE:
-                cur_object_under_construction = new Circle();
-                break;
-            case T_RECTANGLE:
-                cur_object_under_construction = new Rectangle();
-                break;
-            case T_TEXTBOX:
-                cur_object_under_construction = new Textbox();
-                break;
+            switch($1)
+            {
+                case T_TRIANGLE:
+                    cur_object_under_construction = new Triangle();
+                    break;
+                case T_PIXMAP:
+                    cur_object_under_construction = new Pixmap();
+                    break;
+                case T_CIRCLE:
+                    cur_object_under_construction = new Circle();
+                    break;
+                case T_RECTANGLE:
+                    cur_object_under_construction = new Rectangle();
+                    break;
+                case T_TEXTBOX:
+                    cur_object_under_construction = new Textbox();
+                    break;
+            }
+            symbol_table->insert(new Symbol(id, cur_object_under_construction));
         }
-        symbol_table->insert(new Symbol(id, cur_object_under_construction));
+        else
+        {
+            Error::error(Error::PREVIOUSLY_DECLARED_VARIABLE, id);
+        }
     } 
     T_LPAREN parameter_list_or_empty T_RPAREN
     {
@@ -515,6 +522,9 @@ parameter_list_or_empty :
 //---------------------------------------------------------------------
 parameter_list :
     parameter_list T_COMMA parameter
+    {
+
+    }
     | parameter
     ;
 
@@ -522,41 +532,38 @@ parameter_list :
 parameter:
     T_ID T_ASSIGN expression
     {
-        /**
-        Gpl_type gpl_type;
-        cur_object_under_construction->get_member_variable_type(*$1, gpl_type);
-        if(gpl_type == ANIMATION_BLOCK)
+        string id = *$1;
+        if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
-            
+            Status status;
+            Gpl_type gpl_type;
+            status = cur_object_under_construction->get_member_variable_type(*$1, gpl_type);
+            if(gpl_type == INT)
+            {
+                status = cur_object_under_construction->set_member_variable(*$1, $3->eval_int());
+                if(status == MEMBER_NOT_OF_GIVEN_TYPE)
+                    Error::error(Error::INCORRECT_CONSTRUCTOR_PARAMETER_TYPE, *$1, cur_object_name);
+            }
+            else if(gpl_type == DOUBLE)
+            {
+                status = cur_object_under_construction->set_member_variable(*$1, $3->eval_double());
+            }
+            else if(gpl_type == STRING)
+            {
+                status = cur_object_under_construction->set_member_variable(*$1, $3->eval_string());
+            }
+            else if(gpl_type == ANIMATION_BLOCK)
+            {
+                status = cur_object_under_construction->set_member_variable(*$1, $3->eval_animation_block());
+            }
+
+            if(status == MEMBER_NOT_DECLARED)
+                Error::error(Error::UNKNOWN_CONSTRUCTOR_PARAMETER, cur_object_under_construction->type(), *$1);
         }
-        **/
-        if($1)
+        else
         {
-            if($3->getGplType() == INT)
-            {
-                cur_object_under_construction->set_member_variable(*$1, $3->eval_int());
-            }
-            else if($3->getGplType() == DOUBLE)
-            {
-                cur_object_under_construction->set_member_variable(*$1, $3->eval_double());
-            }
-            else if($3->getGplType() == STRING)
-            {
-                cur_object_under_construction->set_member_variable(*$1, $3->eval_string());
-            }
-            else if($3->getGplType() == ANIMATION_BLOCK)
-            {
-                cur_object_under_construction->set_member_variable(*$1, $3->eval_animation_block());
-            }
-            else
-            {
-                Error::error(Error::INCORRECT_CONSTRUCTOR_PARAMETER_TYPE, cur_object_name);
-            }
-         }
-         else
-         {
-            Error::error(Error::UNKNOWN_CONSTRUCTOR_PARAMETER, cur_object_name);
-         }
+            Error::error(Error::ANIMATION_PARAMETER_NAME_NOT_UNIQUE, id);
+        }
     }
     ;
 
@@ -565,7 +572,15 @@ forward_declaration:
     T_FORWARD T_ANIMATION T_ID T_LPAREN animation_parameter T_RPAREN
     {
         string id = *$3;
-        symbol_table->insert(new Symbol(id, new Animation_block($1, $5, *$3)));
+        if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
+        {
+            symbol_table->insert(new Symbol(id, new Animation_block($1, $5, *$3)));
+        }
+        else
+        {
+            Error::error(Error::PREVIOUSLY_DECLARED_VARIABLE, id);
+        }
+
     }
     ;
 
@@ -601,28 +616,35 @@ animation_parameter:
     object_type T_ID
     {
         string id = cur_object_name = *$2;
-        switch($1)
+        if(!symbol_table->lookup(id) && !symbol_table->lookup(id+"[0]"))
         {
-            case T_TRIANGLE:
-                cur_object_under_construction = new Triangle();
-                break;
-            case T_PIXMAP:
-                cur_object_under_construction = new Pixmap();
-                break;
-            case T_CIRCLE:
-                cur_object_under_construction = new Circle();
-                break;
-            case T_RECTANGLE:
-                cur_object_under_construction = new Rectangle();
-                break;
-            case T_TEXTBOX:
-                cur_object_under_construction = new Textbox();
-                break;
-        }
+            switch($1)
+            {
+                case T_TRIANGLE:
+                    cur_object_under_construction = new Triangle();
+                    break;
+                case T_PIXMAP:
+                    cur_object_under_construction = new Pixmap();
+                    break;
+                case T_CIRCLE:
+                    cur_object_under_construction = new Circle();
+                    break;
+                case T_RECTANGLE:
+                    cur_object_under_construction = new Rectangle();
+                    break;
+                case T_TEXTBOX:
+                    cur_object_under_construction = new Textbox();
+                    break;
+            }
 
-        cur_object_under_construction->never_animate();
-        cur_object_under_construction->never_draw();
-        symbol_table->insert(new Symbol(id, cur_object_under_construction));
+            cur_object_under_construction->never_animate();
+            cur_object_under_construction->never_draw();
+            symbol_table->insert(new Symbol(id, cur_object_under_construction));
+        }
+        else
+        {
+            Error::error(Error::ANIMATION_PARAMETER_NAME_NOT_UNIQUE, id);
+        }
     }
     ;
 
@@ -630,7 +652,6 @@ animation_parameter:
 check_animation_parameter:
     T_TRIANGLE T_ID
     {
-        
     }
     | T_PIXMAP T_ID
     {
@@ -772,7 +793,7 @@ variable:
             
             if(!symbol_table->lookup(name))
             {
-                $$ = new Variable(*$1, $3);
+                $$ = new Variable("0");
                 Error::error(Error::ARRAY_INDEX_OUT_OF_BOUNDS,*$1, $3->eval_string());
             }
             else
@@ -780,23 +801,31 @@ variable:
         }
         else if($3->getGplType() == DOUBLE)
         {
-            $$ = new Variable(*$1, $3);
+            $$ = new Variable("0");
             Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A double expression");
         }
         else if($3->getGplType() == STRING)
         {         
-            $$ = new Variable(*$1, $3);
+            $$ = new Variable("0");
             Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A string expression");
         }
     }
     | T_ID T_PERIOD T_ID
     {
-        Symbol* symbol = symbol_table->retrieve(*$1);
-        if(symbol->getType() == GAME_OBJECT)
+        if(symbol_table->lookup(*$1))
         {
-            $$ = new Variable(*$1, *$3);
+            Symbol* symbol = symbol_table->retrieve(*$1);
+            if(symbol->getType() == GAME_OBJECT)
+            {
+                Game_object* object = symbol->getGameObject();
+                Gpl_type type;
+                Status status = object->get_member_variable_type(*$3, type);
+                if(status == MEMBER_NOT_DECLARED)
+                    Error::error(Error::UNDECLARED_MEMBER,*$1, *$3);
+                $$ = new Variable(*$1, *$3);
+            }
         }
-        else
+        else 
         {
             Error::error(Error::UNDECLARED_VARIABLE,*$1);
             $$ = new Variable("0");
@@ -804,7 +833,47 @@ variable:
     }
     | T_ID T_LBRACKET expression T_RBRACKET T_PERIOD T_ID
     {
-        $$= NULL;
+        string id = *$1;
+        assert($3);
+        if($3->getGplType() == INT)
+        {
+            string name = *$1;
+            int i = $3->eval_int();
+            stringstream ss;
+            ss << name << "[" << i << "]";
+            name = ss.str();
+            
+            if(!symbol_table->lookup(name))
+            {
+                $$ = new Variable("0");
+                Error::error(Error::ARRAY_INDEX_OUT_OF_BOUNDS,*$1, $3->eval_string());
+            }
+            else
+            {
+                Symbol* symbol = symbol_table->retrieve(name);
+                if(symbol->getType() == GAME_OBJECT)
+                {
+                    Game_object* object = symbol->getGameObject();
+                    Gpl_type type;
+                    Status status = object->get_member_variable_type(*$6, type);
+                    if(status == MEMBER_NOT_DECLARED)
+                        Error::error(Error::UNDECLARED_MEMBER,*$1, *$6);
+                    $$ = new Variable(*$1, $3, *$6);
+                }
+            }
+        }
+        else if($3->getGplType() == DOUBLE)
+        {
+            $$ = new Variable("0");
+            Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A double expression");
+        }
+        else if($3->getGplType() == STRING)
+        {         
+            $$ = new Variable("0");
+            Error::error(Error::ARRAY_INDEX_MUST_BE_AN_INTEGER,*$1, "A string expression");
+        }
+        
+            
     }
     ;
 
@@ -1033,7 +1102,7 @@ primary_expression:
         $$ = $2;
     }
     | variable
-    {        
+    {       
         $$ = new Expr($1);   
     }
     | T_INT_CONSTANT
