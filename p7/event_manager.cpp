@@ -19,8 +19,12 @@ Event_manager::~Event_manager()
 {
 }
 
-
 void 
 Event_manager::execute_handlers(Window::Keystroke keystroke)
+{
+}
+
+void 
+Event_manager::register_handler(Window::Keystroke keystroke, Statement_block* newBlock)
 {
 }

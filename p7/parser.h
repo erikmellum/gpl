@@ -36,5 +36,13 @@
 #include "variable.h"
 #include "y.tab.h"
 #include "animation_block.h"
-
+#include <stack>
+#include "error.h"      // class for printing errors (used by gpl)
+#include "gpl_assert.h" // function version of standard assert.h
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include "expr.h"
+#include "animation_block.h"
+    
 #endif // #ifndef PARSER_H

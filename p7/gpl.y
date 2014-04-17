@@ -26,14 +26,8 @@ extern int yylex();         // this lexer function returns next token
 extern int yyerror(char *); // used to print errors
 extern int line_count;      // the current line in the input; from array.l
 
-#include "error.h"      // class for printing errors (used by gpl)
-#include "gpl_assert.h" // function version of standard assert.h
 #include "parser.h"
-#include <iostream>
-#include <vector>
-#include <sstream>
-#include "expr.h"
-#include "animation_block.h"
+
 using namespace std;
 Game_object *cur_object_under_construction;
 string cur_object_name;
@@ -730,21 +724,33 @@ if_block:
 //---------------------------------------------------------------------
 statement_block:
     T_LBRACE statement_block_creator statement_list T_RBRACE end_of_statement_block
+    {
+
+    }
     ;
 
 //---------------------------------------------------------------------
 statement_block_creator:
+    {
+
+    }
     // this goes to nothing so that you can put an action here in p7
     ;
 
 //---------------------------------------------------------------------
 end_of_statement_block:
+    {
+
+    }
     // this goes to nothing so that you can put an action here in p7
     ;
 
 //---------------------------------------------------------------------
 statement_list:
     statement_list statement
+    {
+
+    }
     | empty
     ;
 

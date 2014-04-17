@@ -31,7 +31,7 @@ class Event_manager
     static Event_manager *instance();
 
     void execute_handlers(Window::Keystroke keystroke);
-
+    void register_handler(Window::Keystroke keystroke, Statement_block* newBlock);
     ~Event_manager();
 
   private:
