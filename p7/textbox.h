@@ -1,33 +1,35 @@
-
-#ifndef CIRCLE_H
-#define CIRCLE_H
+#ifndef TEXTBOX_H
+#define TEXTBOX_H
 
 #include "game_object.h"
+#include <string>
 
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
+#include <glut.h>
 #else
 #include <GL/gl.h>
-#include <GL/glu.h>
+#include <GL/glut.h>
 #endif
 
-class Circle : public Game_object
+
+class Textbox : public Game_object
 {
   public:
-    Circle();
+    Textbox();
 
   private:
-    virtual void updated(std::string name);
     virtual void build_display_list();
 
-    int m_radius;
+    std::string m_text;
+    double m_size;
+    int m_space;
     GLUquadricObj *m_quadric;
 
     // disable default copy constructor and default assignment
     // done as a precaution, they should never be called
-    Circle(const Circle &);
-    const Circle &operator=(const Circle &);
+    Textbox(const Textbox &);
+    const Textbox &operator=(const Textbox &);
 };
 
-#endif // #ifndef CIRCLE_H
+#endif // #ifndef TEXTBOX_H
