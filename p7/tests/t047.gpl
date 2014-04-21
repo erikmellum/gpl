@@ -1,0 +1,15 @@
+
+double x = 3.145;
+double y = 3.145;
+
+on akey
+{
+    x -= .005;
+    y -= 1;
+}
+
+on skey
+{
+    print("x = " + x);
+    print("y = " + y);
+}

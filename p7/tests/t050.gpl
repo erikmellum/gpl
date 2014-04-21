@@ -1,0 +1,32 @@
+int i;
+rectangle rect(x = 0, y = 0, w = 100, h = 100);
+string window_title = "p7 t050.gpl -- compare to t050.jpg";
+
+on uparrow
+{
+    for (i = 0; i < 20; i += 1)
+    {
+        rect.y += 1;
+    }
+}
+on downarrow
+{
+    for (i = 0; i < 20; i += 1)
+    {
+        rect.y -= 1;
+    }
+}
+on leftarrow
+{
+    for (i = 0; i < 20; i += 1)
+    {
+        rect.x -= 1;
+    }
+}
+on rightarrow
+{
+    for (i = 0; i < 20; i += 1)
+    {
+        rect.x += 1;
+    }
+}

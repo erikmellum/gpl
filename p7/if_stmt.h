@@ -11,9 +11,10 @@ Class: If_stmt implements an if statement for gpl
 
 using namespace std;
 
-class If_stmt
+class If_stmt : public Statement
 {
 	public:
+		If_stmt(Expr* newExpr, Statement_block* thenBlock);
 		If_stmt(Expr* newExpr, Statement_block* thenBlock, Statement_block* elseBlock);
 		void execute();
 		

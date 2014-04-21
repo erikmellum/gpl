@@ -1,0 +1,7 @@
+double x;
+string s;
+
+on akey
+{
+    x = s;
+}

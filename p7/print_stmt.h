@@ -11,10 +11,10 @@ Class: Print_stmt ipmlements a print statement for gpl using cout
 
 using namespace std;
 
-class Print_stmt
+class Print_stmt : public Statement
 {
 	public:
-		Print_stmt(Expr* expr);
+		Print_stmt(Expr* expr, int newLineNo);
 		void execute();
 		void setOutput(Expr* newExpr);
 		void setLineNo(int newLineNo);

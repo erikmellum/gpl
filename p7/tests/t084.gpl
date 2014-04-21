@@ -1,0 +1,8 @@
+
+circle c(x = 42, y = 42, radius = 42);
+
+on akey
+{
+    // width of a circle is derived, cannot change it
+    c.w = 100;
+}

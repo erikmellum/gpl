@@ -1,0 +1,13 @@
+string str = "hello";
+double x = 3.145;
+
+on akey
+{
+    str += x;
+}
+
+on skey
+{
+    print("str = " + str);
+}
+

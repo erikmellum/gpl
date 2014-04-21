@@ -1,0 +1,16 @@
+int row;
+int col;
+string str;
+
+on akey
+{
+    for (row = 0; row < 10; row += 1)
+    {
+        for (col = 0; col < 10; col += 1)
+        {
+            str = "row = " + row + ", col = " + col;
+            print(str);
+        }
+    }
+}
+

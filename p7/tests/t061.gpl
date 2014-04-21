@@ -1,0 +1,7 @@
+int i;
+string s;
+
+on akey
+{
+    i = s;
+}

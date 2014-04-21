@@ -1,0 +1,10 @@
+int i;
+string s;
+
+on akey
+{
+    for (i = 0; s + s; i += 1)
+    {
+        print("hello");
+    }
+}

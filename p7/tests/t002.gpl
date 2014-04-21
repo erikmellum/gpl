@@ -1,0 +1,6 @@
+int i = 42;
+
+on space
+{
+    print("i = " + i);
+}

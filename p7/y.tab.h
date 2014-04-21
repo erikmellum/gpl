@@ -227,7 +227,7 @@ typedef union YYSTYPE
 {
 
 /* Line 2068 of yacc.c  */
-#line 57 "gpl.y"
+#line 59 "gpl.y"
 
  int             union_int;
  std::string     *union_string;  // MUST be a pointer to a string (this sucks!)s
@@ -239,11 +239,13 @@ typedef union YYSTYPE
  Game_object     *union_game_object;
  Animation_block *union_animation_block;
  Symbol          *union_symbol;
+ Statement_block *union_statement_block;
+ Statement       *union_statement;
 
 
 
 /* Line 2068 of yacc.c  */
-#line 247 "y.tab.h"
+#line 249 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

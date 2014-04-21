@@ -1,0 +1,40 @@
+int i;
+circle circles[10];
+int down = 0;
+string window_title = "p7 t051.gpl -- compare to t051.jpg";
+
+on akey
+{
+    for (i = 0; i < 10; i += 1)
+    {
+        circles[i].radius = 10;
+        circles[i].x = i * 20 + 200;
+        circles[i].y = 400;
+    }
+}
+on leftarrow
+{
+    for (i = 0; i < 10; i += 1)
+    {
+        circles[i].x -= 20;
+    }
+}
+on downarrow
+{
+    if (down == 9)
+    {
+        for (i = 0; i < 10; i += 1)
+        {
+            circles[i].y -= 20;
+        }
+    }
+    else
+    {
+        for (i = down; i >= 0; i -= 1)
+        {
+            circles[i].x = circles[i+1].x;
+            circles[i].y = circles[i+1].y - 20;
+        }
+        down += 1;
+    }
+}

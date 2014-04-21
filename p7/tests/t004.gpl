@@ -1,0 +1,9 @@
+rectangle my_rect(x = 1, y = 2, w = 3, h = 4);
+
+on space
+{
+    print("my_rect.x = " + my_rect.x);
+    print("my_rect.y = " + my_rect.y);
+    print("my_rect.w = " + my_rect.w);
+    print("my_rect.h = " + my_rect.h);
+}

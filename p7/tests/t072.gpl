@@ -1,0 +1,7 @@
+double x = 3.145;
+on akey
+{
+    if (x + 3.145)
+        print("yes");
+    else print("no");
+}

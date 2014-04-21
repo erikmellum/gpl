@@ -1,0 +1,14 @@
+on space {print("space");}
+on leftarrow {print("leftarrow");}
+on rightarrow {print("rightarrow");}
+on uparrow {print("uparrow");}
+on downarrow {print("downarrow");}
+on f1 {print("f1");}
+on akey {print("akey");}
+on skey {print("skey");}
+on dkey {print("dkey");}
+on fkey {print("fkey");}
+on hkey {print("hkey");}
+on jkey {print("jkey");}
+on kkey {print("kkey");}
+on lkey {print("lkey");}

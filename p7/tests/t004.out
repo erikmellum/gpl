@@ -1,0 +1,86 @@
+gpl.cpp::main()
+  input file(tests/t004.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(true)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+game_object my_rect
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(4),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(3),
+    x = int(1),
+    y = int(2)
+  }
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[5]: my_rect.x = 1
+gpl[6]: my_rect.y = 2
+gpl[7]: my_rect.w = 3
+gpl[8]: my_rect.h = 4
+
+Printing the symbol table from signal_handler()
+game_object my_rect
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(4),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(3),
+    x = int(1),
+    y = int(2)
+  }

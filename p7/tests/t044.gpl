@@ -1,0 +1,13 @@
+string str = "hello";
+int i = 42;
+
+on akey
+{
+    str += i;
+}
+
+on skey
+{
+    print("str = " + str);
+}
+

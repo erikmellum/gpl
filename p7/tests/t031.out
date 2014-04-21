@@ -1,0 +1,29 @@
+gpl.cpp::main()
+  input file(tests/t031.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(true)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+double a 20.1251
+double b 21.875
+double c -9.9999
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[12]: a = 20.1251
+gpl[13]: b = 21.875
+gpl[14]: c = 42.0001
+
+Printing the symbol table from signal_handler()
+double a 20.1251
+double b 21.875
+double c 42.0001

@@ -1,0 +1,1 @@
+Semantic error on line 6: A double expression is not a legal array index.  The array is 'nums'.

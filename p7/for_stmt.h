@@ -11,10 +11,10 @@ Class: For_stmt implements a for statement
 
 using namespace std;
 
-class For_stmt
+class For_stmt : public Statement
 {
 	public:
-		For_stmt(Statement_block* newInitializer, Statement_block* newIncrementor, Statement_block* newBody, Expr* newExpr);
+		For_stmt(Statement_block* newInitializer, Expr* argument, Statement_block* newIncrementor, Statement_block* newBody);
 		void execute();
 
 	private:

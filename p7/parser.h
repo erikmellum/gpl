@@ -34,6 +34,7 @@
 #include <string>
 #include "expr.h"
 #include "variable.h"
+#include "window.h"
 #include "y.tab.h"
 #include "animation_block.h"
 #include <stack>
@@ -44,5 +45,15 @@
 #include <sstream>
 #include "expr.h"
 #include "animation_block.h"
+#include "statement.h"
+#include "statement_block.h"
+#include "event_manager.h"
+#include "if_stmt.h"
+#include "for_stmt.h"
+#include "print_stmt.h"
+#include "assignment_stmt.h"
+#include "exit_stmt.h"
+
+
     
 #endif // #ifndef PARSER_H

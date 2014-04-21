@@ -1,0 +1,1 @@
+Semantic error on line 6: LHS of minus-assignment must be (INT || DOUBLE).  Variable 'str1' is of type 'string'.

@@ -25,12 +25,14 @@
 extern int yylex();         // this lexer function returns next token
 extern int yyerror(char *); // used to print errors
 extern int line_count;      // the current line in the input; from array.l
-
+#include "statement.h"
 #include "parser.h"
-
 using namespace std;
+
+// Global Variables
 Game_object *cur_object_under_construction;
 string cur_object_name;
+stack<Statement_block*> statement_block_stack;
 Symbol_table *symbol_table = Symbol_table::instance();
 // use this global variable to store all the values in the array
 // add vectors here for additional types
@@ -65,6 +67,8 @@ Symbol_table *symbol_table = Symbol_table::instance();
  Game_object     *union_game_object;
  Animation_block *union_animation_block;
  Symbol          *union_symbol;
+ Statement_block *union_statement_block;
+ Statement       *union_statement;
 }
 
 %token T_INT
@@ -115,7 +119,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %token T_IF
 %token T_FOR
 %token T_ELSE
-%token T_EXIT
+%token <union_int> T_EXIT
 
 %token T_LPAREN
 %token T_RPAREN
@@ -173,9 +177,19 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %type <union_expression_kind> optional_initializer
 %type <union_operator_type> math_operator
 %type <union_int> object_type
-%type <union_animation_block> animation_block
+//%type <union_animation_block> animation_block
 %type <union_symbol> animation_parameter
 %type <union_int> T_FORWARD
+%type <union_statement> statement
+%type <union_statement> if_statement
+%type <union_statement> for_statement
+%type <union_statement> print_statement
+%type <union_statement> exit_statement
+%type <union_statement> assign_statement
+%type <union_statement_block> end_of_statement_block
+%type <union_statement_block> statement_block
+%type <union_statement_block> if_block
+
 // Grammar symbols that have values associated with them need to be
 // declared here.  The above union is used for the "ruturning" the value.
 // 
@@ -414,9 +428,6 @@ object_declaration:
         }
     } 
     T_LPAREN parameter_list_or_empty T_RPAREN
-    {
-                
-    }
     | object_type T_ID T_LBRACKET expression T_RBRACKET
     {
         string id = *$2;
@@ -516,9 +527,6 @@ parameter_list_or_empty :
 //---------------------------------------------------------------------
 parameter_list :
     parameter_list T_COMMA parameter
-    {
-
-    }
     | parameter
     ;
 
@@ -614,10 +622,6 @@ initialization_block:
 //---------------------------------------------------------------------
 animation_block:
     T_ANIMATION T_ID T_LPAREN check_animation_parameter T_RPAREN T_LBRACE { } statement_list T_RBRACE end_of_statement_block
-    {
-        
-
-    }
     ;
 
 //---------------------------------------------------------------------
@@ -663,45 +667,68 @@ animation_parameter:
 //---------------------------------------------------------------------
 check_animation_parameter:
     T_TRIANGLE T_ID
-    {
-    }
     | T_PIXMAP T_ID
-    {
-       
-    }
     | T_CIRCLE T_ID
-    {
-        
-    }
     | T_RECTANGLE T_ID
-    {
-       
-    }
     | T_TEXTBOX T_ID
-    {
-        
-    }
     ;
 
 //---------------------------------------------------------------------
 on_block:
     T_ON keystroke statement_block
+    {
+        register_handlers($2,$3);
+    }
     ;
 
 //---------------------------------------------------------------------
 keystroke:
     T_SPACE
+    {
+        $$ = SPACE;
+    }
     | T_UPARROW
+    {
+        $$ = UPARROW;
+    }
     | T_DOWNARROW
+    {
+        $$ = DOWNARROW;
+    }
     | T_LEFTARROW
+    {
+        $$ = LEFTARROW;
+    }
     | T_RIGHTARROW
+    {
+        $$ = RIGHTARROW;
+    }
     | T_LEFTMOUSE_DOWN
+    {
+
+    }
     | T_MIDDLEMOUSE_DOWN
+    {
+
+    }
     | T_RIGHTMOUSE_DOWN
+    {
+
+    }
     | T_LEFTMOUSE_UP
+    {
+
+    }
     | T_MIDDLEMOUSE_UP
+    {
+
+    }
     | T_RIGHTMOUSE_UP
+    {
+
+    }
     | T_MOUSE_MOVE
+
     | T_MOUSE_DRAG
     | T_AKEY 
     | T_SKEY 
@@ -718,77 +745,121 @@ keystroke:
 //---------------------------------------------------------------------
 if_block:
     statement_block_creator statement end_of_statement_block
+    {
+        $$ = $3;
+    }
     | statement_block
+    {
+        $$ = $1;
+    }
     ;
 
 //---------------------------------------------------------------------
 statement_block:
     T_LBRACE statement_block_creator statement_list T_RBRACE end_of_statement_block
     {
-
+        $$ = $5;
     }
     ;
 
 //---------------------------------------------------------------------
 statement_block_creator:
     {
-
+        // how do I get the line number?
+        statement_block_stack.push(new Statement_block(0));
     }
-    // this goes to nothing so that you can put an action here in p7
     ;
 
 //---------------------------------------------------------------------
 end_of_statement_block:
     {
-
+        $$ = statement_block_stack.top();
+        statement_block_stack.pop();
     }
-    // this goes to nothing so that you can put an action here in p7
     ;
 
 //---------------------------------------------------------------------
 statement_list:
     statement_list statement
-    {
-
-    }
     | empty
     ;
 
 //---------------------------------------------------------------------
 statement:
     if_statement
+    {
+        statement_block_stack.top()->addStatement($1);
+    }
     | for_statement
+    {
+        statement_block_stack.top()->addStatement($1);
+    }
     | assign_statement T_SEMIC
+    {
+        statement_block_stack.top()->addStatement($1);
+    }
     | print_statement T_SEMIC
+    {
+        statement_block_stack.top()->addStatement($1);
+    }
     | exit_statement T_SEMIC
+    {
+        statement_block_stack.top()->addStatement($1);
+    }
     ;
 
 //---------------------------------------------------------------------
 if_statement:
     T_IF T_LPAREN expression T_RPAREN if_block %prec IF_NO_ELSE
+    {
+        //$$ = new If_stmt($3, $5);
+    }
+
     | T_IF T_LPAREN expression T_RPAREN if_block T_ELSE if_block
+    {
+        //$$ = new If_stmt($3, $5, $7);
+    }
     ;
 
 //---------------------------------------------------------------------
 for_statement:
     T_FOR T_LPAREN statement_block_creator assign_statement end_of_statement_block T_SEMIC expression T_SEMIC statement_block_creator assign_statement end_of_statement_block T_RPAREN statement_block
+    {
+        $$ = new For_stmt($5, $7, $11, $13);
+    }
     ;
 
 //---------------------------------------------------------------------
 print_statement:
     T_PRINT T_LPAREN expression T_RPAREN
+    {
+
+        $$ = new Print_stmt($3, $1);
+    }
     ;
 
 //---------------------------------------------------------------------
 exit_statement:
     T_EXIT T_LPAREN expression T_RPAREN
+    {
+        $$ = new Exit_stmt($3, $1);
+    }
     ;
 
 //---------------------------------------------------------------------
 assign_statement:
     variable T_ASSIGN expression
+    {
+        $$ = new Assignment_stmt($1, $3, EQUALS);
+    }
     | variable T_PLUS_ASSIGN expression
+    {
+        $$ = new Assignment_stmt($1, $3, PLUS_EQUALS);        
+    }
     | variable T_MINUS_ASSIGN expression
+    {
+        $$ = new Assignment_stmt($1, $3, MINUS_EQUALS);
+    }
     ;
 
 //---------------------------------------------------------------------

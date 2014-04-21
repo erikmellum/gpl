@@ -1,0 +1,1 @@
+Semantic error on line 5: LHS of plus-assignment must be (INT || DOUBLE || STRING).  Variable 'my_rectangle' is of type 'game_object'.

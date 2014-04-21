@@ -13,6 +13,7 @@ using namespace std;
 
 Event_manager::Event_manager()
 {
+
 }
 
 Event_manager::~Event_manager()
@@ -22,9 +23,14 @@ Event_manager::~Event_manager()
 void 
 Event_manager::execute_handlers(Window::Keystroke keystroke)
 {
+	for(unsigned int i = 0; i < handlers[keystroke].size(); i++)
+	{
+		handlers[keystroke][i]->execute();
+	}
 }
 
 void 
 Event_manager::register_handler(Window::Keystroke keystroke, Statement_block* newBlock)
 {
+	handlers[keystroke].push_back(newBlock);
 }

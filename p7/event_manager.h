@@ -19,7 +19,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include "statement_block.h"
 #include "window.h" // for Keystroke enum
 
 class Statement_block;
@@ -37,7 +37,7 @@ class Event_manager
   private:
     // hide default constructor because this is a singleton
     Event_manager();
-
+    vector<Statement_block*> handlers[22];
     static Event_manager *m_instance;
 
     // disable default copy constructor and default assignment

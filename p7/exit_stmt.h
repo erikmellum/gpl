@@ -10,12 +10,13 @@ Class: Exit_stmt
 
 using namespace std;
 
-class Exit_stmt
+class Exit_stmt : public Statement
 {
 	public:
-		Exit_stmt(Expr* newExpr);
+		Exit_stmt(Expr* newExpr, int newLineNo);
 		void execute();
 
 	private:
 		Expr* expr;
+		int lineNo;
 };

@@ -1,0 +1,579 @@
+gpl.cpp::main()
+  input file(tests/t800.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(true)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+game_object c
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(50),
+    y = int(10)
+  }
+int i 42
+game_object p
+  Pixmap
+  {
+    animation_block = animation_block(0),
+    blue = double(0.5),
+    drawing_order = int(0),
+    filename = string(""),
+    green = double(0.5),
+    h = int(10),
+    proximity = int(4),
+    red = double(0.5),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(10),
+    y = int(100)
+  }
+game_object r
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(10),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(50),
+    y = int(100)
+  }
+string s "hello world"
+game_object t
+  Triangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(1),
+    h = int(10),
+    proximity = int(4),
+    red = double(0),
+    rotation = double(0),
+    size = int(10),
+    skew = double(1),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(10),
+    y = int(10)
+  }
+game_object txt
+  Textbox
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(11),
+    proximity = int(4),
+    red = double(0),
+    size = double(0.1),
+    space = int(10),
+    text = string("hello"),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(100),
+    y = int(10)
+  }
+double values[0] 0
+double values[10] 0
+double values[11] 0
+double values[12] 0
+double values[13] 0
+double values[14] 0
+double values[15] 0
+double values[16] 0
+double values[17] 0
+double values[18] 0
+double values[19] 0
+double values[1] 0
+double values[20] 0
+double values[21] 0
+double values[22] 0
+double values[23] 0
+double values[24] 0
+double values[25] 0
+double values[26] 0
+double values[27] 0
+double values[28] 0
+double values[29] 0
+double values[2] 0
+double values[30] 0
+double values[31] 0
+double values[32] 0
+double values[33] 0
+double values[34] 0
+double values[35] 0
+double values[36] 0
+double values[37] 0
+double values[38] 0
+double values[39] 0
+double values[3] 0
+double values[40] 0
+double values[41] 0
+double values[42] 0
+double values[43] 0
+double values[44] 0
+double values[45] 0
+double values[46] 0
+double values[47] 0
+double values[48] 0
+double values[49] 0
+double values[4] 0
+double values[50] 0
+double values[51] 0
+double values[52] 0
+double values[53] 0
+double values[54] 0
+double values[55] 0
+double values[56] 0
+double values[57] 0
+double values[58] 0
+double values[59] 0
+double values[5] 0
+double values[60] 0
+double values[61] 0
+double values[62] 0
+double values[63] 0
+double values[64] 0
+double values[65] 0
+double values[66] 0
+double values[67] 0
+double values[68] 0
+double values[69] 0
+double values[6] 0
+double values[70] 0
+double values[71] 0
+double values[72] 0
+double values[73] 0
+double values[74] 0
+double values[75] 0
+double values[76] 0
+double values[77] 0
+double values[78] 0
+double values[79] 0
+double values[7] 0
+double values[80] 0
+double values[81] 0
+double values[82] 0
+double values[83] 0
+double values[84] 0
+double values[85] 0
+double values[86] 0
+double values[87] 0
+double values[88] 0
+double values[89] 0
+double values[8] 0
+double values[90] 0
+double values[91] 0
+double values[92] 0
+double values[93] 0
+double values[94] 0
+double values[95] 0
+double values[96] 0
+double values[97] 0
+double values[98] 0
+double values[99] 0
+double values[9] 0
+double x 3.145
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[13]: i = 42
+gpl[14]: x = 3.145
+gpl[15]: s = hello world
+gpl[16]: t.x = 10
+gpl[17]: p.x = 10
+gpl[18]: c.x = 50
+gpl[19]: r.x = 50
+gpl[20]: txt.x = 100
+gpl[35]: values[0] = 0.669131
+gpl[35]: values[1] = 0.743145
+gpl[35]: values[2] = 0.900404
+gpl[35]: values[3] = 50.9867
+gpl[35]: values[4] = 39.0133
+gpl[35]: values[5] = 37.8472
+gpl[35]: values[6] = 6.48074
+gpl[35]: values[7] = 42
+gpl[35]: values[8] = 42
+gpl[51]: values[0] = 0.669131
+gpl[51]: values[1] = 0.743145
+gpl[51]: values[2] = 0.900404
+gpl[51]: values[3] = 50.9867
+gpl[51]: values[4] = 39.0133
+gpl[51]: values[5] = 37.8472
+gpl[51]: values[6] = 6.48074
+gpl[51]: values[7] = 42
+gpl[51]: values[8] = 42
+gpl[56]: -11.71
+gpl[57]: 1
+gpl[58]: 1
+gpl[59]: 0
+gpl[60]: 0
+gpl[61]: 1
+gpl[62]: 1
+gpl[63]: 1
+gpl[64]: 1
+
+Printing the symbol table from signal_handler()
+game_object c
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(50),
+    y = int(10)
+  }
+int i 9
+game_object p
+  Pixmap
+  {
+    animation_block = animation_block(0),
+    blue = double(0.5),
+    drawing_order = int(0),
+    filename = string(""),
+    green = double(0.5),
+    h = int(80),
+    proximity = int(4),
+    red = double(0.5),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(112),
+    x = int(10),
+    y = int(100)
+  }
+game_object r
+  Rectangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(10),
+    proximity = int(4),
+    red = double(1),
+    rotation = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(50),
+    y = int(100)
+  }
+string s "hello world"
+game_object t
+  Triangle
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(1),
+    h = int(11),
+    proximity = int(4),
+    red = double(0),
+    rotation = double(0),
+    size = int(10),
+    skew = double(1),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(10),
+    x = int(10),
+    y = int(10)
+  }
+game_object txt
+  Textbox
+  {
+    animation_block = animation_block(0),
+    blue = double(0),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(11),
+    proximity = int(4),
+    red = double(0),
+    size = double(0.1),
+    space = int(10),
+    text = string("hello"),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(30),
+    x = int(100),
+    y = int(10)
+  }
+double values[0] 0.669131
+double values[10] 0
+double values[11] 0
+double values[12] 0
+double values[13] 0
+double values[14] 0
+double values[15] 0
+double values[16] 0
+double values[17] 0
+double values[18] 0
+double values[19] 0
+double values[1] 0.743145
+double values[20] 0
+double values[21] 0
+double values[22] 0
+double values[23] 0
+double values[24] 0
+double values[25] 0
+double values[26] 0
+double values[27] 0
+double values[28] 0
+double values[29] 0
+double values[2] 0.900404
+double values[30] 0
+double values[31] 0
+double values[32] 0
+double values[33] 0
+double values[34] 0
+double values[35] 0
+double values[36] 0
+double values[37] 0
+double values[38] 0
+double values[39] 0
+double values[3] 50.9867
+double values[40] 0
+double values[41] 0
+double values[42] 0
+double values[43] 0
+double values[44] 0
+double values[45] 0
+double values[46] 0
+double values[47] 0
+double values[48] 0
+double values[49] 0
+double values[4] 39.0133
+double values[50] 0
+double values[51] 0
+double values[52] 0
+double values[53] 0
+double values[54] 0
+double values[55] 0
+double values[56] 0
+double values[57] 0
+double values[58] 0
+double values[59] 0
+double values[5] 37.8472
+double values[60] 0
+double values[61] 0
+double values[62] 0
+double values[63] 0
+double values[64] 0
+double values[65] 0
+double values[66] 0
+double values[67] 0
+double values[68] 0
+double values[69] 0
+double values[6] 6.48074
+double values[70] 0
+double values[71] 0
+double values[72] 0
+double values[73] 0
+double values[74] 0
+double values[75] 0
+double values[76] 0
+double values[77] 0
+double values[78] 0
+double values[79] 0
+double values[7] 42
+double values[80] 0
+double values[81] 0
+double values[82] 0
+double values[83] 0
+double values[84] 0
+double values[85] 0
+double values[86] 0
+double values[87] 0
+double values[88] 0
+double values[89] 0
+double values[8] 42
+double values[90] 0
+double values[91] 0
+double values[92] 0
+double values[93] 0
+double values[94] 0
+double values[95] 0
+double values[96] 0
+double values[97] 0
+double values[98] 0
+double values[99] 0
+double values[9] 0
+double x 3.145

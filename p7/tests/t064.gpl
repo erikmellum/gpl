@@ -1,0 +1,7 @@
+double x = 3.145;
+string str = "hello";
+
+on akey
+{
+    x += str;
+}

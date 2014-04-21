@@ -1,0 +1,34 @@
+
+int i;
+int num = 8;
+circle c[num];
+int angle = 0;
+int spacing = 0;
+string window_title = "p7 t055.gpl -- compare to t055.jpg";
+
+
+// initialize the circles (normally done in initialization block
+// but there is no initializaiton block in p7
+on space
+{
+    for (i = 0; i < num; i += 1)
+    {
+        c[i].x = 250;
+        c[i].y = 250;
+    } 
+}
+
+on akey
+{
+    if (spacing <= 20)
+    {
+        spacing += 1;
+    }
+
+    angle += 1;
+    for (i = 0; i < num; i += 1)
+    {
+        c[i].x = floor(cos(angle) * spacing * i) + 250;
+        c[i].y = floor(sin(angle) * spacing * i) + 250;
+    } 
+}

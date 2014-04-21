@@ -13,10 +13,12 @@
 
 #ifndef STATEMENT_BLOCK_H
 #define STATEMENT_BLOCK_H
-
+  
+#include "gpl_assert.h"
 #include <iostream>
-
+#include "statement.h"
 #include "indent.h"
+#include <vector>
 
 class Game_object;
 
@@ -31,12 +33,14 @@ class Statement_block
     // This is called when a statement block is executed
     // Implement it for p7
     void execute();
-  
+    void addStatement(Statement* statement);
+    Statement* removeStatement();
     std::ostream &print(std::ostream &os) const;
 
   protected:
 
     // line number statement block starts on (only used for debugging)
+    vector<Statement*> statements;
     int m_line; 
 };
 

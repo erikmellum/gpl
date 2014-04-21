@@ -1,0 +1,1 @@
+Runtime error: Cannot changed derived field 'w' of a 'Circle' object.  This field is derived from other fields.  The change will be ignored.

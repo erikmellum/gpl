@@ -1,0 +1,34 @@
+gpl.cpp::main()
+  input file(tests/t015.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(true)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+int a 1
+int b 2
+int c 3
+int d 4
+int e 5
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[24]: b is NOT largest value.  b = 2
+gpl[29]: c is NOT largest value.  c = 3
+gpl[37]: d is NOT largest value.  d = 4
+gpl[41]: e is the largest value.  e = 5
+
+Printing the symbol table from signal_handler()
+int a 1
+int b 2
+int c 3
+int d 4
+int e 5

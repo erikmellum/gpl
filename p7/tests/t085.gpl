@@ -1,0 +1,6 @@
+string s = "hello" + " " + "world";
+
+on akey
+{
+    exit(s);
+}

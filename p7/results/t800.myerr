@@ -1,0 +1,5 @@
+Semantic error on line 4: The animation parameter 'x' is not a unique name.  Animation parameters must have names that are unique in the global name space.
+Semantic error on line 5: The animation parameter 'x' is not a unique name.  Animation parameters must have names that are unique in the global name space.
+Semantic error on line 6: The animation parameter 'x' is not a unique name.  Animation parameters must have names that are unique in the global name space.
+Semantic error on line 7: The animation parameter 'x' is not a unique name.  Animation parameters must have names that are unique in the global name space.
+Semantic error on line 8: The animation parameter 'x' is not a unique name.  Animation parameters must have names that are unique in the global name space.

@@ -1,0 +1,7 @@
+string str = "index";
+int nums[4];
+
+on akey
+{
+    nums[str] = 42;
+}

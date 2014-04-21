@@ -1,0 +1,7 @@
+string str = "hello";
+on akey
+{
+    if (str)
+        print("yes");
+    else print("no");
+}

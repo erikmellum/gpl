@@ -1,0 +1,34 @@
+int index;
+int i = 42;
+double x = 3.145;
+string s = "hello";
+int ints[3];
+double doubles[3];
+string strings[3];
+rectangle rects[3];
+triangle my_triangle();
+
+
+on akey
+{
+    for (index = 0; index < 3; index += 1)
+    {
+        ints[index] = index;
+        doubles[index] = 3.145 * index;
+        strings[index] = "index = " + index;
+        rects[index].x = 42;
+    }
+
+    my_triangle.x = 42;
+}
+
+on skey
+{
+    i = index + ints[0] + my_triangle.x + rects[0].x;
+    print("i = " + i);
+    x = x + ints[0] + doubles[0] + rects[0].x;
+    print("x = " + x);
+    s = strings[0] + "  " + strings[1] + "  " + strings[2];
+    print("s = " + s);
+}
+

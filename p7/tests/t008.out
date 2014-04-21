@@ -1,0 +1,236 @@
+gpl.cpp::main()
+  input file(tests/t008.gpl)
+  random seed(42)
+  read_keypresses_from_standard_input(true)
+  dump_pixels(false)
+  symbol_table(true)
+  print_symbol_table(true)
+  graphics(true)
+
+gpl.cpp::main() Calling yyparse()
+
+
+gpl.cpp::main() after call to yyparse().
+
+
+Printing the symbol table from main()
+game_object circles[0]
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object circles[1]
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object circles[2]
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+double doubles[0] 0
+double doubles[1] 0
+double doubles[2] 0
+int ints[0] 0
+int ints[1] 0
+int ints[2] 0
+string strings[0] ""
+string strings[1] ""
+string strings[2] ""
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[24]: ints[0] = 0
+gpl[25]: ints[1] = 1
+gpl[26]: ints[2] = 2
+gpl[27]: doubles[0] = 0
+gpl[28]: doubles[1] = 1
+gpl[29]: doubles[2] = 2
+gpl[30]: strings[0] = zero
+gpl[31]: strings[1] = one
+gpl[32]: strings[2] = two
+gpl[33]: circles[0].x = 0
+gpl[34]: circles[1].x = 1
+gpl[35]: circles[2].x = 2
+
+Printing the symbol table from signal_handler()
+game_object circles[0]
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(0),
+    y = int(0)
+  }
+game_object circles[1]
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(1),
+    y = int(0)
+  }
+game_object circles[2]
+  Circle
+  {
+    animation_block = animation_block(0),
+    blue = double(1),
+    drawing_order = int(0),
+    green = double(0),
+    h = int(20),
+    proximity = int(4),
+    radius = int(10),
+    red = double(0),
+    user_double = double(0),
+    user_double2 = double(0),
+    user_double3 = double(0),
+    user_double4 = double(0),
+    user_double5 = double(0),
+    user_int = int(0),
+    user_int2 = int(0),
+    user_int3 = int(0),
+    user_int4 = int(0),
+    user_int5 = int(0),
+    user_string = string(""),
+    user_string2 = string(""),
+    user_string3 = string(""),
+    user_string4 = string(""),
+    user_string5 = string(""),
+    visible = int(1),
+    w = int(20),
+    x = int(2),
+    y = int(0)
+  }
+double doubles[0] 0
+double doubles[1] 1
+double doubles[2] 2
+int ints[0] 0
+int ints[1] 1
+int ints[2] 2
+string strings[0] "zero"
+string strings[1] "one"
+string strings[2] "two"

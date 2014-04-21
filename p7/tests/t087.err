@@ -1,0 +1,1 @@
+Semantic error on line 5: Incorrect type for expression in a print statement.  Expressions in print statements must be of type INT, DOUBLE, or STRING.

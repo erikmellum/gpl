@@ -1,0 +1,8 @@
+int i = 0;
+int nums[10];
+
+on akey
+{
+    i = -1;
+    nums[i] = 42;
+}

@@ -1,0 +1,12 @@
+int nums[4];
+
+on akey
+{
+    nums[0] = 42;
+}
+
+on skey
+{
+    print("nums[0] = " + nums[0]);
+}
+

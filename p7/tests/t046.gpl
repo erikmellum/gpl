@@ -1,0 +1,13 @@
+
+int i = 42;
+
+on akey
+{
+    i -= 1;
+}
+
+on skey
+{
+    print("i = " + i);
+}
+

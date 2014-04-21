@@ -11,14 +11,20 @@ Class: Assignment_stmt implements an assign statement for gpl
 
 using namespace std;
 
-class Assignment_stmt
+enum Assign_kind{
+	EQUALS,
+	PLUS_EQUALS,
+	MINUS_EQUALS
+};
+
+class Assignment_stmt : public Statement
 {
 	public:
-		Assignment_stmt(Expr* newLhs, Expr* newRhs, Operator_type newType);
+		Assignment_stmt(Variable* newLhs, Expr* newRhs, Assign_kind newType);
 		void execute();
 		
 	private:
-		Expr* lhs;
+		Variable* lhs;
 		Expr* rhs;
-		Operator_type type;
+		Assign_kind type;
 };

@@ -1,0 +1,12 @@
+string str = "hello";
+
+on akey
+{
+    str += " world";
+}
+
+on skey
+{
+    print("str = " + str);
+}
+

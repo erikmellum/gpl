@@ -1,0 +1,40 @@
+on akey
+{
+    print("There ");
+}
+on akey
+{
+    print("are ");
+}
+on akey
+{
+    print("ten ");
+}
+on akey
+{
+    print("event ");
+}
+on akey
+{
+    print("handlers ");
+}
+on akey
+{
+    print("for the akey ");
+}
+on akey
+{
+    print("in this tests.");
+}
+on akey
+{
+    print("Did you print the ");
+}
+on akey
+{
+    print("text from all ");
+}
+on akey
+{
+    print("ten?");
+}

@@ -1,0 +1,10 @@
+int i = 42;
+double x = 3.145;
+string str = "hello world";
+
+on space
+{
+    print("i = " + i);
+    print("x = " + x);
+    print("str = " + str);
+}

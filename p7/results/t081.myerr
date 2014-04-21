@@ -1,0 +1,1 @@
+Semantic error on line 2: Object 'my_circle' does not contain the member variable 'bad_member_name'.

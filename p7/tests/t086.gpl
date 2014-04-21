@@ -1,0 +1,6 @@
+rectangle r(x = 100, y = 100, h = 100, w = 100);
+
+on akey
+{
+    r = 42;
+}

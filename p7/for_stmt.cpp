@@ -1,11 +1,11 @@
 #include "for_stmt.h"
 
-For_stmt::For_stmt(Statement_block* newInitializer, Statement_block* newIncrementor, Statement_block* newBody, Expr* newExpr)
+For_stmt::For_stmt(Statement_block* newInitializer, Expr* argument, Statement_block* newIncrementor, Statement_block* newBody)
 {
 	initializer = newInitializer;
 	incrementor = newIncrementor;
 	body = newBody;
-	expr = newExpr;
+	expr = argument;
 }
 
 void For_stmt::execute()

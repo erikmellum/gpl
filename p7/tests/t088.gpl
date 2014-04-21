@@ -1,0 +1,6 @@
+int numbers;
+
+on akey
+{
+    numbers[42] = 11;
+}
