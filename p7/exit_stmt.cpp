@@ -7,5 +7,5 @@ Exit_stmt::Exit_stmt(Expr* newExpr, int newLineNo)
 }
 void Exit_stmt::execute()
 {
-
+	exit(lineNo);
 }

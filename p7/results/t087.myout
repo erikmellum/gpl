@@ -46,3 +46,4 @@ game_object my_rectangle
     y = int(100)
   }
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().

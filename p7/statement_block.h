@@ -13,7 +13,7 @@
 
 #ifndef STATEMENT_BLOCK_H
 #define STATEMENT_BLOCK_H
-  
+
 #include "gpl_assert.h"
 #include <iostream>
 #include "statement.h"
@@ -25,6 +25,7 @@ class Game_object;
 class Statement_block
 {
   public:
+    Statement_block();
     Statement_block(int block_line);
 
     // Implement this function

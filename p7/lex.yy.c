@@ -1353,12 +1353,12 @@ return T_ELSE;
 case 56:
 YY_RULE_SETUP
 #line 169 "gpl.l"
-return T_EXIT;
+return emit_with_line_number(T_EXIT);
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
 #line 170 "gpl.l"
-return T_PRINT;
+return emit_with_line_number(T_PRINT);
 	YY_BREAK
 case 58:
 YY_RULE_SETUP

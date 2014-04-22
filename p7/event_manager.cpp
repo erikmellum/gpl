@@ -13,7 +13,6 @@ using namespace std;
 
 Event_manager::Event_manager()
 {
-
 }
 
 Event_manager::~Event_manager()

@@ -69,6 +69,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
  Symbol          *union_symbol;
  Statement_block *union_statement_block;
  Statement       *union_statement;
+ Window::Keystroke union_keystroke;
 }
 
 %token T_INT
@@ -189,6 +190,7 @@ Symbol_table *symbol_table = Symbol_table::instance();
 %type <union_statement_block> end_of_statement_block
 %type <union_statement_block> statement_block
 %type <union_statement_block> if_block
+%type <union_keystroke> keystroke
 
 // Grammar symbols that have values associated with them need to be
 // declared here.  The above union is used for the "ruturning" the value.
@@ -677,7 +679,7 @@ check_animation_parameter:
 on_block:
     T_ON keystroke statement_block
     {
-        register_handlers($2,$3);
+        Event_manager::instance()->register_handler($2,$3);
     }
     ;
 
@@ -685,61 +687,96 @@ on_block:
 keystroke:
     T_SPACE
     {
-        $$ = SPACE;
+        $$ = Window::SPACE;
     }
     | T_UPARROW
     {
-        $$ = UPARROW;
+        $$ = Window::UPARROW;
     }
     | T_DOWNARROW
     {
-        $$ = DOWNARROW;
+        $$ = Window::DOWNARROW;
     }
     | T_LEFTARROW
     {
-        $$ = LEFTARROW;
+        $$ = Window::LEFTARROW;
     }
     | T_RIGHTARROW
     {
-        $$ = RIGHTARROW;
+        $$ = Window::RIGHTARROW;
     }
     | T_LEFTMOUSE_DOWN
     {
-
+        $$ = Window::LEFTMOUSE_DOWN;
     }
     | T_MIDDLEMOUSE_DOWN
     {
-
+        $$ = Window::MIDDLEMOUSE_DOWN;
     }
     | T_RIGHTMOUSE_DOWN
     {
-
+        $$ = Window::RIGHTMOUSE_DOWN;
     }
     | T_LEFTMOUSE_UP
     {
-
+        $$ = Window::LEFTMOUSE_UP;
     }
     | T_MIDDLEMOUSE_UP
     {
-
+        $$ = Window::MIDDLEMOUSE_UP;
     }
     | T_RIGHTMOUSE_UP
     {
-
+        $$ = Window::RIGHTMOUSE_UP;
     }
     | T_MOUSE_MOVE
-
+    {
+        $$ = Window::MOUSE_MOVE;
+    }
     | T_MOUSE_DRAG
+    {
+        $$ = Window::MOUSE_DRAG;
+    }
     | T_AKEY 
+    {
+        $$ = Window::AKEY;
+    }
     | T_SKEY 
+    {
+        $$ = Window::SKEY;
+    }
     | T_DKEY 
+    {
+        $$ = Window::DKEY;
+    }
     | T_FKEY 
+    {
+        $$ = Window::FKEY;
+    }
     | T_HKEY 
+    {
+        $$ = Window::HKEY;
+    }
     | T_JKEY 
+    {
+        $$ = Window::JKEY;
+    }
     | T_KKEY 
+    {
+        $$ = Window::KKEY;
+    }
     | T_LKEY 
+    {
+        $$ = Window::LKEY;
+    }
     | T_WKEY 
+    {
+        $$ = Window::WKEY;
+    }
     | T_F1
+    {
+        $$ = Window::F1;
+    }
     ;
 
 //---------------------------------------------------------------------
@@ -812,12 +849,12 @@ statement:
 if_statement:
     T_IF T_LPAREN expression T_RPAREN if_block %prec IF_NO_ELSE
     {
-        //$$ = new If_stmt($3, $5);
+        $$ = new If_stmt($3, $5);
     }
 
     | T_IF T_LPAREN expression T_RPAREN if_block T_ELSE if_block
     {
-        //$$ = new If_stmt($3, $5, $7);
+        $$ = new If_stmt($3, $5, $7);
     }
     ;
 
@@ -850,15 +887,15 @@ exit_statement:
 assign_statement:
     variable T_ASSIGN expression
     {
-        $$ = new Assignment_stmt($1, $3, EQUALS);
+        $$ = new Assignment_stmt(new Expr($1), $3, EQUALS);
     }
     | variable T_PLUS_ASSIGN expression
     {
-        $$ = new Assignment_stmt($1, $3, PLUS_EQUALS);        
+        $$ = new Assignment_stmt(new Expr($1), $3, PLUS_EQUALS);        
     }
     | variable T_MINUS_ASSIGN expression
     {
-        $$ = new Assignment_stmt($1, $3, MINUS_EQUALS);
+        $$ = new Assignment_stmt(new Expr($1), $3, MINUS_EQUALS);
     }
     ;
 

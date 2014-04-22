@@ -20,7 +20,7 @@ class If_stmt : public Statement
 		
 	private:
 		Expr* expr;
-		Statement_block then_block;
-		Statement_block else_block;
+		Statement_block* then_block;
+		Statement_block* else_block;
 
 };

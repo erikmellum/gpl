@@ -17,3 +17,8 @@ Printing the symbol table from main()
 int i 42
 double x 3.145
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+
+Printing the symbol table from signal_handler()
+int i 42
+double x 3.145

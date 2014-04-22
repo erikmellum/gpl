@@ -18,3 +18,9 @@ int col 0
 int row 0
 string str ""
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+
+Printing the symbol table from signal_handler()
+int col 0
+int row 0
+string str ""

@@ -37,7 +37,7 @@ class Event_manager
   private:
     // hide default constructor because this is a singleton
     Event_manager();
-    vector<Statement_block*> handlers[22];
+    vector<Statement_block*> handlers[Window::NUMBER_OF_KEYS];
     static Event_manager *m_instance;
 
     // disable default copy constructor and default assignment

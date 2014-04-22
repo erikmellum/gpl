@@ -15,3 +15,20 @@ gpl.cpp::main() after call to yyparse().
 
 Printing the symbol table from main()
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[1]: space
+gpl[2]: leftarrow
+gpl[3]: rightarrow
+gpl[4]: uparrow
+gpl[5]: downarrow
+gpl[6]: f1
+gpl[7]: akey
+gpl[8]: skey
+gpl[9]: dkey
+gpl[10]: fkey
+gpl[11]: hkey
+gpl[12]: jkey
+gpl[13]: kkey
+gpl[14]: lkey
+
+Printing the symbol table from signal_handler()

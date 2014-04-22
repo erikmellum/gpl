@@ -166,8 +166,8 @@ The right-hand-side (RHS) gives an action (code to execute)
 "if"            return T_IF;
 "for"           return T_FOR;
 "else"          return T_ELSE;
-"exit"          return T_EXIT;
-"print"         return T_PRINT;
+"exit"          return emit_with_line_number(T_EXIT);
+"print"         return emit_with_line_number(T_PRINT);
 "true"          return T_TRUE;
 "false"         return T_FALSE;
 "space"         return T_SPACE;

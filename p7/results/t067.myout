@@ -17,3 +17,8 @@ Printing the symbol table from main()
 string str1 "hello"
 string str2 "o"
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+
+Printing the symbol table from signal_handler()
+string str1 "hello"
+string str2 "o"

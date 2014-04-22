@@ -241,11 +241,12 @@ typedef union YYSTYPE
  Symbol          *union_symbol;
  Statement_block *union_statement_block;
  Statement       *union_statement;
+ Window::Keystroke union_keystroke;
 
 
 
 /* Line 2068 of yacc.c  */
-#line 249 "y.tab.h"
+#line 250 "y.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */

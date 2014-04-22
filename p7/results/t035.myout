@@ -108,3 +108,4 @@ game_object rects[2]
     y = int(0)
   }
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().

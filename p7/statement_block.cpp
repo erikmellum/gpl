@@ -2,6 +2,7 @@
 
 using namespace std;
 
+Statement_block::Statement_block(){}
 
 Statement_block::Statement_block(int block_line)
 {

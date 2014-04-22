@@ -7,5 +7,5 @@ Print_stmt::Print_stmt(Expr* expr, int newLineNo)
 }
 void Print_stmt::execute()
 {
-	cout << output->eval_string();
+	cout << "gpl[" << line_no << "]: " << output->eval_string() << endl;
 }

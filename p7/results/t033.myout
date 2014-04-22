@@ -22,3 +22,14 @@ int nums[2] 0
 int nums[3] 0
 string s ""
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[14]: 
+
+Printing the symbol table from signal_handler()
+int i 4
+int j 2
+int nums[0] 0
+int nums[1] 0
+int nums[2] 0
+int nums[3] 0
+string s ""

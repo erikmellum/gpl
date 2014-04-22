@@ -16,3 +16,8 @@ gpl.cpp::main() after call to yyparse().
 Printing the symbol table from main()
 string str "hello"
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[10]: str = hello
+
+Printing the symbol table from signal_handler()
+string str "hello"

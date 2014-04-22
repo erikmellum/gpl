@@ -15,3 +15,66 @@ gpl.cpp::main() after call to yyparse().
 
 Printing the symbol table from main()
 gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[3]: There 
+gpl[7]: are 
+gpl[11]: ten 
+gpl[15]: event 
+gpl[19]: handlers 
+gpl[23]: for the akey 
+gpl[27]: in this tests.
+gpl[31]: Did you print the 
+gpl[35]: text from all 
+gpl[39]: ten?
+gpl[3]: There 
+gpl[7]: are 
+gpl[11]: ten 
+gpl[15]: event 
+gpl[19]: handlers 
+gpl[23]: for the akey 
+gpl[27]: in this tests.
+gpl[31]: Did you print the 
+gpl[35]: text from all 
+gpl[39]: ten?
+gpl[3]: There 
+gpl[7]: are 
+gpl[11]: ten 
+gpl[15]: event 
+gpl[19]: handlers 
+gpl[23]: for the akey 
+gpl[27]: in this tests.
+gpl[31]: Did you print the 
+gpl[35]: text from all 
+gpl[39]: ten?
+gpl[3]: There 
+gpl[7]: are 
+gpl[11]: ten 
+gpl[15]: event 
+gpl[19]: handlers 
+gpl[23]: for the akey 
+gpl[27]: in this tests.
+gpl[31]: Did you print the 
+gpl[35]: text from all 
+gpl[39]: ten?
+gpl[3]: There 
+gpl[7]: are 
+gpl[11]: ten 
+gpl[15]: event 
+gpl[19]: handlers 
+gpl[23]: for the akey 
+gpl[27]: in this tests.
+gpl[31]: Did you print the 
+gpl[35]: text from all 
+gpl[39]: ten?
+gpl[3]: There 
+gpl[7]: are 
+gpl[11]: ten 
+gpl[15]: event 
+gpl[19]: handlers 
+gpl[23]: for the akey 
+gpl[27]: in this tests.
+gpl[31]: Did you print the 
+gpl[35]: text from all 
+gpl[39]: ten?
+
+Printing the symbol table from signal_handler()
