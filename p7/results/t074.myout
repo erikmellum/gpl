@@ -29,7 +29,7 @@ gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
 
 Printing the symbol table from signal_handler()
-int i 0
+int i 7000
 int nums[0] 0
 int nums[1] 0
 int nums[2] 0

@@ -271,7 +271,7 @@ gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
 
 Printing the symbol table from signal_handler()
-int angle 0
+int angle 210
 game_object c[0]
   Circle
   {

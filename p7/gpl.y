@@ -887,15 +887,15 @@ exit_statement:
 assign_statement:
     variable T_ASSIGN expression
     {
-        $$ = new Assignment_stmt(new Expr($1), $3, EQUALS);
+        $$ = new Assignment_stmt($1, $3, EQUALS);
     }
     | variable T_PLUS_ASSIGN expression
     {
-        $$ = new Assignment_stmt(new Expr($1), $3, PLUS_EQUALS);        
+        $$ = new Assignment_stmt($1, $3, PLUS_EQUALS);        
     }
     | variable T_MINUS_ASSIGN expression
     {
-        $$ = new Assignment_stmt(new Expr($1), $3, MINUS_EQUALS);
+        $$ = new Assignment_stmt($1, $3, MINUS_EQUALS);
     }
     ;
 

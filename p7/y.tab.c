@@ -2643,7 +2643,7 @@ yyreduce:
 /* Line 1806 of yacc.c  */
 #line 889 "gpl.y"
     {
-        (yyval.union_statement) = new Assignment_stmt(new Expr((yyvsp[(1) - (3)].union_variable_type)), (yyvsp[(3) - (3)].union_expression_kind), EQUALS);
+        (yyval.union_statement) = new Assignment_stmt((yyvsp[(1) - (3)].union_variable_type), (yyvsp[(3) - (3)].union_expression_kind), EQUALS);
     }
     break;
 
@@ -2652,7 +2652,7 @@ yyreduce:
 /* Line 1806 of yacc.c  */
 #line 893 "gpl.y"
     {
-        (yyval.union_statement) = new Assignment_stmt(new Expr((yyvsp[(1) - (3)].union_variable_type)), (yyvsp[(3) - (3)].union_expression_kind), PLUS_EQUALS);        
+        (yyval.union_statement) = new Assignment_stmt((yyvsp[(1) - (3)].union_variable_type), (yyvsp[(3) - (3)].union_expression_kind), PLUS_EQUALS);        
     }
     break;
 
@@ -2661,7 +2661,7 @@ yyreduce:
 /* Line 1806 of yacc.c  */
 #line 897 "gpl.y"
     {
-        (yyval.union_statement) = new Assignment_stmt(new Expr((yyvsp[(1) - (3)].union_variable_type)), (yyvsp[(3) - (3)].union_expression_kind), MINUS_EQUALS);
+        (yyval.union_statement) = new Assignment_stmt((yyvsp[(1) - (3)].union_variable_type), (yyvsp[(3) - (3)].union_expression_kind), MINUS_EQUALS);
     }
     break;
 

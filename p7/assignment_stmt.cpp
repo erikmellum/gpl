@@ -1,6 +1,6 @@
 #include "assignment_stmt.h"
 
-Assignment_stmt::Assignment_stmt(Expr* newLhs, Expr* newRhs, Assign_kind newType)
+Assignment_stmt::Assignment_stmt(Variable* newLhs, Expr* newRhs, Assign_kind newType)
 {
 	lhs = newLhs;
 	rhs = newRhs;
@@ -10,54 +10,49 @@ void Assignment_stmt::execute()
 {
 	switch(type)
 	{
-		case EQUALS:
-			/**
-			if(lhs->getGplType() == INT)
+		case EQUALS:		
+			if(lhs->eval()->getType() == INT)
 			{
-				lhs->eval_int() = rhs->eval_int();
+				lhs->eval()->setInt(rhs->eval_int());
 			}
-			else if(lhs->g etGplType() == DOUBLE)
+			else if(lhs->eval()->getType() == DOUBLE)
 			{
-				lhs->eval_double() = rhs->eval_double();
+				lhs->eval()->setDouble(rhs->eval_double());
 			}
-			else if(lhs->getGplType() == STRING)
+			else if(lhs->eval()->getType() == STRING)
 			{
-				lhs->eval_string() = rhs->eval_string();
+				lhs->eval()->setString(rhs->eval_string());
 			}
-			else if(lhs->getGplType() == GAME_OBJECT)
+			else if(lhs->eval()->getType() == GAME_OBJECT)
 			{	
-				lhs->eval_game_object() = rhs->eval_game_object();
+				lhs->eval()->setGameObject(rhs->eval_game_object());
 			}
-			else if(lhs->getGplType() == ANIMATION_BLOCK)
+			else if(lhs->eval()->getType() == ANIMATION_BLOCK)
 			{
-				lhs->eval_animation_block() = rhs->eval_animation_block();
-
+				lhs->eval()->setAnimationBlock(rhs->eval_animation_block());
 			}
-			**/
 		break;
 		case PLUS_EQUALS:
-			/**
-			if(lhs->getGplType() == INT)
+			if(lhs->eval()->getType() == INT)
 			{
-				lhs->eval_int() += rhs->eval_int();
+				lhs->eval()->setInt(rhs->eval_int() + lhs->eval()->getInt());
 			}
-			else if(lhs->getGplType() == DOUBLE)
+			else if(lhs->eval()->getType() == DOUBLE)
 			{
-				lhs->eval_double() += rhs->eval_double();
+				if(rhs->getGplType() == DOUBLE || rhs->getGplType() == INT)
+					lhs->eval()->setDouble(rhs->eval_double() + lhs->eval()->getDouble());
 			}
-			**/
 		break;
 		case MINUS_EQUALS:
-			/**
-			if(lhs->getGplType() == INT)
+			if(lhs->eval()->getType() == INT)
 			{
-				lhs->eval_int() -= rhs->eval_int();
+				lhs->eval()->setInt(lhs->eval()->getInt() - rhs->eval_int());
 			}
-			else if(lhs->getGplType() == DOUBLE)
+			else if(lhs->eval()->getType() == DOUBLE)
 			{
-				lhs->eval_double() -= rhs->eval_double();
+				if(rhs->getGplType() == DOUBLE || rhs->getGplType() == INT)
+					lhs->eval()->setDouble(lhs->eval()->getDouble() - rhs->eval_double());
 			}
-			**/
 		break;
 	}
 }

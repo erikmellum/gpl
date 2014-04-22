@@ -20,11 +20,11 @@ enum Assign_kind{
 class Assignment_stmt : public Statement
 {
 	public:
-		Assignment_stmt(Expr* newLhs, Expr* newRhs, Assign_kind newType);
+		Assignment_stmt(Variable* newLhs, Expr* newRhs, Assign_kind newType);
 		void execute();
 		
 	private:
-		Expr* lhs;
+		Variable* lhs;
 		Expr* rhs;
 		Assign_kind type;
 };
