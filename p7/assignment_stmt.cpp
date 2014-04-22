@@ -16,7 +16,7 @@ void Assignment_stmt::execute()
 			{
 				lhs->eval_int() = rhs->eval_int();
 			}
-			else if(lhs->getGplType() == DOUBLE)
+			else if(lhs->g etGplType() == DOUBLE)
 			{
 				lhs->eval_double() = rhs->eval_double();
 			}

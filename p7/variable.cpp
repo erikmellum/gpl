@@ -73,6 +73,13 @@ double Variable::getDoubleValue(Symbol* sym)
         assert(status == OK);
         return var;
     }
+    else if(type == INT)
+    {
+        int var;
+        status = object->get_member_variable(param, var);
+        assert(status == OK);
+        return (double) var;
+    }
     //else 
         //error
     return 0;
@@ -90,6 +97,24 @@ string Variable::getStringValue(Symbol* sym)
         status = object->get_member_variable(param, var);
         assert(status == OK);
         return var;
+    }
+    else if(type == DOUBLE)
+    {
+        stringstream ss;
+        double var;
+        status = object->get_member_variable(param, var);
+        assert(status == OK);
+        ss << var;
+        return ss.str();
+    }
+    else if(type == INT)
+    {
+        stringstream ss;
+        int var;
+        status = object->get_member_variable(param, var);
+        assert(status == OK);
+        ss << var;
+        return ss.str();
     }
     //else 
         //error
