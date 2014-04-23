@@ -7,6 +7,7 @@ Class: Assignment_stmt implements an assign statement for gpl
 #include "statement.h"
 #include "gpl_type.h"
 #include "expr.h"
+#include "variable.h"
 #pragma once
 
 using namespace std;

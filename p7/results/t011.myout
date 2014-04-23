@@ -16,5 +16,6 @@ gpl.cpp::main() after call to yyparse().
 Printing the symbol table from main()
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
+gpl[4]: 42 == 42 is true
 
 Printing the symbol table from signal_handler()

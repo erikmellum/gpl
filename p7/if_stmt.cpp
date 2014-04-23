@@ -13,5 +13,14 @@ If_stmt::If_stmt(Expr* newExpr, Statement_block* thenBlock, Statement_block* els
 }
 void If_stmt::execute()
 {
-
+	if(!else_block)
+	{
+		if(expr->eval_int())
+			then_block->execute();
+	}
+	else
+		if(expr->eval_int())
+			then_block->execute();
+		else
+			else_block->execute();
 }

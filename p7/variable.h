@@ -9,6 +9,10 @@
 using namespace std;
 class Expr;
 
+enum Var_type{
+    STANDARD,
+    OBJECT_PARAM
+};
 class Variable
 {
     public:      
@@ -16,13 +20,21 @@ class Variable
         Variable(string value, Expr* expr);
         Variable(string value, string parameter);
         Variable(string value, Expr* expr, string parameter);
+        Var_type getType();
         int getIntValue(Symbol* sym);
         double getDoubleValue(Symbol* sym);
         string getStringValue(Symbol* sym);
+        void setIntParam(Symbol* sym, int newValue);
+        void setDoubleParam(Symbol* sym, double newValue);
+        void setStringParam(Symbol* sym, string newValue);
+        string getParam();
+        Gpl_type getParamType(Symbol* sym);
+        void setParam(string newParam);
         Symbol* eval();
     private:
         Symbol* symbol;
         Expr* expression;
+        Var_type type;
         string name;
         string param;
 };

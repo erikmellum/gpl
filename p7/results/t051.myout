@@ -641,6 +641,6 @@ game_object circles[9]
     x = int(0),
     y = int(0)
   }
-int down 0
+int down 9
 int i 0
 string window_title "p7 t051.gpl -- compare to t051.jpg"

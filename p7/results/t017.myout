@@ -18,3 +18,4 @@ int i 42
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
 gpl[6]: about to call exit with 42
+gpl[7]: exit(42)

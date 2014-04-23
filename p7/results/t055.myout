@@ -522,5 +522,5 @@ game_object c[7]
   }
 int i 0
 int num 8
-int spacing 0
+int spacing 21
 string window_title "p7 t055.gpl -- compare to t055.jpg"

@@ -12,25 +12,25 @@ void Assignment_stmt::execute()
 	{
 		case EQUALS:		
 			if(lhs->eval()->getType() == INT)
-			{
 				lhs->eval()->setInt(rhs->eval_int());
-			}
 			else if(lhs->eval()->getType() == DOUBLE)
-			{
 				lhs->eval()->setDouble(rhs->eval_double());
-			}
 			else if(lhs->eval()->getType() == STRING)
-			{
 				lhs->eval()->setString(rhs->eval_string());
-			}
 			else if(lhs->eval()->getType() == GAME_OBJECT)
-			{	
-				lhs->eval()->setGameObject(rhs->eval_game_object());
-			}
+				if(lhs->getType() == OBJECT_PARAM)
+				{
+					if(lhs->getParamType(lhs->eval()) == INT)
+						lhs->setIntParam(lhs->eval(), rhs->eval_int());
+					else if(lhs->getParamType(lhs->eval()) == DOUBLE)
+						lhs->setDoubleParam(lhs->eval(), rhs->eval_double());
+					else if(lhs->getParamType(lhs->eval()) == STRING)
+						lhs->setStringParam(lhs->eval(), rhs->eval_string());
+				}
+				else
+					lhs->eval()->setGameObject(rhs->eval_game_object());
 			else if(lhs->eval()->getType() == ANIMATION_BLOCK)
-			{
 				lhs->eval()->setAnimationBlock(rhs->eval_animation_block());
-			}
 		break;
 		case PLUS_EQUALS:
 			if(lhs->eval()->getType() == INT)

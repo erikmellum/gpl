@@ -1949,7 +1949,7 @@ yyreduce:
                 {
                     stringstream ss;
                     ss  << id  << "[" << i << "]";
-                    symbol_table->insert(new Symbol(ss.str(),0));
+                    symbol_table->insert(new Symbol(ss.str(),0.0));
                 }
             }
             else if((yyvsp[(1) - (5)].union_gpl_type) == STRING)

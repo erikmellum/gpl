@@ -23,6 +23,7 @@ int x 0
 int y 0
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
+gpl[18]: x > y is true
 
 Printing the symbol table from signal_handler()
 int a 1

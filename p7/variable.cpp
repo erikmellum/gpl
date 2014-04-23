@@ -5,24 +5,28 @@ Variable::Variable(string value)
     name = value;
     param = "";
     expression = NULL;
+    type = STANDARD;
 }
 Variable::Variable(string value, Expr* expr)
 {
     name = value;
     expression = expr;
     param = "";
+    type = STANDARD;
 }
 Variable::Variable(string value, string parameter)
 {
     name = value;
     param = parameter;
     expression = NULL;
+    type = OBJECT_PARAM;
 }
 Variable::Variable(string value, Expr* expr, string parameter)
 {
     name = value;
     param = parameter;
     expression = expr;
+    type = OBJECT_PARAM;
 }
 Symbol* Variable::eval()
 {
@@ -40,6 +44,10 @@ Symbol* Variable::eval()
         return symbol_table->retrieve(rname);
     }
     return new Symbol("dummy", 0);
+}
+Var_type Variable::getType()
+{
+    return type;
 }
 int Variable::getIntValue(Symbol* sym)
 {
@@ -119,4 +127,42 @@ string Variable::getStringValue(Symbol* sym)
     //else 
         //error
     return 0;
+}
+void Variable::setIntParam(Symbol* sym, int newValue)
+{
+    Game_object* object = sym->getGameObject();
+    Status status;
+    status = object->set_member_variable(param, newValue);
+    assert(status == OK);
+}
+void Variable::setDoubleParam(Symbol* sym, double newValue)
+{
+    Game_object* object = sym->getGameObject();
+    Status status;
+    status = object->set_member_variable(param, newValue);
+    assert(status == OK);
+}
+void Variable::setStringParam(Symbol* sym, string newValue)
+{
+    Game_object* object = sym->getGameObject();
+    Status status;
+    status = object->set_member_variable(param, newValue);
+    assert(status == OK);
+}
+string Variable::getParam()
+{
+    return param;
+}
+void Variable::setParam(string newParam)
+{
+    param = newParam;
+}
+Gpl_type Variable::getParamType(Symbol* sym)
+{
+    Game_object* object = sym->getGameObject();
+    Gpl_type type;
+    Status status;
+    status = object->get_member_variable_type(param, type);
+    assert(status == OK);
+    return type;
 }
