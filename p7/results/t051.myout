@@ -359,8 +359,8 @@ game_object circles[0]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(220)
   }
 game_object circles[1]
   Circle
@@ -390,8 +390,8 @@ game_object circles[1]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(240)
   }
 game_object circles[2]
   Circle
@@ -421,8 +421,8 @@ game_object circles[2]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(260)
   }
 game_object circles[3]
   Circle
@@ -452,8 +452,8 @@ game_object circles[3]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(280)
   }
 game_object circles[4]
   Circle
@@ -483,8 +483,8 @@ game_object circles[4]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(300)
   }
 game_object circles[5]
   Circle
@@ -514,8 +514,8 @@ game_object circles[5]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(320)
   }
 game_object circles[6]
   Circle
@@ -545,8 +545,8 @@ game_object circles[6]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(340)
   }
 game_object circles[7]
   Circle
@@ -576,8 +576,8 @@ game_object circles[7]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(360)
   }
 game_object circles[8]
   Circle
@@ -607,8 +607,8 @@ game_object circles[8]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(380)
   }
 game_object circles[9]
   Circle
@@ -638,9 +638,9 @@ game_object circles[9]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(380),
+    y = int(400)
   }
 int down 9
-int i 0
+int i 10
 string window_title "p7 t051.gpl -- compare to t051.jpg"

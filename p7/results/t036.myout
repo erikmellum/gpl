@@ -143,9 +143,17 @@ int size 4
 string str ""
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
+gpl[20]: rects[0].x = 0
+gpl[22]: rects[0].y = 0
+gpl[20]: rects[1].x = 100
+gpl[22]: rects[1].y = 100
+gpl[20]: rects[2].x = 200
+gpl[22]: rects[2].y = 200
+gpl[20]: rects[3].x = 300
+gpl[22]: rects[3].y = 300
 
 Printing the symbol table from signal_handler()
-int i 0
+int i 4
 game_object rects[0]
   Rectangle
   {
@@ -205,8 +213,8 @@ game_object rects[1]
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(100),
+    y = int(100)
   }
 game_object rects[2]
   Rectangle
@@ -236,8 +244,8 @@ game_object rects[2]
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(200),
+    y = int(200)
   }
 game_object rects[3]
   Rectangle
@@ -267,8 +275,8 @@ game_object rects[3]
     user_string5 = string(""),
     visible = int(1),
     w = int(10),
-    x = int(0),
-    y = int(0)
+    x = int(300),
+    y = int(300)
   }
 int size 4
-string str ""
+string str "rects[3].y = 300"

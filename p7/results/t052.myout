@@ -3121,7 +3121,7 @@ gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
 
 Printing the symbol table from signal_handler()
-int i 0
+int i 100
 game_object rects[0]
   Rectangle
   {
@@ -3129,9 +3129,9 @@ game_object rects[0]
     blue = double(0),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3149,7 +3149,7 @@ game_object rects[0]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(162),
     y = int(188)
   }
@@ -3157,12 +3157,12 @@ game_object rects[10]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.1),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.1),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3180,7 +3180,7 @@ game_object rects[10]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(391),
     y = int(221)
   }
@@ -3188,12 +3188,12 @@ game_object rects[11]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.11),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.11),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3211,7 +3211,7 @@ game_object rects[11]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(56),
     y = int(93)
   }
@@ -3219,12 +3219,12 @@ game_object rects[12]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.12),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.12),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3242,7 +3242,7 @@ game_object rects[12]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(130),
     y = int(376)
   }
@@ -3250,12 +3250,12 @@ game_object rects[13]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.13),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.13),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3273,7 +3273,7 @@ game_object rects[13]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(336),
     y = int(14)
   }
@@ -3281,12 +3281,12 @@ game_object rects[14]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.14),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.14),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3304,7 +3304,7 @@ game_object rects[14]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(367),
     y = int(12)
   }
@@ -3312,12 +3312,12 @@ game_object rects[15]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.15),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.15),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3335,7 +3335,7 @@ game_object rects[15]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(122),
     y = int(82)
   }
@@ -3343,12 +3343,12 @@ game_object rects[16]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.16),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.16),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3366,7 +3366,7 @@ game_object rects[16]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(152),
     y = int(176)
   }
@@ -3374,12 +3374,12 @@ game_object rects[17]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.17),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.17),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3397,7 +3397,7 @@ game_object rects[17]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(282),
     y = int(0)
   }
@@ -3405,12 +3405,12 @@ game_object rects[18]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.18),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.18),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3428,7 +3428,7 @@ game_object rects[18]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(48),
     y = int(143)
   }
@@ -3436,12 +3436,12 @@ game_object rects[19]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.19),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.19),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3459,7 +3459,7 @@ game_object rects[19]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(289),
     y = int(252)
   }
@@ -3467,12 +3467,12 @@ game_object rects[1]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.01),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.01),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3490,7 +3490,7 @@ game_object rects[1]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(102),
     y = int(248)
   }
@@ -3498,12 +3498,12 @@ game_object rects[20]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.2),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.2),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3521,7 +3521,7 @@ game_object rects[20]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(73),
     y = int(64)
   }
@@ -3529,12 +3529,12 @@ game_object rects[21]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.21),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.21),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3552,7 +3552,7 @@ game_object rects[21]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(350),
     y = int(216)
   }
@@ -3560,12 +3560,12 @@ game_object rects[22]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.22),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.22),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3583,7 +3583,7 @@ game_object rects[22]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(314),
     y = int(219)
   }
@@ -3591,12 +3591,12 @@ game_object rects[23]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.23),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.23),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3614,7 +3614,7 @@ game_object rects[23]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(295),
     y = int(204)
   }
@@ -3622,12 +3622,12 @@ game_object rects[24]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.24),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.24),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3645,7 +3645,7 @@ game_object rects[24]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(188),
     y = int(16)
   }
@@ -3653,12 +3653,12 @@ game_object rects[25]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.25),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.25),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3676,7 +3676,7 @@ game_object rects[25]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(91),
     y = int(131)
   }
@@ -3684,12 +3684,12 @@ game_object rects[26]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.26),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.26),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3707,7 +3707,7 @@ game_object rects[26]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(238),
     y = int(148)
   }
@@ -3715,12 +3715,12 @@ game_object rects[27]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.27),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.27),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3738,7 +3738,7 @@ game_object rects[27]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(224),
     y = int(320)
   }
@@ -3746,12 +3746,12 @@ game_object rects[28]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.28),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.28),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3769,7 +3769,7 @@ game_object rects[28]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(76),
     y = int(112)
   }
@@ -3777,12 +3777,12 @@ game_object rects[29]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.29),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.29),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3800,7 +3800,7 @@ game_object rects[29]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(335),
     y = int(395)
   }
@@ -3808,12 +3808,12 @@ game_object rects[2]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.02),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.02),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3831,7 +3831,7 @@ game_object rects[2]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(296),
     y = int(272)
   }
@@ -3839,12 +3839,12 @@ game_object rects[30]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.3),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.3),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3862,7 +3862,7 @@ game_object rects[30]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(76),
     y = int(57)
   }
@@ -3870,12 +3870,12 @@ game_object rects[31]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.31),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.31),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3893,7 +3893,7 @@ game_object rects[31]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(77),
     y = int(229)
   }
@@ -3901,12 +3901,12 @@ game_object rects[32]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.32),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.32),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3924,7 +3924,7 @@ game_object rects[32]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(233),
     y = int(360)
   }
@@ -3932,12 +3932,12 @@ game_object rects[33]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.33),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.33),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3955,7 +3955,7 @@ game_object rects[33]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(229),
     y = int(234)
   }
@@ -3963,12 +3963,12 @@ game_object rects[34]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.34),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.34),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -3986,7 +3986,7 @@ game_object rects[34]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(55),
     y = int(118)
   }
@@ -3994,12 +3994,12 @@ game_object rects[35]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.35),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.35),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4017,7 +4017,7 @@ game_object rects[35]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(86),
     y = int(129)
   }
@@ -4025,12 +4025,12 @@ game_object rects[36]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.36),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.36),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4048,7 +4048,7 @@ game_object rects[36]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(134),
     y = int(389)
   }
@@ -4056,12 +4056,12 @@ game_object rects[37]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.37),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.37),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4079,7 +4079,7 @@ game_object rects[37]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(297),
     y = int(48)
   }
@@ -4087,12 +4087,12 @@ game_object rects[38]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.38),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.38),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4110,7 +4110,7 @@ game_object rects[38]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(160),
     y = int(144)
   }
@@ -4118,12 +4118,12 @@ game_object rects[39]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.39),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.39),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4141,7 +4141,7 @@ game_object rects[39]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(253),
     y = int(300)
   }
@@ -4149,12 +4149,12 @@ game_object rects[3]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.03),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.03),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4172,7 +4172,7 @@ game_object rects[3]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(261),
     y = int(336)
   }
@@ -4180,12 +4180,12 @@ game_object rects[40]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.4),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.4),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4203,7 +4203,7 @@ game_object rects[40]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(160),
     y = int(296)
   }
@@ -4211,12 +4211,12 @@ game_object rects[41]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.41),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.41),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4234,7 +4234,7 @@ game_object rects[41]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(384),
     y = int(350)
   }
@@ -4242,12 +4242,12 @@ game_object rects[42]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.42),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.42),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4265,7 +4265,7 @@ game_object rects[42]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(396),
     y = int(208)
   }
@@ -4273,12 +4273,12 @@ game_object rects[43]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.43),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.43),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4296,7 +4296,7 @@ game_object rects[43]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(223),
     y = int(24)
   }
@@ -4304,12 +4304,12 @@ game_object rects[44]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.44),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.44),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4327,7 +4327,7 @@ game_object rects[44]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(273),
     y = int(158)
   }
@@ -4335,12 +4335,12 @@ game_object rects[45]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.45),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.45),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4358,7 +4358,7 @@ game_object rects[45]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(20),
     y = int(349)
   }
@@ -4366,12 +4366,12 @@ game_object rects[46]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.46),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.46),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4389,7 +4389,7 @@ game_object rects[46]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(167),
     y = int(49)
   }
@@ -4397,12 +4397,12 @@ game_object rects[47]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.47),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.47),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4420,7 +4420,7 @@ game_object rects[47]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(178),
     y = int(352)
   }
@@ -4428,12 +4428,12 @@ game_object rects[48]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.48),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.48),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4451,7 +4451,7 @@ game_object rects[48]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(361),
     y = int(360)
   }
@@ -4459,12 +4459,12 @@ game_object rects[49]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.49),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.49),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4482,7 +4482,7 @@ game_object rects[49]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(186),
     y = int(17)
   }
@@ -4490,12 +4490,12 @@ game_object rects[4]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.04),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.04),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4513,7 +4513,7 @@ game_object rects[4]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(204),
     y = int(378)
   }
@@ -4521,12 +4521,12 @@ game_object rects[50]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.5),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.5),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4544,7 +4544,7 @@ game_object rects[50]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(30),
     y = int(225)
   }
@@ -4552,12 +4552,12 @@ game_object rects[51]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.51),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.51),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4575,7 +4575,7 @@ game_object rects[51]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(98),
     y = int(165)
   }
@@ -4583,12 +4583,12 @@ game_object rects[52]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.52),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.52),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4606,7 +4606,7 @@ game_object rects[52]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(166),
     y = int(347)
   }
@@ -4614,12 +4614,12 @@ game_object rects[53]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.53),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.53),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4637,7 +4637,7 @@ game_object rects[53]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(165),
     y = int(326)
   }
@@ -4645,12 +4645,12 @@ game_object rects[54]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.54),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.54),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4668,7 +4668,7 @@ game_object rects[54]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(91),
     y = int(370)
   }
@@ -4676,12 +4676,12 @@ game_object rects[55]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.55),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.55),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4699,7 +4699,7 @@ game_object rects[55]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(179),
     y = int(251)
   }
@@ -4707,12 +4707,12 @@ game_object rects[56]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.56),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.56),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4730,7 +4730,7 @@ game_object rects[56]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(219),
     y = int(163)
   }
@@ -4738,12 +4738,12 @@ game_object rects[57]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.57),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.57),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4761,7 +4761,7 @@ game_object rects[57]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(154),
     y = int(215)
   }
@@ -4769,12 +4769,12 @@ game_object rects[58]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.58),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.58),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4792,7 +4792,7 @@ game_object rects[58]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(323),
     y = int(377)
   }
@@ -4800,12 +4800,12 @@ game_object rects[59]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.59),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.59),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4823,7 +4823,7 @@ game_object rects[59]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(192),
     y = int(196)
   }
@@ -4831,12 +4831,12 @@ game_object rects[5]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.05),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.05),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4854,7 +4854,7 @@ game_object rects[5]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(223),
     y = int(98)
   }
@@ -4862,12 +4862,12 @@ game_object rects[60]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.6),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.6),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4885,7 +4885,7 @@ game_object rects[60]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(135),
     y = int(164)
   }
@@ -4893,12 +4893,12 @@ game_object rects[61]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.61),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.61),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4916,7 +4916,7 @@ game_object rects[61]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(98),
     y = int(254)
   }
@@ -4924,12 +4924,12 @@ game_object rects[62]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.62),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.62),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4947,7 +4947,7 @@ game_object rects[62]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(213),
     y = int(276)
   }
@@ -4955,12 +4955,12 @@ game_object rects[63]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.63),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.63),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -4978,7 +4978,7 @@ game_object rects[63]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(206),
     y = int(175)
   }
@@ -4986,12 +4986,12 @@ game_object rects[64]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.64),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.64),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5009,7 +5009,7 @@ game_object rects[64]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(188),
     y = int(393)
   }
@@ -5017,12 +5017,12 @@ game_object rects[65]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.65),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.65),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5040,7 +5040,7 @@ game_object rects[65]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(144),
     y = int(171)
   }
@@ -5048,12 +5048,12 @@ game_object rects[66]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.66),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.66),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5071,7 +5071,7 @@ game_object rects[66]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(218),
     y = int(194)
   }
@@ -5079,12 +5079,12 @@ game_object rects[67]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.67),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.67),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5102,7 +5102,7 @@ game_object rects[67]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(336),
     y = int(384)
   }
@@ -5110,12 +5110,12 @@ game_object rects[68]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.68),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.68),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5133,7 +5133,7 @@ game_object rects[68]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(141),
     y = int(53)
   }
@@ -5141,12 +5141,12 @@ game_object rects[69]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.69),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.69),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5164,7 +5164,7 @@ game_object rects[69]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(262),
     y = int(232)
   }
@@ -5172,12 +5172,12 @@ game_object rects[6]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.06),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.06),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5195,7 +5195,7 @@ game_object rects[6]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(142),
     y = int(250)
   }
@@ -5203,12 +5203,12 @@ game_object rects[70]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.7),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.7),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5226,7 +5226,7 @@ game_object rects[70]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(24),
     y = int(393)
   }
@@ -5234,12 +5234,12 @@ game_object rects[71]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.71),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.71),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5257,7 +5257,7 @@ game_object rects[71]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(35),
     y = int(243)
   }
@@ -5265,12 +5265,12 @@ game_object rects[72]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.72),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.72),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5288,7 +5288,7 @@ game_object rects[72]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(108),
     y = int(189)
   }
@@ -5296,12 +5296,12 @@ game_object rects[73]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.73),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.73),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5319,7 +5319,7 @@ game_object rects[73]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(10),
     y = int(384)
   }
@@ -5327,12 +5327,12 @@ game_object rects[74]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.74),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.74),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5350,7 +5350,7 @@ game_object rects[74]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(166),
     y = int(202)
   }
@@ -5358,12 +5358,12 @@ game_object rects[75]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.75),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.75),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5381,7 +5381,7 @@ game_object rects[75]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(132),
     y = int(253)
   }
@@ -5389,12 +5389,12 @@ game_object rects[76]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.76),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.76),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5412,7 +5412,7 @@ game_object rects[76]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(366),
     y = int(230)
   }
@@ -5420,12 +5420,12 @@ game_object rects[77]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.77),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.77),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5443,7 +5443,7 @@ game_object rects[77]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(107),
     y = int(132)
   }
@@ -5451,12 +5451,12 @@ game_object rects[78]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.78),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.78),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5474,7 +5474,7 @@ game_object rects[78]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(59),
     y = int(266)
   }
@@ -5482,12 +5482,12 @@ game_object rects[79]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.79),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.79),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5505,7 +5505,7 @@ game_object rects[79]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(259),
     y = int(199)
   }
@@ -5513,12 +5513,12 @@ game_object rects[7]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.07),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.07),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5536,7 +5536,7 @@ game_object rects[7]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(269),
     y = int(127)
   }
@@ -5544,12 +5544,12 @@ game_object rects[80]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.8),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.8),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5567,7 +5567,7 @@ game_object rects[80]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(259),
     y = int(3)
   }
@@ -5575,12 +5575,12 @@ game_object rects[81]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.81),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.81),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5598,7 +5598,7 @@ game_object rects[81]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(370),
     y = int(29)
   }
@@ -5606,12 +5606,12 @@ game_object rects[82]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.82),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.82),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5629,7 +5629,7 @@ game_object rects[82]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(197),
     y = int(258)
   }
@@ -5637,12 +5637,12 @@ game_object rects[83]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.83),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.83),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5660,7 +5660,7 @@ game_object rects[83]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(365),
     y = int(290)
   }
@@ -5668,12 +5668,12 @@ game_object rects[84]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.84),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.84),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5691,7 +5691,7 @@ game_object rects[84]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(312),
     y = int(179)
   }
@@ -5699,12 +5699,12 @@ game_object rects[85]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.85),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.85),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5722,7 +5722,7 @@ game_object rects[85]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(122),
     y = int(336)
   }
@@ -5730,12 +5730,12 @@ game_object rects[86]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.86),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.86),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5753,7 +5753,7 @@ game_object rects[86]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(125),
     y = int(109)
   }
@@ -5761,12 +5761,12 @@ game_object rects[87]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.87),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.87),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5784,7 +5784,7 @@ game_object rects[87]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(131),
     y = int(233)
   }
@@ -5792,12 +5792,12 @@ game_object rects[88]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.88),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.88),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5815,7 +5815,7 @@ game_object rects[88]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(299),
     y = int(141)
   }
@@ -5823,12 +5823,12 @@ game_object rects[89]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.89),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.89),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5846,7 +5846,7 @@ game_object rects[89]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(169),
     y = int(17)
   }
@@ -5854,12 +5854,12 @@ game_object rects[8]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.08),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.08),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5877,7 +5877,7 @@ game_object rects[8]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(338),
     y = int(16)
   }
@@ -5885,12 +5885,12 @@ game_object rects[90]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.9),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.9),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5908,7 +5908,7 @@ game_object rects[90]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(344),
     y = int(302)
   }
@@ -5916,12 +5916,12 @@ game_object rects[91]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.91),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.91),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5939,7 +5939,7 @@ game_object rects[91]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(223),
     y = int(262)
   }
@@ -5947,12 +5947,12 @@ game_object rects[92]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.92),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.92),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -5970,7 +5970,7 @@ game_object rects[92]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(84),
     y = int(282)
   }
@@ -5978,12 +5978,12 @@ game_object rects[93]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.93),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.93),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6001,7 +6001,7 @@ game_object rects[93]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(346),
     y = int(143)
   }
@@ -6009,12 +6009,12 @@ game_object rects[94]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.94),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.94),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6032,7 +6032,7 @@ game_object rects[94]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(148),
     y = int(205)
   }
@@ -6040,12 +6040,12 @@ game_object rects[95]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.95),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.95),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6063,7 +6063,7 @@ game_object rects[95]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(343),
     y = int(359)
   }
@@ -6071,12 +6071,12 @@ game_object rects[96]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.96),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.96),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6094,7 +6094,7 @@ game_object rects[96]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(208),
     y = int(313)
   }
@@ -6102,12 +6102,12 @@ game_object rects[97]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.97),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.97),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6125,7 +6125,7 @@ game_object rects[97]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(388),
     y = int(357)
   }
@@ -6133,12 +6133,12 @@ game_object rects[98]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.98),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.98),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6156,7 +6156,7 @@ game_object rects[98]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(172),
     y = int(305)
   }
@@ -6164,12 +6164,12 @@ game_object rects[99]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.99),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.99),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6187,7 +6187,7 @@ game_object rects[99]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(199),
     y = int(36)
   }
@@ -6195,12 +6195,12 @@ game_object rects[9]
   Rectangle
   {
     animation_block = animation_block(0),
-    blue = double(0),
+    blue = double(0.09),
     drawing_order = int(0),
     green = double(0),
-    h = int(10),
+    h = int(5),
     proximity = int(4),
-    red = double(1),
+    red = double(0.09),
     rotation = double(0),
     user_double = double(0),
     user_double2 = double(0),
@@ -6218,7 +6218,7 @@ game_object rects[9]
     user_string4 = string(""),
     user_string5 = string(""),
     visible = int(1),
-    w = int(10),
+    w = int(5),
     x = int(121),
     y = int(287)
   }

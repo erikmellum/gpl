@@ -7,7 +7,7 @@ Exit_stmt::Exit_stmt(Expr* newExpr, int newLineNo)
 }
 void Exit_stmt::execute()
 {
-	cout << "gpl[" << lineNo << "]: exit(" << expr->eval_int() << ")"; 
+	cout << "gpl[" << lineNo << "]: exit(" << expr->eval_int() << ")" << endl; 
 	exit(expr->eval_int());
 
 }

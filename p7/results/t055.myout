@@ -300,8 +300,8 @@ game_object c[0]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(250),
+    y = int(250)
   }
 game_object c[1]
   Circle
@@ -331,8 +331,8 @@ game_object c[1]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(231),
+    y = int(239)
   }
 game_object c[2]
   Circle
@@ -362,8 +362,8 @@ game_object c[2]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(213),
+    y = int(229)
   }
 game_object c[3]
   Circle
@@ -393,8 +393,8 @@ game_object c[3]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(195),
+    y = int(218)
   }
 game_object c[4]
   Circle
@@ -424,8 +424,8 @@ game_object c[4]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(177),
+    y = int(208)
   }
 game_object c[5]
   Circle
@@ -455,8 +455,8 @@ game_object c[5]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(159),
+    y = int(197)
   }
 game_object c[6]
   Circle
@@ -486,8 +486,8 @@ game_object c[6]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(140),
+    y = int(187)
   }
 game_object c[7]
   Circle
@@ -517,10 +517,10 @@ game_object c[7]
     user_string5 = string(""),
     visible = int(1),
     w = int(20),
-    x = int(0),
-    y = int(0)
+    x = int(122),
+    y = int(176)
   }
-int i 0
+int i 8
 int num 8
 int spacing 21
 string window_title "p7 t055.gpl -- compare to t055.jpg"

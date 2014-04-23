@@ -10,9 +10,8 @@ For_stmt::For_stmt(Statement_block* newInitializer, Expr* argument, Statement_bl
 
 void For_stmt::execute()
 {
-	/**
-	for(initializer->execute(); expr->eval_int() == true; incrementor->execute())
+	for(initializer->execute(); expr->eval_int() > 0; incrementor->execute())
 	{
-		//body->execute();
-	}**/
+		body->execute();
+	}
 }

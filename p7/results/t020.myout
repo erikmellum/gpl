@@ -17,6 +17,16 @@ Printing the symbol table from main()
 int i 0
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
+gpl[7]: i = 0
+gpl[7]: i = 1
+gpl[7]: i = 2
+gpl[7]: i = 3
+gpl[7]: i = 4
+gpl[7]: i = 5
+gpl[7]: i = 6
+gpl[7]: i = 7
+gpl[7]: i = 8
+gpl[7]: i = 9
 
 Printing the symbol table from signal_handler()
-int i 0
+int i 10

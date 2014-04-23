@@ -824,37 +824,22 @@ statement_list:
 //---------------------------------------------------------------------
 statement:
     if_statement
-    {
-        statement_block_stack.top()->addStatement($1);
-    }
     | for_statement
-    {
-        statement_block_stack.top()->addStatement($1);
-    }
     | assign_statement T_SEMIC
-    {
-        statement_block_stack.top()->addStatement($1);
-    }
     | print_statement T_SEMIC
-    {
-        statement_block_stack.top()->addStatement($1);
-    }
     | exit_statement T_SEMIC
-    {
-        statement_block_stack.top()->addStatement($1);
-    }
     ;
 
 //---------------------------------------------------------------------
 if_statement:
     T_IF T_LPAREN expression T_RPAREN if_block %prec IF_NO_ELSE
     {
-        $$ = new If_stmt($3, $5);
+        statement_block_stack.top()->addStatement(new If_stmt($3, $5));
     }
 
     | T_IF T_LPAREN expression T_RPAREN if_block T_ELSE if_block
     {
-        $$ = new If_stmt($3, $5, $7);
+        statement_block_stack.top()->addStatement(new If_stmt($3, $5, $7));
     }
     ;
 
@@ -862,7 +847,7 @@ if_statement:
 for_statement:
     T_FOR T_LPAREN statement_block_creator assign_statement end_of_statement_block T_SEMIC expression T_SEMIC statement_block_creator assign_statement end_of_statement_block T_RPAREN statement_block
     {
-        $$ = new For_stmt($5, $7, $11, $13);
+        statement_block_stack.top()->addStatement(new For_stmt($5, $7, $11, $13));
     }
     ;
 
@@ -870,8 +855,7 @@ for_statement:
 print_statement:
     T_PRINT T_LPAREN expression T_RPAREN
     {
-
-        $$ = new Print_stmt($3, $1);
+        statement_block_stack.top()->addStatement(new Print_stmt($3, $1));     
     }
     ;
 
@@ -879,7 +863,7 @@ print_statement:
 exit_statement:
     T_EXIT T_LPAREN expression T_RPAREN
     {
-        $$ = new Exit_stmt($3, $1);
+        statement_block_stack.top()->addStatement(new Exit_stmt($3, $1));
     }
     ;
 
@@ -887,15 +871,16 @@ exit_statement:
 assign_statement:
     variable T_ASSIGN expression
     {
-        $$ = new Assignment_stmt($1, $3, EQUALS);
+        statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, EQUALS));
     }
     | variable T_PLUS_ASSIGN expression
-    {
+    {   
+        statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, PLUS_EQUALS));
         $$ = new Assignment_stmt($1, $3, PLUS_EQUALS);        
     }
     | variable T_MINUS_ASSIGN expression
     {
-        $$ = new Assignment_stmt($1, $3, MINUS_EQUALS);
+        statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, MINUS_EQUALS));
     }
     ;
 

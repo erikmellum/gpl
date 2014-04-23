@@ -26,11 +26,11 @@ gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
 
 Printing the symbol table from signal_handler()
-int count 0
-int index[0] 0
-int index[1] 0
-int index[2] 0
-int index[3] 0
-int index[4] 0
-int index[5] 0
-int index[6] 0
+int count 2187
+int index[0] 3
+int index[1] 3
+int index[2] 3
+int index[3] 3
+int index[4] 3
+int index[5] 3
+int index[6] 3

@@ -1,0 +1,9 @@
+
+int i = 42;
+
+on akey
+{
+    print ("about to call exit with 0");
+    exit(0);
+    print("this should not print... we should have exited the program");
+}
