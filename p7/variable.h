@@ -7,6 +7,7 @@
 #include "animation_block.h"
 #include "gpl_assert.h" 
 #include <string>
+#include "error.h"
 using namespace std;
 class Expr;
 

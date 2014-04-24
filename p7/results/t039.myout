@@ -12,5 +12,24 @@ gpl.cpp::main() Calling yyparse()
 
 gpl.cpp::main() after call to yyparse().
 
-2 errors found.
-gpl giving up.
+
+Printing the symbol table from main()
+int i 0
+int k 7000
+int nums[0] 0
+int nums[1] 0
+int nums[2] 0
+int nums[3] 0
+int nums[4] 0
+gpl.cpp::main() Calling window->initialize().
+gpl.cpp::main() Passing control to window->main_loop().
+gpl[21]: nums[k] = 42
+
+Printing the symbol table from signal_handler()
+int i 5
+int k 3
+int nums[0] 0
+int nums[1] 1
+int nums[2] 2
+int nums[3] 42
+int nums[4] 4

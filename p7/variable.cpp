@@ -43,6 +43,7 @@ Symbol* Variable::eval()
     {
         return symbol_table->retrieve(rname);
     }
+
     return new Symbol("dummy", 0);
 }
 Var_type Variable::getType()

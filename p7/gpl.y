@@ -901,20 +901,8 @@ variable:
     | T_ID T_LBRACKET expression T_RBRACKET
     {
         if($3->getGplType() == INT)
-        {
-            string name = *$1;
-            int i = $3->eval_int();
-            stringstream ss;
-            ss << name << "[" << i << "]";
-            name = ss.str();
-            
-            if(!symbol_table->lookup(name))
-            {
-                $$ = new Variable("0");
-                Error::error(Error::ARRAY_INDEX_OUT_OF_BOUNDS,*$1, $3->eval_string());
-            }
-            else
-                $$ = new Variable(*$1, $3);
+        {          
+            $$ = new Variable(*$1, $3);
         }
         else if($3->getGplType() == DOUBLE)
         {
