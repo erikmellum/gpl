@@ -18,8 +18,8 @@ string str "hello"
 double x 3.145
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
-gpl[11]: str = hello
+gpl[11]: str = hello3.145
 
 Printing the symbol table from signal_handler()
-string str "hello"
+string str "hello3.145"
 double x 3.145

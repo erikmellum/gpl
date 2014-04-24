@@ -1,1 +1,1 @@
-assertion "status == OK" failed: file "variable.cpp", line 101.  Input line 7.
+assertion "status == OK" failed: file "variable.cpp", line 102.  Input line 7.

@@ -18,8 +18,8 @@ int i 42
 string str "hello"
 gpl.cpp::main() Calling window->initialize().
 gpl.cpp::main() Passing control to window->main_loop().
-gpl[11]: str = hello
+gpl[11]: str = hello42
 
 Printing the symbol table from signal_handler()
 int i 42
-string str "hello"
+string str "hello42"
