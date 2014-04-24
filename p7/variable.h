@@ -6,6 +6,7 @@
 #include "game_object.h"
 #include "animation_block.h"
 #include "gpl_assert.h" 
+#include <string>
 using namespace std;
 class Expr;
 

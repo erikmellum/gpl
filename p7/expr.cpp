@@ -437,7 +437,24 @@ string Expr::eval_string()
                 return oss.str();
             }
             else if(gpl_type == STRING)
+            {
                 return lhs->eval_string() + rhs->eval_string();
+            }
+        }
+        else if(operator_type == MINUS)
+        {
+            if(gpl_type == INT)
+            {
+                ostringstream oss;
+                oss << lhs->eval_int() - rhs->eval_int();
+                return oss.str();
+            }
+            else if(gpl_type == DOUBLE)
+            {
+                ostringstream oss;
+                oss << eval_double() - rhs->eval_double();
+                return oss.str();
+            }
         }
     }
     return "";
