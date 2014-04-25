@@ -1,0 +1,15 @@
+int i;
+int size = 100;
+rectangle rects[size];
+string window_title = "p7 t052.gpl -- compare to t052.jpg";
+
+on space
+{
+    rects[0].x = 1;
+    i = 1;
+    print(rects[0].x);
+    print(i);
+    if(rects[0].x == i)
+        print("Hello");
+}
+

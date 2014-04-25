@@ -146,147 +146,136 @@ int Expr::eval_int()
         else if(operator_type == EQUAL)
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
-            {
                 return (lhs->eval_string() == rhs->eval_string());
-            }
             else if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
-                return (lhs->eval_double() == rhs->eval_double());
-            }   
+                return (lhs->eval_double() == rhs->eval_double()); 
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() == rhs->eval_int());
+            else if(lhs->getGplType() == GAME_OBJECT)
+            {
+                if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == INT)
+                    return (lhs->getVariable()->getIntValue(lhs->getVariable()->eval()) == rhs->eval_int());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == DOUBLE)
+                    return (lhs->getVariable()->getDoubleValue(lhs->getVariable()->eval()) == rhs->eval_double());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == STRING)
+                    return (lhs->getVariable()->getStringValue(lhs->getVariable()->eval()) == rhs->eval_string());
             }               
         }
         else if(operator_type == NOT_EQUAL)
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
-            {
                 return (lhs->eval_string() != rhs->eval_string());
-            }
             else if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() != rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() != rhs->eval_int());
-            }  
         }
         else if(operator_type == AND)
         {
             if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() && rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() && rhs->eval_int());
-            }
         }
         else if(operator_type == OR)
         {
             if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() || rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() || rhs->eval_int());
-            }
         }
         else if(operator_type == GREATER_THAN_EQUAL)
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
-            {
                 return (lhs->eval_string() >= rhs->eval_string());      
-            }
             else if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() >= rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() >= rhs->eval_int());
-            }
+            else if(lhs->getGplType() == GAME_OBJECT)
+            {
+                if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == INT)
+                    return (lhs->getVariable()->getIntValue(lhs->getVariable()->eval()) >= rhs->eval_int());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == DOUBLE)
+                    return (lhs->getVariable()->getDoubleValue(lhs->getVariable()->eval()) >= rhs->eval_double());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == STRING)
+                    return (lhs->getVariable()->getStringValue(lhs->getVariable()->eval()) >= rhs->eval_string());
+            }   
         }
         else if(operator_type == GREATER_THAN)
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
-            {
                 return (lhs->eval_string() > rhs->eval_string());      
-            }
             else if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() > rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() > rhs->eval_int());
-            }
+            else if(lhs->getGplType() == GAME_OBJECT)
+            {
+                if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == INT)
+                    return (lhs->getVariable()->getIntValue(lhs->getVariable()->eval()) > rhs->eval_int());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == DOUBLE)
+                    return (lhs->getVariable()->getDoubleValue(lhs->getVariable()->eval()) > rhs->eval_double());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == STRING)
+                    return (lhs->getVariable()->getStringValue(lhs->getVariable()->eval()) > rhs->eval_string());
+            }   
         }
         else if(operator_type == LESS_THAN_EQUAL)
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
-            {
                 return (lhs->eval_string() <= rhs->eval_string());      
-            }
             else if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() <= rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() <= rhs->eval_int());
-            }
+            else if(lhs->getGplType() == GAME_OBJECT)
+            {
+                if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == INT)
+                    return (lhs->getVariable()->getIntValue(lhs->getVariable()->eval()) <= rhs->eval_int());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == DOUBLE)
+                    return (lhs->getVariable()->getDoubleValue(lhs->getVariable()->eval()) <= rhs->eval_double());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == STRING)
+                    return (lhs->getVariable()->getStringValue(lhs->getVariable()->eval()) <= rhs->eval_string());
+            }   
         }
         else if(operator_type == LESS_THAN)
         {
             if(lhs->getGplType() == STRING || rhs->getGplType() == STRING)
-            {
                 return (lhs->eval_string() < rhs->eval_string());      
-            }
             else if(lhs->getGplType() == DOUBLE || rhs->getGplType() == DOUBLE)
-            {
                 return (lhs->eval_double() < rhs->eval_double());
-            }
             else if(lhs->getGplType() == INT && rhs->getGplType() == INT)
-            {
                 return (lhs->eval_int() < rhs->eval_int());
-            }
+            else if(lhs->getGplType() == GAME_OBJECT)
+            {
+                if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == INT)
+                    return (lhs->getVariable()->getIntValue(lhs->getVariable()->eval()) < rhs->eval_int());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == DOUBLE)
+                    return (lhs->getVariable()->getDoubleValue(lhs->getVariable()->eval()) < rhs->eval_double());
+                else if(lhs->getVariable()->getParamType(lhs->getVariable()->eval()) == STRING)
+                    return (lhs->getVariable()->getStringValue(lhs->getVariable()->eval()) < rhs->eval_string());
+            }   
         }
     }
     else if(kind == UNARY_OP)
     {
         if(operator_type == UNARY_MINUS)
-        {
             return lhs->eval_int()*-1;
-        }
         else if(operator_type == RANDOM)
-        {
             return rand() % lhs->eval_int();
-        }
         else if(operator_type == NOT)
         {
             if(lhs->getGplType() == INT)
-            {
                 return lhs->eval_int() ? 0 : 1;
-            }
             else if(lhs->getGplType() == DOUBLE)
-            {
                 return lhs->eval_double() ? 0 : 1;
-            }
         }
         else if(operator_type == FLOOR)
         {
             if(lhs->getGplType() == INT)
-            {
                 return floor(lhs->eval_int());
-            }
             else if(lhs->getGplType() == DOUBLE)
-            {
                 return floor(lhs->eval_double());
-            }
         }
         else if(operator_type == ABS)
         {
@@ -298,13 +287,9 @@ int Expr::eval_int()
     else if(kind == VARIABLE)
     {
         if(variable_value->eval()->getType() == GAME_OBJECT)
-        {
             return variable_value->getIntValue(variable_value->eval());
-        }
         else
-        {
             return variable_value->eval()->getInt();
-        }
     }
     return 0;
 }
@@ -495,4 +480,8 @@ Operator_type Expr::getOperatorType()
 Kind Expr::getKind()
 {
     return kind;
+}
+Variable* Expr::getVariable()
+{
+    return variable_value;
 }

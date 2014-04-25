@@ -12,7 +12,12 @@ void Assignment_stmt::execute()
 	{
 		case EQUALS:		
 			if(lhs->eval()->getType() == INT)
-				lhs->eval()->setInt(rhs->eval_int());
+			{
+				if(rhs->getGplType() == INT)
+					lhs->eval()->setInt(rhs->eval_int());
+				
+
+			}
 			else if(lhs->eval()->getType() == DOUBLE)
 				lhs->eval()->setDouble(rhs->eval_double());
 			else if(lhs->eval()->getType() == STRING)

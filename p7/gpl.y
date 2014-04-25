@@ -871,10 +871,13 @@ exit_statement:
 assign_statement:
     variable T_ASSIGN expression
     {
+        if($1->eval()->getType() == INT && $3->getGplType() == DOUBLE)
+            Error::error(Error::ASSIGNMENT_TYPE_ERROR, "int","double");
         statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, EQUALS));
     }
     | variable T_PLUS_ASSIGN expression
     {   
+
         statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, PLUS_EQUALS));
         $$ = new Assignment_stmt($1, $3, PLUS_EQUALS);        
     }

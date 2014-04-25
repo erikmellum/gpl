@@ -37,6 +37,7 @@ class Expr
         Gpl_type getGplType();
         Operator_type getOperatorType();
         Kind getKind();
+        Variable* getVariable();
     private:
         Gpl_type gpl_type;
         Operator_type operator_type;

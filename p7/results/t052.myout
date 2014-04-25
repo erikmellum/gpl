@@ -3150,8 +3150,8 @@ game_object rects[0]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(162),
-    y = int(188)
+    x = int(0),
+    y = int(0)
   }
 game_object rects[10]
   Rectangle
@@ -3181,8 +3181,8 @@ game_object rects[10]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(391),
-    y = int(221)
+    x = int(50),
+    y = int(50)
   }
 game_object rects[11]
   Rectangle
@@ -3212,8 +3212,8 @@ game_object rects[11]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(56),
-    y = int(93)
+    x = int(55),
+    y = int(55)
   }
 game_object rects[12]
   Rectangle
@@ -3243,8 +3243,8 @@ game_object rects[12]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(130),
-    y = int(376)
+    x = int(60),
+    y = int(60)
   }
 game_object rects[13]
   Rectangle
@@ -3274,8 +3274,8 @@ game_object rects[13]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(336),
-    y = int(14)
+    x = int(65),
+    y = int(65)
   }
 game_object rects[14]
   Rectangle
@@ -3305,8 +3305,8 @@ game_object rects[14]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(367),
-    y = int(12)
+    x = int(70),
+    y = int(70)
   }
 game_object rects[15]
   Rectangle
@@ -3336,8 +3336,8 @@ game_object rects[15]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(122),
-    y = int(82)
+    x = int(75),
+    y = int(75)
   }
 game_object rects[16]
   Rectangle
@@ -3367,8 +3367,8 @@ game_object rects[16]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(152),
-    y = int(176)
+    x = int(80),
+    y = int(80)
   }
 game_object rects[17]
   Rectangle
@@ -3398,8 +3398,8 @@ game_object rects[17]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(282),
-    y = int(0)
+    x = int(85),
+    y = int(85)
   }
 game_object rects[18]
   Rectangle
@@ -3429,8 +3429,8 @@ game_object rects[18]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(48),
-    y = int(143)
+    x = int(90),
+    y = int(90)
   }
 game_object rects[19]
   Rectangle
@@ -3460,8 +3460,8 @@ game_object rects[19]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(289),
-    y = int(252)
+    x = int(95),
+    y = int(95)
   }
 game_object rects[1]
   Rectangle
@@ -3491,8 +3491,8 @@ game_object rects[1]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(102),
-    y = int(248)
+    x = int(5),
+    y = int(5)
   }
 game_object rects[20]
   Rectangle
@@ -3522,8 +3522,8 @@ game_object rects[20]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(73),
-    y = int(64)
+    x = int(100),
+    y = int(100)
   }
 game_object rects[21]
   Rectangle
@@ -3553,8 +3553,8 @@ game_object rects[21]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(350),
-    y = int(216)
+    x = int(105),
+    y = int(105)
   }
 game_object rects[22]
   Rectangle
@@ -3584,8 +3584,8 @@ game_object rects[22]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(314),
-    y = int(219)
+    x = int(110),
+    y = int(110)
   }
 game_object rects[23]
   Rectangle
@@ -3615,8 +3615,8 @@ game_object rects[23]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(295),
-    y = int(204)
+    x = int(115),
+    y = int(115)
   }
 game_object rects[24]
   Rectangle
@@ -3646,8 +3646,8 @@ game_object rects[24]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(188),
-    y = int(16)
+    x = int(120),
+    y = int(120)
   }
 game_object rects[25]
   Rectangle
@@ -3677,8 +3677,8 @@ game_object rects[25]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(91),
-    y = int(131)
+    x = int(125),
+    y = int(125)
   }
 game_object rects[26]
   Rectangle
@@ -3708,8 +3708,8 @@ game_object rects[26]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(238),
-    y = int(148)
+    x = int(130),
+    y = int(130)
   }
 game_object rects[27]
   Rectangle
@@ -3739,8 +3739,8 @@ game_object rects[27]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(224),
-    y = int(320)
+    x = int(135),
+    y = int(135)
   }
 game_object rects[28]
   Rectangle
@@ -3770,8 +3770,8 @@ game_object rects[28]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(76),
-    y = int(112)
+    x = int(140),
+    y = int(140)
   }
 game_object rects[29]
   Rectangle
@@ -3801,8 +3801,8 @@ game_object rects[29]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(335),
-    y = int(395)
+    x = int(145),
+    y = int(145)
   }
 game_object rects[2]
   Rectangle
@@ -3832,8 +3832,8 @@ game_object rects[2]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(296),
-    y = int(272)
+    x = int(10),
+    y = int(10)
   }
 game_object rects[30]
   Rectangle
@@ -3863,8 +3863,8 @@ game_object rects[30]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(76),
-    y = int(57)
+    x = int(150),
+    y = int(150)
   }
 game_object rects[31]
   Rectangle
@@ -3894,8 +3894,8 @@ game_object rects[31]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(77),
-    y = int(229)
+    x = int(155),
+    y = int(155)
   }
 game_object rects[32]
   Rectangle
@@ -3925,8 +3925,8 @@ game_object rects[32]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(233),
-    y = int(360)
+    x = int(160),
+    y = int(160)
   }
 game_object rects[33]
   Rectangle
@@ -3956,8 +3956,8 @@ game_object rects[33]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(229),
-    y = int(234)
+    x = int(165),
+    y = int(165)
   }
 game_object rects[34]
   Rectangle
@@ -3987,8 +3987,8 @@ game_object rects[34]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(55),
-    y = int(118)
+    x = int(170),
+    y = int(170)
   }
 game_object rects[35]
   Rectangle
@@ -4018,8 +4018,8 @@ game_object rects[35]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(86),
-    y = int(129)
+    x = int(175),
+    y = int(175)
   }
 game_object rects[36]
   Rectangle
@@ -4049,8 +4049,8 @@ game_object rects[36]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(134),
-    y = int(389)
+    x = int(180),
+    y = int(180)
   }
 game_object rects[37]
   Rectangle
@@ -4080,8 +4080,8 @@ game_object rects[37]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(297),
-    y = int(48)
+    x = int(185),
+    y = int(185)
   }
 game_object rects[38]
   Rectangle
@@ -4111,8 +4111,8 @@ game_object rects[38]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(160),
-    y = int(144)
+    x = int(190),
+    y = int(190)
   }
 game_object rects[39]
   Rectangle
@@ -4142,8 +4142,8 @@ game_object rects[39]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(253),
-    y = int(300)
+    x = int(195),
+    y = int(195)
   }
 game_object rects[3]
   Rectangle
@@ -4173,8 +4173,8 @@ game_object rects[3]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(261),
-    y = int(336)
+    x = int(15),
+    y = int(15)
   }
 game_object rects[40]
   Rectangle
@@ -4204,8 +4204,8 @@ game_object rects[40]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(160),
-    y = int(296)
+    x = int(200),
+    y = int(200)
   }
 game_object rects[41]
   Rectangle
@@ -4235,8 +4235,8 @@ game_object rects[41]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(384),
-    y = int(350)
+    x = int(205),
+    y = int(205)
   }
 game_object rects[42]
   Rectangle
@@ -4266,8 +4266,8 @@ game_object rects[42]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(396),
-    y = int(208)
+    x = int(210),
+    y = int(210)
   }
 game_object rects[43]
   Rectangle
@@ -4297,8 +4297,8 @@ game_object rects[43]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(223),
-    y = int(24)
+    x = int(215),
+    y = int(215)
   }
 game_object rects[44]
   Rectangle
@@ -4328,8 +4328,8 @@ game_object rects[44]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(273),
-    y = int(158)
+    x = int(220),
+    y = int(220)
   }
 game_object rects[45]
   Rectangle
@@ -4359,8 +4359,8 @@ game_object rects[45]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(20),
-    y = int(349)
+    x = int(225),
+    y = int(225)
   }
 game_object rects[46]
   Rectangle
@@ -4390,8 +4390,8 @@ game_object rects[46]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(167),
-    y = int(49)
+    x = int(230),
+    y = int(230)
   }
 game_object rects[47]
   Rectangle
@@ -4421,8 +4421,8 @@ game_object rects[47]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(178),
-    y = int(352)
+    x = int(235),
+    y = int(235)
   }
 game_object rects[48]
   Rectangle
@@ -4452,8 +4452,8 @@ game_object rects[48]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(361),
-    y = int(360)
+    x = int(240),
+    y = int(240)
   }
 game_object rects[49]
   Rectangle
@@ -4483,8 +4483,8 @@ game_object rects[49]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(186),
-    y = int(17)
+    x = int(245),
+    y = int(245)
   }
 game_object rects[4]
   Rectangle
@@ -4514,8 +4514,8 @@ game_object rects[4]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(204),
-    y = int(378)
+    x = int(20),
+    y = int(20)
   }
 game_object rects[50]
   Rectangle
@@ -4545,8 +4545,8 @@ game_object rects[50]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(30),
-    y = int(225)
+    x = int(250),
+    y = int(250)
   }
 game_object rects[51]
   Rectangle
@@ -4576,8 +4576,8 @@ game_object rects[51]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(98),
-    y = int(165)
+    x = int(255),
+    y = int(255)
   }
 game_object rects[52]
   Rectangle
@@ -4607,8 +4607,8 @@ game_object rects[52]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(166),
-    y = int(347)
+    x = int(260),
+    y = int(260)
   }
 game_object rects[53]
   Rectangle
@@ -4638,8 +4638,8 @@ game_object rects[53]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(165),
-    y = int(326)
+    x = int(265),
+    y = int(265)
   }
 game_object rects[54]
   Rectangle
@@ -4669,8 +4669,8 @@ game_object rects[54]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(91),
-    y = int(370)
+    x = int(270),
+    y = int(270)
   }
 game_object rects[55]
   Rectangle
@@ -4700,8 +4700,8 @@ game_object rects[55]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(179),
-    y = int(251)
+    x = int(275),
+    y = int(275)
   }
 game_object rects[56]
   Rectangle
@@ -4731,8 +4731,8 @@ game_object rects[56]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(219),
-    y = int(163)
+    x = int(280),
+    y = int(280)
   }
 game_object rects[57]
   Rectangle
@@ -4762,8 +4762,8 @@ game_object rects[57]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(154),
-    y = int(215)
+    x = int(285),
+    y = int(285)
   }
 game_object rects[58]
   Rectangle
@@ -4793,8 +4793,8 @@ game_object rects[58]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(323),
-    y = int(377)
+    x = int(290),
+    y = int(290)
   }
 game_object rects[59]
   Rectangle
@@ -4824,8 +4824,8 @@ game_object rects[59]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(192),
-    y = int(196)
+    x = int(295),
+    y = int(295)
   }
 game_object rects[5]
   Rectangle
@@ -4855,8 +4855,8 @@ game_object rects[5]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(223),
-    y = int(98)
+    x = int(25),
+    y = int(25)
   }
 game_object rects[60]
   Rectangle
@@ -4886,8 +4886,8 @@ game_object rects[60]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(135),
-    y = int(164)
+    x = int(300),
+    y = int(300)
   }
 game_object rects[61]
   Rectangle
@@ -4917,8 +4917,8 @@ game_object rects[61]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(98),
-    y = int(254)
+    x = int(305),
+    y = int(305)
   }
 game_object rects[62]
   Rectangle
@@ -4948,8 +4948,8 @@ game_object rects[62]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(213),
-    y = int(276)
+    x = int(310),
+    y = int(310)
   }
 game_object rects[63]
   Rectangle
@@ -4979,8 +4979,8 @@ game_object rects[63]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(206),
-    y = int(175)
+    x = int(315),
+    y = int(315)
   }
 game_object rects[64]
   Rectangle
@@ -5010,8 +5010,8 @@ game_object rects[64]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(188),
-    y = int(393)
+    x = int(320),
+    y = int(320)
   }
 game_object rects[65]
   Rectangle
@@ -5041,8 +5041,8 @@ game_object rects[65]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(144),
-    y = int(171)
+    x = int(325),
+    y = int(325)
   }
 game_object rects[66]
   Rectangle
@@ -5072,8 +5072,8 @@ game_object rects[66]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(218),
-    y = int(194)
+    x = int(330),
+    y = int(330)
   }
 game_object rects[67]
   Rectangle
@@ -5103,8 +5103,8 @@ game_object rects[67]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(336),
-    y = int(384)
+    x = int(335),
+    y = int(335)
   }
 game_object rects[68]
   Rectangle
@@ -5134,8 +5134,8 @@ game_object rects[68]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(141),
-    y = int(53)
+    x = int(340),
+    y = int(340)
   }
 game_object rects[69]
   Rectangle
@@ -5165,8 +5165,8 @@ game_object rects[69]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(262),
-    y = int(232)
+    x = int(345),
+    y = int(345)
   }
 game_object rects[6]
   Rectangle
@@ -5196,8 +5196,8 @@ game_object rects[6]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(142),
-    y = int(250)
+    x = int(30),
+    y = int(30)
   }
 game_object rects[70]
   Rectangle
@@ -5227,8 +5227,8 @@ game_object rects[70]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(24),
-    y = int(393)
+    x = int(350),
+    y = int(350)
   }
 game_object rects[71]
   Rectangle
@@ -5258,8 +5258,8 @@ game_object rects[71]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(35),
-    y = int(243)
+    x = int(355),
+    y = int(355)
   }
 game_object rects[72]
   Rectangle
@@ -5289,8 +5289,8 @@ game_object rects[72]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(108),
-    y = int(189)
+    x = int(360),
+    y = int(360)
   }
 game_object rects[73]
   Rectangle
@@ -5320,8 +5320,8 @@ game_object rects[73]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(10),
-    y = int(384)
+    x = int(365),
+    y = int(365)
   }
 game_object rects[74]
   Rectangle
@@ -5351,8 +5351,8 @@ game_object rects[74]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(166),
-    y = int(202)
+    x = int(370),
+    y = int(370)
   }
 game_object rects[75]
   Rectangle
@@ -5382,8 +5382,8 @@ game_object rects[75]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(132),
-    y = int(253)
+    x = int(375),
+    y = int(375)
   }
 game_object rects[76]
   Rectangle
@@ -5413,8 +5413,8 @@ game_object rects[76]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(366),
-    y = int(230)
+    x = int(380),
+    y = int(380)
   }
 game_object rects[77]
   Rectangle
@@ -5444,8 +5444,8 @@ game_object rects[77]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(107),
-    y = int(132)
+    x = int(385),
+    y = int(385)
   }
 game_object rects[78]
   Rectangle
@@ -5475,8 +5475,8 @@ game_object rects[78]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(59),
-    y = int(266)
+    x = int(390),
+    y = int(390)
   }
 game_object rects[79]
   Rectangle
@@ -5506,8 +5506,8 @@ game_object rects[79]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(259),
-    y = int(199)
+    x = int(395),
+    y = int(395)
   }
 game_object rects[7]
   Rectangle
@@ -5537,8 +5537,8 @@ game_object rects[7]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(269),
-    y = int(127)
+    x = int(35),
+    y = int(35)
   }
 game_object rects[80]
   Rectangle
@@ -5568,8 +5568,8 @@ game_object rects[80]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(259),
-    y = int(3)
+    x = int(400),
+    y = int(400)
   }
 game_object rects[81]
   Rectangle
@@ -5599,8 +5599,8 @@ game_object rects[81]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(370),
-    y = int(29)
+    x = int(405),
+    y = int(405)
   }
 game_object rects[82]
   Rectangle
@@ -5630,8 +5630,8 @@ game_object rects[82]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(197),
-    y = int(258)
+    x = int(410),
+    y = int(410)
   }
 game_object rects[83]
   Rectangle
@@ -5661,8 +5661,8 @@ game_object rects[83]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(365),
-    y = int(290)
+    x = int(415),
+    y = int(415)
   }
 game_object rects[84]
   Rectangle
@@ -5692,8 +5692,8 @@ game_object rects[84]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(312),
-    y = int(179)
+    x = int(420),
+    y = int(420)
   }
 game_object rects[85]
   Rectangle
@@ -5723,8 +5723,8 @@ game_object rects[85]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(122),
-    y = int(336)
+    x = int(425),
+    y = int(425)
   }
 game_object rects[86]
   Rectangle
@@ -5754,8 +5754,8 @@ game_object rects[86]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(125),
-    y = int(109)
+    x = int(430),
+    y = int(430)
   }
 game_object rects[87]
   Rectangle
@@ -5785,8 +5785,8 @@ game_object rects[87]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(131),
-    y = int(233)
+    x = int(435),
+    y = int(435)
   }
 game_object rects[88]
   Rectangle
@@ -5816,8 +5816,8 @@ game_object rects[88]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(299),
-    y = int(141)
+    x = int(440),
+    y = int(440)
   }
 game_object rects[89]
   Rectangle
@@ -5847,8 +5847,8 @@ game_object rects[89]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(169),
-    y = int(17)
+    x = int(445),
+    y = int(445)
   }
 game_object rects[8]
   Rectangle
@@ -5878,8 +5878,8 @@ game_object rects[8]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(338),
-    y = int(16)
+    x = int(40),
+    y = int(40)
   }
 game_object rects[90]
   Rectangle
@@ -5909,8 +5909,8 @@ game_object rects[90]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(344),
-    y = int(302)
+    x = int(450),
+    y = int(450)
   }
 game_object rects[91]
   Rectangle
@@ -5940,8 +5940,8 @@ game_object rects[91]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(223),
-    y = int(262)
+    x = int(455),
+    y = int(455)
   }
 game_object rects[92]
   Rectangle
@@ -5971,8 +5971,8 @@ game_object rects[92]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(84),
-    y = int(282)
+    x = int(460),
+    y = int(460)
   }
 game_object rects[93]
   Rectangle
@@ -6002,8 +6002,8 @@ game_object rects[93]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(346),
-    y = int(143)
+    x = int(465),
+    y = int(465)
   }
 game_object rects[94]
   Rectangle
@@ -6033,8 +6033,8 @@ game_object rects[94]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(148),
-    y = int(205)
+    x = int(470),
+    y = int(470)
   }
 game_object rects[95]
   Rectangle
@@ -6064,8 +6064,8 @@ game_object rects[95]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(343),
-    y = int(359)
+    x = int(475),
+    y = int(475)
   }
 game_object rects[96]
   Rectangle
@@ -6095,8 +6095,8 @@ game_object rects[96]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(208),
-    y = int(313)
+    x = int(480),
+    y = int(480)
   }
 game_object rects[97]
   Rectangle
@@ -6126,8 +6126,8 @@ game_object rects[97]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(388),
-    y = int(357)
+    x = int(485),
+    y = int(485)
   }
 game_object rects[98]
   Rectangle
@@ -6157,8 +6157,8 @@ game_object rects[98]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(172),
-    y = int(305)
+    x = int(490),
+    y = int(490)
   }
 game_object rects[99]
   Rectangle
@@ -6188,8 +6188,8 @@ game_object rects[99]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(199),
-    y = int(36)
+    x = int(495),
+    y = int(495)
   }
 game_object rects[9]
   Rectangle
@@ -6219,8 +6219,8 @@ game_object rects[9]
     user_string5 = string(""),
     visible = int(1),
     w = int(5),
-    x = int(121),
-    y = int(287)
+    x = int(45),
+    y = int(45)
   }
 int size 100
 string window_title "p7 t052.gpl -- compare to t052.jpg"
