@@ -834,11 +834,19 @@ statement:
 if_statement:
     T_IF T_LPAREN expression T_RPAREN if_block %prec IF_NO_ELSE
     {
+        if($3->getGplType() != INT)
+        {
+            Error::error(Error::INVALID_TYPE_FOR_IF_STMT_EXPRESSION);
+        }
         statement_block_stack.top()->addStatement(new If_stmt($3, $5));
     }
 
     | T_IF T_LPAREN expression T_RPAREN if_block T_ELSE if_block
     {
+        if($3->getGplType() != INT)
+        {
+            Error::error(Error::INVALID_TYPE_FOR_IF_STMT_EXPRESSION);
+        }
         statement_block_stack.top()->addStatement(new If_stmt($3, $5, $7));
     }
     ;
@@ -847,6 +855,10 @@ if_statement:
 for_statement:
     T_FOR T_LPAREN statement_block_creator assign_statement end_of_statement_block T_SEMIC expression T_SEMIC statement_block_creator assign_statement end_of_statement_block T_RPAREN statement_block
     {
+        if($7->getGplType() != INT)
+        {
+            Error::error(Error::INVALID_TYPE_FOR_FOR_STMT_EXPRESSION);    
+        }
         statement_block_stack.top()->addStatement(new For_stmt($5, $7, $11, $13));
     }
     ;
@@ -855,6 +867,7 @@ for_statement:
 print_statement:
     T_PRINT T_LPAREN expression T_RPAREN
     {
+
         statement_block_stack.top()->addStatement(new Print_stmt($3, $1));     
     }
     ;
@@ -863,7 +876,16 @@ print_statement:
 exit_statement:
     T_EXIT T_LPAREN expression T_RPAREN
     {
-        statement_block_stack.top()->addStatement(new Exit_stmt($3, $1));
+        if($3->getGplType() == DOUBLE)
+        {
+            Error::error(Error::EXIT_STATUS_MUST_BE_AN_INTEGER, "double");    
+        }
+        else if($3->getGplType() == STRING)
+        {
+            Error::error(Error::EXIT_STATUS_MUST_BE_AN_INTEGER, "string");    
+        }
+        else
+            statement_block_stack.top()->addStatement(new Exit_stmt($3, $1));
     }
     ;
 
@@ -871,18 +893,66 @@ exit_statement:
 assign_statement:
     variable T_ASSIGN expression
     {
-        if($1->eval()->getType() == INT && $3->getGplType() == DOUBLE)
-            Error::error(Error::ASSIGNMENT_TYPE_ERROR, "int","double");
+        if($1->getType() == STANDARD && $1->eval()->getType() == GAME_OBJECT)
+            Error::error(Error::INVALID_LHS_OF_ASSIGNMENT, $1->getName(),"game_object");
+        if($1->eval()->getType() == INT)
+        {
+            if($3->getGplType() == DOUBLE)
+                Error::error(Error::ASSIGNMENT_TYPE_ERROR, "int","double");
+            else if($3->getGplType() == STRING)
+                Error::error(Error::ASSIGNMENT_TYPE_ERROR, "int","string");
+
+        }
+        else if($1->eval()->getType() == DOUBLE)
+        {
+            if($3->getGplType() == STRING)
+                Error::error(Error::ASSIGNMENT_TYPE_ERROR, "double","string");
+
+        }
         statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, EQUALS));
     }
     | variable T_PLUS_ASSIGN expression
     {   
+        if($1->getType() == STANDARD && $1->eval()->getType() == GAME_OBJECT)
+            Error::error(Error::INVALID_LHS_OF_PLUS_ASSIGNMENT, $1->getName(),"game_object");
+        if($1->eval()->getType() == INT)
+        {
+            if($3->getGplType() == DOUBLE)
+                Error::error(Error::PLUS_ASSIGNMENT_TYPE_ERROR, "int","double");
+            else if($3->getGplType() == STRING)
+                Error::error(Error::PLUS_ASSIGNMENT_TYPE_ERROR, "int","string");
 
-        statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, PLUS_EQUALS));
-        $$ = new Assignment_stmt($1, $3, PLUS_EQUALS);        
+        }
+        else if($1->eval()->getType() == DOUBLE)
+        {
+            if($3->getGplType() == STRING)
+                Error::error(Error::PLUS_ASSIGNMENT_TYPE_ERROR, "double","string");
+
+        }
+        statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, PLUS_EQUALS));       
     }
     | variable T_MINUS_ASSIGN expression
     {
+        if($1->getType() == STANDARD && $1->eval()->getType() == GAME_OBJECT)
+            Error::error(Error::INVALID_LHS_OF_MINUS_ASSIGNMENT, $1->getName(),"game_object");
+        if($1->eval()->getType() == INT)
+        {
+            if($3->getGplType() == DOUBLE)
+                Error::error(Error::MINUS_ASSIGNMENT_TYPE_ERROR, "int","double");
+            else if($3->getGplType() == STRING)
+                Error::error(Error::MINUS_ASSIGNMENT_TYPE_ERROR, "int","string");
+
+        }
+        else if($1->eval()->getType() == DOUBLE)
+        {
+            if($3->getGplType() == STRING)
+                Error::error(Error::MINUS_ASSIGNMENT_TYPE_ERROR, "double","string");
+
+        }
+        else if($1->eval()->getType() == STRING)
+        {
+            Error::error(Error::INVALID_LHS_OF_MINUS_ASSIGNMENT, $1->eval()->getName(),"string");
+        }
         statement_block_stack.top()->addStatement(new Assignment_stmt($1, $3, MINUS_EQUALS));
     }
     ;

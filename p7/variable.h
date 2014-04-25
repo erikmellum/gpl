@@ -33,6 +33,10 @@ class Variable
         Gpl_type getParamType(Symbol* sym);
         void setParam(string newParam);
         Symbol* eval();
+        Expr* getExpr();
+        void setExpr(Expr* newExpr);
+        string getName();
+        void setName(string newName);
     private:
         Symbol* symbol;
         Expr* expression;

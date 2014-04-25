@@ -34,11 +34,27 @@ Symbol* Variable::eval()
     string rname = name;
     if(expression)
     {   
-    	int i = expression->eval_int();
-    	stringstream ss;
-    	ss << name << "[" << i << "]";
-    	rname = ss.str();
+        if(symbol_table->lookup(name))
+        {
+            Error::error(Error::VARIABLE_NOT_AN_ARRAY, name);
+            return symbol_table->retrieve(name);
+        }
+        else
+        {
+        	int i = expression->eval_int();
+        	stringstream ss;
+        	ss << name << "[" << i << "]";
+        	rname = ss.str();
+            if(!symbol_table->lookup(rname))
+            {
+                stringstream s;
+                s << i;
+                Error::error(Error::ARRAY_INDEX_OUT_OF_BOUNDS, name, s.str());
+                return symbol_table->retrieve(name + "[0]");   
+            }
+        }
     }
+
     if(symbol_table->lookup(rname))
     {
         return symbol_table->retrieve(rname);
@@ -166,4 +182,20 @@ Gpl_type Variable::getParamType(Symbol* sym)
     status = object->get_member_variable_type(param, type);
     assert(status == OK);
     return type;
+}
+Expr* Variable::getExpr()
+{
+    return expression;
+}
+void Variable::setExpr(Expr* newExpr)
+{
+    expression = newExpr;
+}
+string Variable::getName()
+{
+    return name;
+}
+void Variable::setName(string newName)
+{
+    name = newName;
 }

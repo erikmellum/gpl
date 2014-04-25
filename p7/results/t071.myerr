@@ -1,0 +1,1 @@
+Semantic error on line 9: Incorrect type for expression in for statement.  Expressions in for statements must be of type INT.

@@ -1,0 +1,1 @@
+Semantic error on line 5: LHS of assignment must be (INT || DOUBLE || STRING || ANIMATION_BLOCK).  Variable 'r' is of type 'game_object'.
